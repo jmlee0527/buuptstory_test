@@ -86,7 +86,7 @@ export function NctDreamFanQuizTestPage() {
           <div className="flex items-end justify-between gap-4">
             <div>
               <p className="text-xs font-black tracking-[.16em]" style={{ color: theme.primary }}>{theme.label}</p>
-              <h1 className="mt-2 text-xl font-black sm:text-2xl" style={{ color: theme.text }}>NCT DREAM 찐팬 테스트</h1>
+              <h1 className="mt-2 text-xl font-black sm:text-2xl" style={{ color: theme.text }}>NCT DREAM 팬 퀴즈</h1>
             </div>
             <strong className="shrink-0 rounded-full bg-white px-3 py-1.5 text-sm shadow-sm" style={{ color: theme.mutedText }}>{index + 1} / {NCT_DREAM_QUIZ_SIZE}</strong>
           </div>

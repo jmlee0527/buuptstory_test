@@ -12,7 +12,7 @@ export const metadata = createMetadata({
   absoluteTitle: true,
   description: "미미테스트에서 짧고 재미있는 다양한 테스트로 새로운 나를 발견해보세요.",
   path: "/",
-  keywords: ["무료 테스트", "성향 테스트", "종합 테스트", "심리 테스트", "연애 테스트", "찐팬 테스트"],
+  keywords: ["무료 테스트", "성향 테스트", "종합 테스트", "심리 테스트", "연애 테스트", "팬 퀴즈"],
 });
 
 const rankedTests = [...tests].sort((a, b) => b.participants - a.participants);

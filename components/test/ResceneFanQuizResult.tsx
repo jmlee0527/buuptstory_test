@@ -36,7 +36,7 @@ export function ResceneFanQuizResult({ answers }: { answers: ResceneAnswer[] | n
       wrongReviews={wrongReviews}
       resultPath={resultPath}
       imageSrc={resceneFanTest.thumbnail}
-      imageAlt="리센트 찐팬 테스트 썸네일"
+      imageAlt="리센트 팬 퀴즈 썸네일"
       shareDescription="당신의 REMINE 덕력도 확인해 보세요."
     />
   );

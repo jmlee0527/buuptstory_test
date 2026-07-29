@@ -2,8 +2,8 @@
   "schemaVersion": "1.0.0",
   "test": {
     "id": "ateez-true-fan-test",
-    "title": "ATEEZ 찐팬 테스트",
-    "alternativeTitle": "에이티즈 찐팬 테스트",
+    "title": "ATEEZ 팬 퀴즈",
+    "alternativeTitle": "에이티즈 팬 퀴즈",
     "topic": "ATEEZ",
     "language": "ko-KR",
     "questionPoolSize": 60,
@@ -19,11 +19,11 @@
   },
   "seo": {
     "slug": "ateez-true-fan-test",
-    "metaTitle": "ATEEZ 찐팬 테스트 | 에이티니 덕력 퀴즈",
+    "metaTitle": "ATEEZ 팬 퀴즈 | 에이티니 덕력 퀴즈",
     "metaDescription": "에이티즈 멤버, 데뷔, 앨범, 타이틀곡과 기록을 맞히는 15문항 4지선다 팬 테스트. 난이도별 문제로 ATINY 덕력을 확인해 보세요.",
-    "primaryKeyword": "ATEEZ 찐팬 테스트",
+    "primaryKeyword": "ATEEZ 팬 퀴즈",
     "secondaryKeywords": [
-      "에이티즈 찐팬 테스트",
+      "에이티즈 팬 퀴즈",
       "ATEEZ 퀴즈",
       "에이티즈 퀴즈",
       "ATINY 테스트",

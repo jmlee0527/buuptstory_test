@@ -36,7 +36,7 @@ export function SeventeenFanQuizResult({ answers }: { answers: SeventeenAnswer[]
       wrongReviews={wrongReviews}
       resultPath={resultPath}
       imageSrc={seventeenFanTest.thumbnail}
-      imageAlt="세븐틴 찐팬 테스트 썸네일"
+      imageAlt="세븐틴 팬 퀴즈 썸네일"
       shareDescription="당신의 캐럿력도 확인해 보세요."
     />
   );

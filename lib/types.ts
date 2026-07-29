@@ -1066,7 +1066,7 @@ export type BurgerBrandProfile = {
   targets: BurgerScores;
 };
 
-// 임영웅 찐팬 테스트 (영탁 팬 퀴즈와 동일한 구조)
+// 임영웅 팬 퀴즈 (영탁 팬 퀴즈와 동일한 구조)
 export type LimYoungwoongQuestionCategory =
   | "profile" | "competition" | "songs" | "discography" | "ost" | "concert"
   | "fandom" | "broadcast" | "production" | "official-content"

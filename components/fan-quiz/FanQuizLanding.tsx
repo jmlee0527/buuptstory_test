@@ -93,7 +93,7 @@ export function FanQuizLanding({ test, insight, answerType = "4지선다" }: Pro
         <section className="container-wide-readable mt-6 rounded-[1.5rem] border border-[var(--fan-border)] bg-white/70 p-5 shadow-sm sm:p-6">
           <h2 className="text-base font-black text-[var(--fan-text)]">{entityName} 팬퀴즈를 찾고 있다면</h2>
           <p className="mt-2 text-sm leading-7 text-[var(--fan-muted)]">
-            {test.shortTitle}는 {entityName} 팬 퀴즈와 찐팬 테스트를 함께 즐길 수 있는 무료 팬 콘텐츠입니다. 짧은 문제를 풀고 내 팬심 레벨을 바로 확인해 보세요.
+            {test.shortTitle}는 {entityName}에 관한 문제를 풀며 팬심을 확인할 수 있는 무료 팬 퀴즈입니다. 짧은 문제를 풀고 내 팬심 레벨을 바로 확인해 보세요.
           </p>
         </section>
 

@@ -36,7 +36,7 @@ export function StrayKidsFanQuizResult({ answers }: { answers: StrayKidsAnswer[]
       wrongReviews={wrongReviews}
       resultPath={resultPath}
       imageSrc={strayKidsFanTest.thumbnail}
-      imageAlt="스트레이 키즈 찐팬 테스트 썸네일"
+      imageAlt="스트레이 키즈 팬 퀴즈 썸네일"
       shareDescription="당신의 STAY 팬심도 확인해 보세요."
     />
   );

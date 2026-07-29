@@ -1,7 +1,7 @@
 import rawBank from "@/data/question-banks/girls-generation-true-fan.json";
 import type { TestDefinition } from "@/lib/types";
 
-// 소녀시대 찐팬 테스트 — 문제·정답·해설·결과 등급은 첨부 JSON 문제은행을 단일 원본으로 사용합니다.
+// 소녀시대 팬 퀴즈 — 문제·정답·해설·결과 등급은 첨부 JSON 문제은행을 단일 원본으로 사용합니다.
 // 문제 내용을 이 파일에서 수정하지 마세요. 검수는 data/question-banks/girls-generation-true-fan.json에서 진행합니다.
 export type GirlsGenerationDifficulty = "easy" | "medium" | "hard";
 export type GirlsGenerationQuestion = {
@@ -83,9 +83,9 @@ export const getGirlsGenerationGradeBySlug = (slug: string) => girlsGenerationGr
 export const girlsGenerationFanTest: TestDefinition = {
   type: "quiz",
   slug: "girls-generation-true-fan-test",
-  title: "소녀시대 찐팬 테스트",
-  shortTitle: "소녀시대 찐팬 테스트",
-  cardTitle: "소녀시대 찐팬 테스트",
+  title: "소녀시대 팬 퀴즈",
+  shortTitle: "소녀시대 팬 퀴즈",
+  cardTitle: "소녀시대 팬 퀴즈",
   description: "데뷔곡부터 정규앨범, 태티서와 Oh!GG까지 나의 S♡NE 덕력을 확인해 보세요.",
   category: "팬 퀴즈",
   duration: "약 3분",
@@ -102,9 +102,9 @@ export const girlsGenerationFanTest: TestDefinition = {
   seoDescription: girlsGenerationBank.seo.metaDescription,
   keywords: [girlsGenerationBank.seo.primaryKeyword, ...girlsGenerationBank.seo.secondaryKeywords, "Girls' Generation True Fan Test", "Girls Generation 테스트", "girls generation quiz"],
   seoContent: {
-    heading: "소녀시대 찐팬 테스트란?",
+    heading: "소녀시대 팬 퀴즈란?",
     paragraphs: [
-      "소녀시대 찐팬 테스트는 멤버와 데뷔, 다시 만난 세계와 Gee, 소원을 말해봐 같은 대표곡, 정규앨범과 FOREVER 1, 태티서·Oh!GG 유닛 활동까지 공식 자료로 검증한 60문항 문제은행에서 매번 15문항을 뽑아 진행하는 팬덤 퀴즈입니다.",
+      "소녀시대 팬 퀴즈는 멤버와 데뷔, 다시 만난 세계와 Gee, 소원을 말해봐 같은 대표곡, 정규앨범과 FOREVER 1, 태티서·Oh!GG 유닛 활동까지 공식 자료로 검증한 60문항 문제은행에서 매번 15문항을 뽑아 진행하는 팬덤 퀴즈입니다.",
       "난이도는 easy 5문항, medium 6문항, hard 4문항으로 항상 균형이 유지되고, 같은 분야나 같은 앨범에 문제가 몰리지 않도록 출제를 제한합니다. 문제 순서와 보기 순서가 매번 바뀌기 때문에 다시 도전할 때마다 새로운 시험처럼 즐길 수 있습니다.",
       "결과에서는 15점 만점 점수와 정답률, 새싹 S♡NE부터 레전드 S♡NE까지 5단계 등급, 그리고 문제별 정답과 해설 복습을 제공합니다. 본 테스트는 공개된 공식 자료를 바탕으로 제작된 비공식 팬 콘텐츠입니다.",
     ],

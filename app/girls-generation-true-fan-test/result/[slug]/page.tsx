@@ -18,7 +18,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return grade
     ? {
         ...createMetadata({
-          title: `${grade.title} | 소녀시대 찐팬 테스트 결과`,
+          title: `${grade.title} | 소녀시대 팬 퀴즈 결과`,
           description: `${grade.summary} 소녀시대 퀴즈로 나의 S♡NE 덕력을 확인해 보세요.`,
           path: `/girls-generation-true-fan-test/result/${slug}`,
           ogImage: false,
@@ -45,7 +45,7 @@ export default async function Page({ params, searchParams }: Props) {
         data={{
           "@context": "https://schema.org",
           "@type": "WebPage",
-          name: `소녀시대 찐팬 테스트 결과: ${grade.title}`,
+          name: `소녀시대 팬 퀴즈 결과: ${grade.title}`,
           description: grade.summary,
           url: absoluteUrl(`/girls-generation-true-fan-test/result/${slug}`),
           inLanguage: "ko-KR",

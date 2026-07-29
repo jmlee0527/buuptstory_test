@@ -48,7 +48,7 @@ export function Fromis9FanQuizResult({ grade, score, wrong, encodedAnswers }: Pr
       wrongReviews={toWrongReviews(wrong)}
       resultPath={resultPath}
       imageSrc={fromis9FanTest.thumbnail}
-      imageAlt="프로미스나인 찐팬 테스트 썸네일"
+      imageAlt="프로미스나인 팬 퀴즈 썸네일"
       shareDescription={grade.subtitle}
       disclaimer="본 테스트는 프로미스나인 또는 소속사의 공식 서비스가 아닌 비공식 팬 퀴즈입니다. 응답은 서버에 저장되지 않습니다."
     />

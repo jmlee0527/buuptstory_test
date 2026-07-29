@@ -3,8 +3,8 @@
   "test": {
     "id": "nct-dream-true-fan-test",
     "slug": "nct-dream-true-fan-test",
-    "title": "NCT DREAM 찐팬 테스트",
-    "shortTitle": "NCT DREAM 찐팬 테스트",
+    "title": "NCT DREAM 팬 퀴즈",
+    "shortTitle": "NCT DREAM 팬 퀴즈",
     "category": "팬 퀴즈",
     "description": "멤버, 데뷔, 앨범, 수록곡, 일본 활동과 THE DREAM SHOW까지 15문제로 확인하는 나의 NCT DREAM 팬심 지수",
     "questionPoolSize": 60,
@@ -96,7 +96,7 @@
       }
     ],
     "seo": {
-      "primaryKeyword": "NCT DREAM 찐팬 테스트",
+      "primaryKeyword": "NCT DREAM 팬 퀴즈",
       "secondaryKeywords": [
         "엔시티 드림 퀴즈",
         "NCT DREAM 테스트",
@@ -108,15 +108,15 @@
         "7DREAM",
         "팬 퀴즈"
       ],
-      "metaTitle": "NCT DREAM 찐팬 테스트 | 엔시티 드림 팬심·시즈니 덕력 퀴즈",
+      "metaTitle": "NCT DREAM 팬 퀴즈 | 엔시티 드림 팬심·시즈니 덕력 퀴즈",
       "metaDescription": "NCT DREAM 멤버, 데뷔곡, 앨범, 수록곡, THE DREAM SHOW와 일본 활동까지 15문제로 나의 시즈니 팬심 지수를 확인해보세요.",
-      "ogTitle": "NCT DREAM 찐팬 테스트",
+      "ogTitle": "NCT DREAM 팬 퀴즈",
       "ogDescription": "나는 몇 점짜리 시즈니일까? 7DREAM의 멤버·노래·앨범·공연 기록으로 팬심을 테스트해보세요.",
       "canonicalPath": "/tests/nct-dream-true-fan-test",
       "indexable": true,
       "suggestedFaq": [
         {
-          "question": "NCT DREAM 찐팬 테스트는 몇 문제인가요?",
+          "question": "NCT DREAM 팬 퀴즈는 몇 문제인가요?",
           "answer": "총 60문제의 검증된 문제 풀에서 쉬움, 보통, 어려움 난이도별로 5문제씩 뽑아 매회 15문제를 제공합니다."
         },
         {

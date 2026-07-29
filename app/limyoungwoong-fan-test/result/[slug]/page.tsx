@@ -17,10 +17,10 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const grade = getLimYoungWoongFanGradeProfile(slug);
   if (!grade) return {};
   return createMetadata({
-    title: `${grade.title} | 임영웅 찐팬 테스트 결과 | 미미테스트`,
-    description: `임영웅 찐팬 테스트 결과 ${grade.title}. 노래, 앨범, 방송, 무대와 활동 기록을 얼마나 알고 있는지 15문제 퀴즈로 확인해보세요.`,
+    title: `${grade.title} | 임영웅 팬 퀴즈 결과 | 미미테스트`,
+    description: `임영웅 팬 퀴즈 결과 ${grade.title}. 노래, 앨범, 방송, 무대와 활동 기록을 얼마나 알고 있는지 15문제 퀴즈로 확인해보세요.`,
     path: limYoungWoongFanResultPath(grade.slug),
-    keywords: ["임영웅 찐팬 테스트", "임영웅 팬 테스트", "임영웅 퀴즈", "임영웅 팬심 지수", grade.title],
+    keywords: ["임영웅 팬 퀴즈", "임영웅 팬 테스트", "임영웅 퀴즈", "임영웅 팬심 지수", grade.title],
     ogImage: false,
   });
 }
@@ -55,7 +55,7 @@ export default async function LimYoungWoongFanQuizResultPage({ params, searchPar
       <JsonLd data={{
         "@context": "https://schema.org",
         "@type": "WebPage",
-        name: `임영웅 찐팬 테스트 결과: ${grade.title}`,
+        name: `임영웅 팬 퀴즈 결과: ${grade.title}`,
         description: grade.summary,
         url: absoluteUrl(limYoungWoongFanResultPath(grade.slug)),
         inLanguage: "ko-KR",

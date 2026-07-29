@@ -51,7 +51,7 @@ export function ArsenalFanQuizResult({ grade, fanIndex, totalCorrect, total, wei
       wrongReviews={toWrongReviews(wrong)}
       resultPath={resultPath}
       imageSrc={arsenalFanTest.thumbnail}
-      imageAlt="아스날 팬 테스트 썸네일"
+      imageAlt="아스날 팬 퀴즈 썸네일"
       shareDescription={grade.subtitle}
       disclaimer="본 테스트는 아스날 FC 또는 프리미어리그의 공식 서비스가 아닌 비공식 팬 퀴즈입니다. 응답은 서버에 저장되지 않습니다."
     />

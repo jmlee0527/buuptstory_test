@@ -1,0 +1,1299 @@
+{
+  "schemaVersion": "1.0",
+  "test": {
+    "slugSuggestion": "bts-jungkook-true-fan-test",
+    "titleKo": "BTS 정국 진성팬 테스트",
+    "titleEn": "BTS Jung Kook True Fan Test",
+    "subject": "BTS Jung Kook",
+    "questionPoolSize": 60,
+    "questionsPerAttempt": 12,
+    "selectionRule": {
+      "easy": 4,
+      "medium": 5,
+      "hard": 3,
+      "shuffleQuestions": true,
+      "shuffleOptions": true,
+      "avoidDuplicateQuestionIds": true
+    },
+    "seo": {
+      "metaTitleKo": "BTS 정국 진성팬 테스트 | 정국 퀴즈 12문제로 팬력 확인",
+      "metaDescriptionKo": "BTS 정국의 GOLDEN, Seven, 3D, Standing Next to You, Dreamers, Never Let Go와 공식 활동 기록으로 구성한 12문제 진성팬 테스트. 랜덤 문제로 정국 팬력을 확인해보세요.",
+      "keywords": [
+        "BTS 정국",
+        "정국 퀴즈",
+        "정국 팬퀴즈",
+        "정국 진성팬 테스트",
+        "BTS 팬퀴즈",
+        "Jung Kook quiz",
+        "Jungkook quiz",
+        "BTS Jung Kook",
+        "GOLDEN",
+        "Seven",
+        "3D",
+        "Standing Next to You",
+        "Dreamers",
+        "Never Let Go",
+        "JUNG KOOK I AM STILL",
+        "BTS ARIRANG"
+      ]
+    },
+    "qualityRules": [
+      "정답은 sourceUrl의 공식 또는 신뢰도 높은 출처로 검증된 사실만 사용한다.",
+      "루머, 사생활 추정, 연애설, 비공식 별명 유래, 건강·가족 등 민감한 정보는 문제로 만들지 않는다.",
+      "세계기록·차트 기록은 현행 기록처럼 단정하지 말고 해당 시점의 기록 또는 최고 순위로 표현한다.",
+      "실제 출제 시 난이도 비율 easy 4 / medium 5 / hard 3을 유지한다.",
+      "보기 순서를 셔플할 경우 answerIndex를 반드시 재계산한다.",
+      "문제 풀 수정 시 verificationDate와 sourceUrl을 함께 갱신한다."
+    ],
+    "verificationDate": "2026-07-29",
+    "introKo": "BTS 정국에 대해 얼마나 알고 있나요? GOLDEN, Seven, 3D, Dreamers부터 공식 공연과 최근 BTS 활동까지, 매번 달라지는 12문제로 정국 팬력을 확인해보세요.",
+    "guideKo": [
+      "전체 60문항 풀에서 12문항이 랜덤 출제됩니다.",
+      "각 문제는 4지선다형이며 한 개의 정답만 있습니다.",
+      "쉬움 4문항, 보통 5문항, 어려움 3문항 비율을 유지합니다.",
+      "제출 후 정답과 간단한 해설을 확인할 수 있습니다."
+    ],
+    "resultTiers": [
+      {
+        "minScore": 0,
+        "maxScore": 3,
+        "title": "정국 입덕 준비 중",
+        "description": "아직 알아갈 이야기가 많이 남아 있어요. 공식 음악과 무대부터 차근차근 만나보세요."
+      },
+      {
+        "minScore": 4,
+        "maxScore": 6,
+        "title": "정국을 꽤 아는 팬",
+        "description": "대표곡과 주요 활동은 확실히 알고 있어요. 조금만 더 파고들면 상위권입니다."
+      },
+      {
+        "minScore": 7,
+        "maxScore": 9,
+        "title": "정국 팬력 상위권",
+        "description": "앨범과 솔로 활동을 폭넓게 알고 있네요. 어려운 공식 기록 문항까지 제법 강합니다."
+      },
+      {
+        "minScore": 10,
+        "maxScore": 11,
+        "title": "정국 진성팬",
+        "description": "세부 트랙과 활동 기록까지 기억하는 진성팬 수준입니다."
+      },
+      {
+        "minScore": 12,
+        "maxScore": 12,
+        "title": "GOLDEN급 정국 마스터",
+        "description": "12문제 전부 정답. 공식 활동과 디스코그래피를 빈틈없이 알고 있습니다."
+      }
+    ],
+    "implementationNotes": [
+      "현재 Mimi Test의 기존 팬퀴즈 템플릿, 카드 구조, 결과 화면, 공유 기능을 우선 재사용한다.",
+      "DB를 새로 추가하지 말고 기존 정적 데이터/콘텐츠 관리 방식에 맞춰 이 JSON을 변환 또는 import한다.",
+      "보기 셔플 시 원본 answerIndex를 그대로 쓰지 말고 정답 식별자를 유지하거나 셔플 후 인덱스를 재계산한다.",
+      "동일 시도 안에서는 question id 중복 출제를 금지한다.",
+      "검색/카테고리 화면에서 테스트 제목, 설명, 키워드, 태그로 검색 가능하게 노출한다.",
+      "SEO 메타데이터, canonical, Open Graph, sitemap에서 기존 프로젝트 패턴을 그대로 따른다."
+    ]
+  },
+  "questions": [
+    {
+      "id": 1,
+      "difficulty": "easy",
+      "category": "BTS 기본",
+      "question": "정국이 멤버로 활동하는 그룹은?",
+      "options": [
+        "BTS",
+        "SEVENTEEN",
+        "NCT DREAM",
+        "TXT"
+      ],
+      "answerIndex": 0,
+      "answer": "BTS",
+      "explanation": "정국은 RM, 진, 슈가, 제이홉, 지민, 뷔와 함께 BTS의 멤버다.",
+      "sourceUrl": "https://bts.ibighit.com/eng/profile/",
+      "keywords": [
+        "BTS 정국",
+        "정국 퀴즈"
+      ]
+    },
+    {
+      "id": 2,
+      "difficulty": "easy",
+      "category": "BTS 기본",
+      "question": "BTS는 공식 프로필 기준 몇 명의 멤버로 구성되어 있을까?",
+      "options": [
+        "5명",
+        "6명",
+        "7명",
+        "8명"
+      ],
+      "answerIndex": 2,
+      "answer": "7명",
+      "explanation": "BIGHIT MUSIC 공식 프로필에는 BTS 멤버 7명이 소개되어 있다.",
+      "sourceUrl": "https://bts.ibighit.com/eng/profile/",
+      "keywords": [
+        "BTS 멤버",
+        "정국 팬퀴즈"
+      ]
+    },
+    {
+      "id": 3,
+      "difficulty": "easy",
+      "category": "BTS 기본",
+      "question": "BTS가 데뷔한 시기는 공식 프로필 기준 언제일까?",
+      "options": [
+        "2012년 6월",
+        "2013년 6월",
+        "2014년 6월",
+        "2015년 6월"
+      ],
+      "answerIndex": 1,
+      "answer": "2013년 6월",
+      "explanation": "BIGHIT MUSIC은 BTS가 2013년 6월 데뷔했다고 소개한다.",
+      "sourceUrl": "https://bts.ibighit.com/eng/profile/",
+      "keywords": [
+        "BTS 데뷔",
+        "정국 진성팬 테스트"
+      ]
+    },
+    {
+      "id": 4,
+      "difficulty": "medium",
+      "category": "BTS 디스코그래피",
+      "question": "BTS 정규 2집 WINGS에서 'Begin'은 몇 번째 트랙일까?",
+      "options": [
+        "1번",
+        "2번",
+        "3번",
+        "4번"
+      ],
+      "answerIndex": 2,
+      "answer": "3번",
+      "explanation": "WINGS 공식 트랙리스트에서 'Begin'은 3번 트랙이다.",
+      "sourceUrl": "https://bts.ibighit.com/eng/discography/detail/wings.html",
+      "keywords": [
+        "정국 Begin",
+        "BTS WINGS"
+      ]
+    },
+    {
+      "id": 5,
+      "difficulty": "medium",
+      "category": "BTS 디스코그래피",
+      "question": "LOVE YOURSELF 結 'Answer'의 CD A에서 'Euphoria'의 트랙 번호는?",
+      "options": [
+        "1번",
+        "3번",
+        "5번",
+        "7번"
+      ],
+      "answerIndex": 0,
+      "answer": "1번",
+      "explanation": "공식 트랙리스트에서 'Euphoria'는 CD A의 첫 번째 곡이다.",
+      "sourceUrl": "https://bts.ibighit.com/eng/discography/detail/love_yourself-answer.html",
+      "keywords": [
+        "정국 Euphoria",
+        "LOVE YOURSELF Answer"
+      ]
+    },
+    {
+      "id": 6,
+      "difficulty": "hard",
+      "category": "BTS 디스코그래피",
+      "question": "MAP OF THE SOUL : 7에서 'My Time'은 몇 번째 트랙일까?",
+      "options": [
+        "7번",
+        "8번",
+        "9번",
+        "10번"
+      ],
+      "answerIndex": 2,
+      "answer": "9번",
+      "explanation": "공식 트랙리스트에서 'My Time'은 9번 트랙이다.",
+      "sourceUrl": "https://bts.ibighit.com/eng/discography/detail/map_of_the_soul-7.html",
+      "keywords": [
+        "정국 My Time",
+        "MAP OF THE SOUL 7"
+      ]
+    },
+    {
+      "id": 7,
+      "difficulty": "medium",
+      "category": "BTS 디스코그래피",
+      "question": "MAP OF THE SOUL : 7은 BTS의 몇 번째 정규 앨범으로 소개됐을까?",
+      "options": [
+        "2집",
+        "3집",
+        "4집",
+        "5집"
+      ],
+      "answerIndex": 2,
+      "answer": "4집",
+      "explanation": "BIGHIT MUSIC은 MAP OF THE SOUL : 7을 BTS의 네 번째 정규 앨범으로 소개한다.",
+      "sourceUrl": "https://bts.ibighit.com/eng/discography/detail/map_of_the_soul-7.html",
+      "keywords": [
+        "BTS 정규 4집",
+        "정국"
+      ]
+    },
+    {
+      "id": 8,
+      "difficulty": "easy",
+      "category": "GOLDEN",
+      "question": "정국의 첫 정규 솔로 앨범 제목은?",
+      "options": [
+        "FACE",
+        "GOLDEN",
+        "INDIGO",
+        "LAYOVER"
+      ],
+      "answerIndex": 1,
+      "answer": "GOLDEN",
+      "explanation": "정국의 첫 정규 솔로 앨범은 GOLDEN이다.",
+      "sourceUrl": "https://shop.weverse.io/ko/shop/KRW/artists/2/sales/20745",
+      "keywords": [
+        "정국 GOLDEN",
+        "정국 솔로 앨범"
+      ]
+    },
+    {
+      "id": 9,
+      "difficulty": "easy",
+      "category": "GOLDEN",
+      "question": "정국의 솔로 앨범 GOLDEN 발매일은?",
+      "options": [
+        "2023년 7월 14일",
+        "2023년 9월 29일",
+        "2023년 11월 3일",
+        "2023년 12월 1일"
+      ],
+      "answerIndex": 2,
+      "answer": "2023년 11월 3일",
+      "explanation": "Weverse Shop 공식 정보에 GOLDEN 발매일은 2023년 11월 3일로 표기돼 있다.",
+      "sourceUrl": "https://shop.weverse.io/ko/shop/KRW/artists/2/sales/20745",
+      "keywords": [
+        "GOLDEN 발매일",
+        "정국 앨범"
+      ]
+    },
+    {
+      "id": 10,
+      "difficulty": "easy",
+      "category": "GOLDEN",
+      "question": "GOLDEN의 타이틀곡은?",
+      "options": [
+        "Seven",
+        "3D",
+        "Standing Next to You",
+        "Hate You"
+      ],
+      "answerIndex": 2,
+      "answer": "Standing Next to You",
+      "explanation": "공식 앨범 정보에서 'Standing Next to You'가 타이틀곡으로 표시돼 있다.",
+      "sourceUrl": "https://shop.weverse.io/ko/shop/KRW/artists/2/sales/20745",
+      "keywords": [
+        "Standing Next to You",
+        "정국 타이틀곡"
+      ]
+    },
+    {
+      "id": 11,
+      "difficulty": "medium",
+      "category": "GOLDEN",
+      "question": "GOLDEN 공식 트랙리스트에는 총 몇 개의 트랙이 실려 있을까? (Seven Clean Ver. 포함)",
+      "options": [
+        "9곡",
+        "10곡",
+        "11곡",
+        "12곡"
+      ],
+      "answerIndex": 2,
+      "answer": "11곡",
+      "explanation": "공식 트랙리스트는 Seven의 Explicit/Clean 버전을 각각 포함해 총 11트랙이다.",
+      "sourceUrl": "https://shop.weverse.io/ko/shop/KRW/artists/2/sales/20745",
+      "keywords": [
+        "GOLDEN 트랙리스트",
+        "정국 팬테스트"
+      ]
+    },
+    {
+      "id": 12,
+      "difficulty": "medium",
+      "category": "GOLDEN",
+      "question": "GOLDEN의 1번 트랙은?",
+      "options": [
+        "3D",
+        "Seven",
+        "Yes or No",
+        "Somebody"
+      ],
+      "answerIndex": 0,
+      "answer": "3D",
+      "explanation": "GOLDEN의 첫 곡은 '3D'다.",
+      "sourceUrl": "https://shop.weverse.io/ko/shop/KRW/artists/2/sales/20745",
+      "keywords": [
+        "정국 3D",
+        "GOLDEN"
+      ]
+    },
+    {
+      "id": 13,
+      "difficulty": "medium",
+      "category": "GOLDEN",
+      "question": "GOLDEN의 2번 트랙은?",
+      "options": [
+        "Closer to You",
+        "Hate You",
+        "Please Don't Change",
+        "Shot Glass of Tears"
+      ],
+      "answerIndex": 0,
+      "answer": "Closer to You",
+      "explanation": "공식 트랙리스트의 2번은 'Closer to You'다.",
+      "sourceUrl": "https://shop.weverse.io/ko/shop/KRW/artists/2/sales/20745",
+      "keywords": [
+        "Closer to You",
+        "GOLDEN"
+      ]
+    },
+    {
+      "id": 14,
+      "difficulty": "hard",
+      "category": "GOLDEN",
+      "question": "GOLDEN의 5번 트랙은?",
+      "options": [
+        "Somebody",
+        "Yes or No",
+        "Hate You",
+        "Too Sad to Dance"
+      ],
+      "answerIndex": 1,
+      "answer": "Yes or No",
+      "explanation": "공식 트랙리스트의 5번은 'Yes or No'다.",
+      "sourceUrl": "https://shop.weverse.io/ko/shop/KRW/artists/2/sales/20745",
+      "keywords": [
+        "Yes or No",
+        "정국 GOLDEN"
+      ]
+    },
+    {
+      "id": 15,
+      "difficulty": "hard",
+      "category": "GOLDEN",
+      "question": "GOLDEN의 7번 트랙은?",
+      "options": [
+        "Hate You",
+        "Somebody",
+        "Yes or No",
+        "Shot Glass of Tears"
+      ],
+      "answerIndex": 0,
+      "answer": "Hate You",
+      "explanation": "공식 트랙리스트의 7번은 'Hate You'다.",
+      "sourceUrl": "https://shop.weverse.io/ko/shop/KRW/artists/2/sales/20745",
+      "keywords": [
+        "Hate You",
+        "정국 GOLDEN"
+      ]
+    },
+    {
+      "id": 16,
+      "difficulty": "hard",
+      "category": "GOLDEN",
+      "question": "GOLDEN의 10번 트랙은?",
+      "options": [
+        "Somebody",
+        "Too Sad to Dance",
+        "Shot Glass of Tears",
+        "Seven (Clean Ver.)"
+      ],
+      "answerIndex": 2,
+      "answer": "Shot Glass of Tears",
+      "explanation": "공식 트랙리스트의 10번은 'Shot Glass of Tears'다.",
+      "sourceUrl": "https://shop.weverse.io/ko/shop/KRW/artists/2/sales/20745",
+      "keywords": [
+        "Shot Glass of Tears",
+        "GOLDEN"
+      ]
+    },
+    {
+      "id": 17,
+      "difficulty": "medium",
+      "category": "GOLDEN",
+      "question": "GOLDEN의 마지막 11번 트랙은?",
+      "options": [
+        "Standing Next to You",
+        "Seven (Clean Ver.)",
+        "3D",
+        "Hate You"
+      ],
+      "answerIndex": 1,
+      "answer": "Seven (Clean Ver.)",
+      "explanation": "GOLDEN의 마지막 트랙은 'Seven (Clean Ver.)'다.",
+      "sourceUrl": "https://shop.weverse.io/ko/shop/KRW/artists/2/sales/20745",
+      "keywords": [
+        "Seven Clean",
+        "GOLDEN"
+      ]
+    },
+    {
+      "id": 18,
+      "difficulty": "easy",
+      "category": "콜라보",
+      "question": "'3D'에 피처링으로 참여한 아티스트는?",
+      "options": [
+        "Jack Harlow",
+        "Latto",
+        "Usher",
+        "DJ Snake"
+      ],
+      "answerIndex": 0,
+      "answer": "Jack Harlow",
+      "explanation": "'3D'에는 Jack Harlow가 피처링으로 참여했다.",
+      "sourceUrl": "https://weverse.io/bts/notice/15383",
+      "keywords": [
+        "3D Jack Harlow",
+        "정국 콜라보"
+      ]
+    },
+    {
+      "id": 19,
+      "difficulty": "medium",
+      "category": "콜라보",
+      "question": "GOLDEN 수록곡 'Closer to You'에 이름을 올린 아티스트는?",
+      "options": [
+        "Major Lazer",
+        "Charlie Puth",
+        "Usher",
+        "RedOne"
+      ],
+      "answerIndex": 0,
+      "answer": "Major Lazer",
+      "explanation": "GOLDEN 공식 트랙리스트에는 'Closer to You (feat. Major Lazer)'로 표기된다.",
+      "sourceUrl": "https://shop.weverse.io/ko/shop/KRW/artists/2/sales/20745",
+      "keywords": [
+        "Closer to You Major Lazer",
+        "정국"
+      ]
+    },
+    {
+      "id": 20,
+      "difficulty": "easy",
+      "category": "콜라보",
+      "question": "'Seven'에 피처링으로 참여한 아티스트는?",
+      "options": [
+        "Latto",
+        "Doja Cat",
+        "Cardi B",
+        "Nicki Minaj"
+      ],
+      "answerIndex": 0,
+      "answer": "Latto",
+      "explanation": "'Seven'은 Latto가 피처링한 곡이다.",
+      "sourceUrl": "https://www.guinnessworldrecords.com/world-records/698349-most-streamed-track-on-spotify-in-one-week-male",
+      "keywords": [
+        "Seven Latto",
+        "정국 Seven"
+      ]
+    },
+    {
+      "id": 21,
+      "difficulty": "medium",
+      "category": "콜라보",
+      "question": "GOLDEN 수록곡 'Please Don't Change'에 참여한 아티스트는?",
+      "options": [
+        "DJ Snake",
+        "Major Lazer",
+        "Jack Harlow",
+        "Usher"
+      ],
+      "answerIndex": 0,
+      "answer": "DJ Snake",
+      "explanation": "공식 트랙리스트에는 'Please Don't Change (feat. DJ Snake)'로 표기된다.",
+      "sourceUrl": "https://shop.weverse.io/ko/shop/KRW/artists/2/sales/20745",
+      "keywords": [
+        "Please Don't Change DJ Snake",
+        "GOLDEN"
+      ]
+    },
+    {
+      "id": 22,
+      "difficulty": "easy",
+      "category": "Seven",
+      "question": "정국의 솔로 디지털 싱글 'Seven' 발매일은?",
+      "options": [
+        "2023년 6월 13일",
+        "2023년 7월 14일",
+        "2023년 8월 18일",
+        "2023년 9월 29일"
+      ],
+      "answerIndex": 1,
+      "answer": "2023년 7월 14일",
+      "explanation": "BIGHIT MUSIC 공지 기준 'Seven'은 2023년 7월 14일 오후 1시(KST)에 발매됐다.",
+      "sourceUrl": "https://weverse.io/bts/notice/14227?hl=ko",
+      "keywords": [
+        "정국 Seven 발매일",
+        "BTS 정국"
+      ]
+    },
+    {
+      "id": 23,
+      "difficulty": "medium",
+      "category": "Seven",
+      "question": "BIGHIT MUSIC은 'Seven'을 어떤 성격의 곡으로 소개했을까?",
+      "options": [
+        "겨울 발라드",
+        "서머송",
+        "록 앤섬",
+        "재즈 스탠더드"
+      ],
+      "answerIndex": 1,
+      "answer": "서머송",
+      "explanation": "공식 발매 공지에서 'Seven'은 정국의 매력을 느낄 수 있는 '서머송'으로 소개됐다.",
+      "sourceUrl": "https://weverse.io/bts/notice/14227?hl=ko",
+      "keywords": [
+        "Seven 서머송",
+        "정국 노래"
+      ]
+    },
+    {
+      "id": 24,
+      "difficulty": "medium",
+      "category": "Seven",
+      "question": "기네스 기록 페이지 기준, 'Seven'이 2023년 7월 20일로 끝나는 한 주 동안 기록한 Spotify 스트리밍 수는?",
+      "options": [
+        "약 3,300만",
+        "약 5,900만",
+        "약 8,975만",
+        "약 1억 5천만"
+      ],
+      "answerIndex": 2,
+      "answer": "약 8,975만",
+      "explanation": "기네스는 해당 주 'Seven'의 전 세계 Spotify 스트리밍을 89,748,171회로 기록한다.",
+      "sourceUrl": "https://www.guinnessworldrecords.com/world-records/698349-most-streamed-track-on-spotify-in-one-week-male",
+      "keywords": [
+        "Seven Spotify",
+        "정국 기네스"
+      ]
+    },
+    {
+      "id": 25,
+      "difficulty": "hard",
+      "category": "Seven",
+      "question": "기네스 기록 페이지 기준, 'Seven'의 2023년 7월 14일 첫날 Spotify 스트리밍 수는?",
+      "options": [
+        "약 800만",
+        "약 1,100만",
+        "약 1,600만",
+        "약 2,500만"
+      ],
+      "answerIndex": 2,
+      "answer": "약 1,600만",
+      "explanation": "기네스는 첫날 15,995,378회로 기록했다.",
+      "sourceUrl": "https://www.guinnessworldrecords.com/world-records/698349-most-streamed-track-on-spotify-in-one-week-male",
+      "keywords": [
+        "Seven 첫날 스트리밍",
+        "Jung Kook Spotify"
+      ]
+    },
+    {
+      "id": 26,
+      "difficulty": "hard",
+      "category": "Seven",
+      "question": "'Seven' Explicit Version이 Spotify 10억 스트리밍에 도달한 날짜는?",
+      "options": [
+        "2023년 9월 30일",
+        "2023년 10월 30일",
+        "2023년 11월 30일",
+        "2024년 1월 1일"
+      ],
+      "answerIndex": 1,
+      "answer": "2023년 10월 30일",
+      "explanation": "기네스 기록 페이지에는 2023년 10월 30일 10억 스트리밍 도달로 기록돼 있다.",
+      "sourceUrl": "https://www.guinnessworldrecords.com/world-records/758773-fastest-time-for-a-music-track-to-reach-1-billion-streams-on-spotify-male",
+      "keywords": [
+        "Seven 10억 스트리밍",
+        "정국 Spotify"
+      ]
+    },
+    {
+      "id": 27,
+      "difficulty": "medium",
+      "category": "Seven",
+      "question": "'Seven'이 미국 Billboard Hot 100에서 기록한 최고 순위는?",
+      "options": [
+        "1위",
+        "2위",
+        "5위",
+        "10위"
+      ],
+      "answerIndex": 0,
+      "answer": "1위",
+      "explanation": "Billboard 보도에 따르면 'Seven'은 Hot 100 1위를 기록했다.",
+      "sourceUrl": "https://ca.billboard.com/music/chart-beat/taylor-swift-cruel-summer-number-one-hot-100-jung-kook-beatles-top-10-1235470495/",
+      "keywords": [
+        "Seven Billboard Hot 100",
+        "정국 빌보드"
+      ]
+    },
+    {
+      "id": 28,
+      "difficulty": "easy",
+      "category": "3D",
+      "question": "정국의 두 번째 솔로 싱글은?",
+      "options": [
+        "Seven",
+        "3D",
+        "Standing Next to You",
+        "Never Let Go"
+      ],
+      "answerIndex": 1,
+      "answer": "3D",
+      "explanation": "BIGHIT MUSIC은 '3D'를 정국의 두 번째 솔로 싱글로 소개했다.",
+      "sourceUrl": "https://weverse.io/bts/notice/15383",
+      "keywords": [
+        "정국 두 번째 솔로 싱글",
+        "3D"
+      ]
+    },
+    {
+      "id": 29,
+      "difficulty": "easy",
+      "category": "3D",
+      "question": "'3D (feat. Jack Harlow)' 발매일은?",
+      "options": [
+        "2023년 7월 14일",
+        "2023년 8월 25일",
+        "2023년 9월 29일",
+        "2023년 11월 3일"
+      ],
+      "answerIndex": 2,
+      "answer": "2023년 9월 29일",
+      "explanation": "공식 공지 기준 '3D'는 2023년 9월 29일 오후 1시(KST) 발매됐다.",
+      "sourceUrl": "https://weverse.io/bts/notice/15383",
+      "keywords": [
+        "3D 발매일",
+        "정국 Jack Harlow"
+      ]
+    },
+    {
+      "id": 30,
+      "difficulty": "medium",
+      "category": "3D",
+      "question": "BIGHIT MUSIC이 '3D'의 장르로 소개한 것은?",
+      "options": [
+        "Pop R&B",
+        "Punk Rock",
+        "Country Pop",
+        "Jazz Fusion"
+      ],
+      "answerIndex": 0,
+      "answer": "Pop R&B",
+      "explanation": "공식 공지에서 '3D'는 R&B 팝(Pop R&B) 장르로 소개된다.",
+      "sourceUrl": "https://weverse.io/bts/notice/15383",
+      "keywords": [
+        "3D 장르",
+        "정국 R&B"
+      ]
+    },
+    {
+      "id": 31,
+      "difficulty": "medium",
+      "category": "3D",
+      "question": "'3D'는 닿을 수 없는 상대에 대한 마음을 어떤 관점으로 풀어냈다고 소개됐을까?",
+      "options": [
+        "과거·현재·미래",
+        "1·2·3차원",
+        "아침·점심·저녁",
+        "봄·여름·가을"
+      ],
+      "answerIndex": 1,
+      "answer": "1·2·3차원",
+      "explanation": "공식 공지는 1, 2, 3차원의 시선으로 위트 있게 풀어낸 곡이라고 설명한다.",
+      "sourceUrl": "https://weverse.io/bts/notice/15383",
+      "keywords": [
+        "3D 1 2 3차원",
+        "정국 3D"
+      ]
+    },
+    {
+      "id": 32,
+      "difficulty": "medium",
+      "category": "3D",
+      "question": "'3D'가 Billboard Global 200에서 기록한 순위는?",
+      "options": [
+        "1위",
+        "3위",
+        "5위",
+        "9위"
+      ],
+      "answerIndex": 0,
+      "answer": "1위",
+      "explanation": "Billboard 보도에 따르면 '3D'는 Global 200 1위로 데뷔했다.",
+      "sourceUrl": "https://ca.billboard.com/music/chart-beat/jung-kook-jack-harlow-3d-number-one-debut-global-charts-1235437392/",
+      "keywords": [
+        "3D Billboard Global 200",
+        "정국 빌보드"
+      ]
+    },
+    {
+      "id": 33,
+      "difficulty": "easy",
+      "category": "Dreamers",
+      "question": "정국의 'Dreamers'는 어떤 대회의 공식 사운드트랙에 포함됐을까?",
+      "options": [
+        "2020 도쿄 올림픽",
+        "2022 FIFA 카타르 월드컵",
+        "2023 아시안게임",
+        "2024 파리 올림픽"
+      ],
+      "answerIndex": 1,
+      "answer": "2022 FIFA 카타르 월드컵",
+      "explanation": "FIFA는 'Dreamers'를 2022 FIFA 카타르 월드컵 공식 사운드트랙 곡으로 소개했다.",
+      "sourceUrl": "https://www.fifa.com/en/articles/bts-jung-kooks-dreamers-unveiled-to-celebrate-the-start-of-fifa-world-cup-2022",
+      "keywords": [
+        "정국 Dreamers",
+        "카타르 월드컵"
+      ]
+    },
+    {
+      "id": 34,
+      "difficulty": "medium",
+      "category": "Dreamers",
+      "question": "정국이 'Dreamers'를 선보인 2022 FIFA 카타르 월드컵 개막식 날짜는?",
+      "options": [
+        "2022년 11월 18일",
+        "2022년 11월 20일",
+        "2022년 12월 1일",
+        "2022년 12월 18일"
+      ],
+      "answerIndex": 1,
+      "answer": "2022년 11월 20일",
+      "explanation": "FIFA는 정국이 2022년 11월 20일 개막식에서 무대에 오른다고 안내했다.",
+      "sourceUrl": "https://www.fifa.com/en/articles/bts-jung-kooks-dreamers-unveiled-to-celebrate-the-start-of-fifa-world-cup-2022",
+      "keywords": [
+        "Dreamers 개막식",
+        "정국 월드컵"
+      ]
+    },
+    {
+      "id": 35,
+      "difficulty": "medium",
+      "category": "Dreamers",
+      "question": "월드컵 개막식 'Dreamers' 무대에서 정국과 함께한 카타르 가수는?",
+      "options": [
+        "Fahad Al-Kubaisi",
+        "RedOne",
+        "DJ Snake",
+        "Jack Harlow"
+      ],
+      "answerIndex": 0,
+      "answer": "Fahad Al-Kubaisi",
+      "explanation": "FIFA는 정국이 카타르 가수 Fahad Al-Kubaisi와 함께 공연한다고 안내했다.",
+      "sourceUrl": "https://www.fifa.com/en/articles/bts-jung-kooks-dreamers-unveiled-to-celebrate-the-start-of-fifa-world-cup-2022",
+      "keywords": [
+        "Fahad Al-Kubaisi",
+        "Dreamers"
+      ]
+    },
+    {
+      "id": 36,
+      "difficulty": "hard",
+      "category": "Dreamers",
+      "question": "정국이 'Dreamers'를 공연한 2022 카타르 월드컵 개막식 경기장은?",
+      "options": [
+        "Lusail Stadium",
+        "Al Bayt Stadium",
+        "Education City Stadium",
+        "Stadium 974"
+      ],
+      "answerIndex": 1,
+      "answer": "Al Bayt Stadium",
+      "explanation": "FIFA 안내에 따르면 개막식 무대는 Al Bayt Stadium에서 열렸다.",
+      "sourceUrl": "https://www.fifa.com/en/articles/bts-jung-kooks-dreamers-unveiled-to-celebrate-the-start-of-fifa-world-cup-2022",
+      "keywords": [
+        "Al Bayt Stadium",
+        "정국 Dreamers"
+      ]
+    },
+    {
+      "id": 37,
+      "difficulty": "hard",
+      "category": "Dreamers",
+      "question": "FIFA 공식 소개에서 'Dreamers'의 프로듀서로 언급된 인물은?",
+      "options": [
+        "RedOne",
+        "Max Martin",
+        "Pharrell Williams",
+        "Timbaland"
+      ],
+      "answerIndex": 0,
+      "answer": "RedOne",
+      "explanation": "FIFA는 'Dreamers'가 RedOne에 의해 프로듀싱됐다고 밝혔다.",
+      "sourceUrl": "https://www.fifa.com/en/articles/bts-jung-kooks-dreamers-unveiled-to-celebrate-the-start-of-fifa-world-cup-2022",
+      "keywords": [
+        "Dreamers RedOne",
+        "정국"
+      ]
+    },
+    {
+      "id": 38,
+      "difficulty": "medium",
+      "category": "GOLDEN 성과",
+      "question": "'Standing Next to You'는 Billboard Hot 100에 몇 위로 데뷔했을까?",
+      "options": [
+        "1위",
+        "3위",
+        "5위",
+        "7위"
+      ],
+      "answerIndex": 2,
+      "answer": "5위",
+      "explanation": "Billboard 보도에 따르면 'Standing Next to You'는 Hot 100 5위로 데뷔했다.",
+      "sourceUrl": "https://ca.billboard.com/music/chart-beat/taylor-swift-cruel-summer-number-one-hot-100-jung-kook-beatles-top-10-1235470495/",
+      "keywords": [
+        "Standing Next to You Billboard",
+        "정국 Hot 100"
+      ]
+    },
+    {
+      "id": 39,
+      "difficulty": "medium",
+      "category": "GOLDEN 성과",
+      "question": "GOLDEN은 Billboard 200에 몇 위로 데뷔했을까?",
+      "options": [
+        "1위",
+        "2위",
+        "5위",
+        "10위"
+      ],
+      "answerIndex": 1,
+      "answer": "2위",
+      "explanation": "Billboard 보도에 따르면 GOLDEN은 Billboard 200 2위로 데뷔했다.",
+      "sourceUrl": "https://ca.billboard.com/music/chart-beat/taylor-swift-cruel-summer-number-one-hot-100-jung-kook-beatles-top-10-1235470495/",
+      "keywords": [
+        "GOLDEN Billboard 200",
+        "정국 앨범"
+      ]
+    },
+    {
+      "id": 40,
+      "difficulty": "medium",
+      "category": "리믹스",
+      "question": "'Standing Next to You : The Remixes'는 원곡 포함 총 몇 트랙일까?",
+      "options": [
+        "5곡",
+        "6곡",
+        "8곡",
+        "10곡"
+      ],
+      "answerIndex": 2,
+      "answer": "8곡",
+      "explanation": "BIGHIT MUSIC 공지 기준 리믹스 앨범은 원곡 포함 총 8트랙이다.",
+      "sourceUrl": "https://weverse.io/bts/notice/16157",
+      "keywords": [
+        "Standing Next to You Remixes",
+        "정국 리믹스"
+      ]
+    },
+    {
+      "id": 41,
+      "difficulty": "hard",
+      "category": "리믹스",
+      "question": "다음 중 'Standing Next to You : The Remixes' 공식 수록 버전이 아닌 것은?",
+      "options": [
+        "Future Funk Remix",
+        "Latin Trap Remix",
+        "Holiday Remix",
+        "House Remix"
+      ],
+      "answerIndex": 3,
+      "answer": "House Remix",
+      "explanation": "공식 8트랙 목록에는 Future Funk, Latin Trap, Holiday 등이 있지만 'House Remix'는 없다.",
+      "sourceUrl": "https://weverse.io/bts/notice/16157",
+      "keywords": [
+        "정국 리믹스",
+        "Standing Next to You"
+      ]
+    },
+    {
+      "id": 42,
+      "difficulty": "medium",
+      "category": "리믹스",
+      "question": "'Standing Next to You : The Remixes' 발매 시각은?",
+      "options": [
+        "2023년 11월 3일 오후 1시",
+        "2023년 11월 6일 오후 2시",
+        "2023년 11월 20일 오후 8시",
+        "2023년 12월 1일 오후 2시"
+      ],
+      "answerIndex": 1,
+      "answer": "2023년 11월 6일 오후 2시",
+      "explanation": "공식 공지 기준 2023년 11월 6일 오후 2시(KST)에 발매됐다.",
+      "sourceUrl": "https://weverse.io/bts/notice/16157",
+      "keywords": [
+        "Standing Next to You 리믹스 발매일",
+        "정국"
+      ]
+    },
+    {
+      "id": 43,
+      "difficulty": "easy",
+      "category": "리믹스",
+      "question": "'Standing Next to You - Usher Remix'에 참여한 아티스트는?",
+      "options": [
+        "Usher",
+        "The Weeknd",
+        "Justin Bieber",
+        "Bruno Mars"
+      ],
+      "answerIndex": 0,
+      "answer": "Usher",
+      "explanation": "BIGHIT MUSIC은 미국 R&B 아티스트 Usher가 해당 리믹스에 참여했다고 밝혔다.",
+      "sourceUrl": "https://weverse.io/bts/notice/16594",
+      "keywords": [
+        "Usher Remix",
+        "정국 Standing Next to You"
+      ]
+    },
+    {
+      "id": 44,
+      "difficulty": "hard",
+      "category": "리믹스",
+      "question": "'Standing Next to You - Usher Remix' 발매일은?",
+      "options": [
+        "2023년 11월 6일",
+        "2023년 11월 20일",
+        "2023년 12월 1일",
+        "2024년 1월 1일"
+      ],
+      "answerIndex": 2,
+      "answer": "2023년 12월 1일",
+      "explanation": "공식 공지 기준 2023년 12월 1일 오후 2시(KST) 발매됐다.",
+      "sourceUrl": "https://weverse.io/bts/notice/16594",
+      "keywords": [
+        "Usher Remix 발매일",
+        "정국"
+      ]
+    },
+    {
+      "id": 45,
+      "difficulty": "medium",
+      "category": "공연",
+      "question": "Jung Kook 'GOLDEN' Live On Stage 개최일은?",
+      "options": [
+        "2023년 11월 3일",
+        "2023년 11월 20일",
+        "2023년 12월 1일",
+        "2024년 6월 7일"
+      ],
+      "answerIndex": 1,
+      "answer": "2023년 11월 20일",
+      "explanation": "공식 안내 기준 공연은 2023년 11월 20일 오후 8시(KST)에 열렸다.",
+      "sourceUrl": "https://weverse.io/bts/notice/16363?hl=ko",
+      "keywords": [
+        "GOLDEN Live On Stage",
+        "정국 공연"
+      ]
+    },
+    {
+      "id": 46,
+      "difficulty": "medium",
+      "category": "공연",
+      "question": "Jung Kook 'GOLDEN' Live On Stage의 오프라인 장소는?",
+      "options": [
+        "고척스카이돔",
+        "잠실실내체육관",
+        "장충체육관",
+        "KSPO DOME"
+      ],
+      "answerIndex": 2,
+      "answer": "장충체육관",
+      "explanation": "공식 안내에 장소는 서울 중구 장충체육관으로 명시됐다.",
+      "sourceUrl": "https://weverse.io/bts/notice/16363?hl=ko",
+      "keywords": [
+        "장충체육관 정국",
+        "GOLDEN Live On Stage"
+      ]
+    },
+    {
+      "id": 47,
+      "difficulty": "hard",
+      "category": "공연",
+      "question": "공식 상세 안내 기준 'GOLDEN' Live On Stage 오프라인 참여 인원은?",
+      "options": [
+        "1,500명",
+        "2,000명",
+        "2,800명",
+        "5,000명"
+      ],
+      "answerIndex": 2,
+      "answer": "2,800명",
+      "explanation": "공식 상세 안내에는 총 2,800명으로 안내됐다.",
+      "sourceUrl": "https://weverse.io/bts/notice/16363?hl=ko",
+      "keywords": [
+        "GOLDEN Live On Stage 2800",
+        "정국"
+      ]
+    },
+    {
+      "id": 48,
+      "difficulty": "medium",
+      "category": "공연",
+      "question": "'GOLDEN' Live On Stage가 독점 라이브로 송출된 플랫폼은?",
+      "options": [
+        "Netflix",
+        "Disney+",
+        "Weverse",
+        "YouTube Premium"
+      ],
+      "answerIndex": 2,
+      "answer": "Weverse",
+      "explanation": "Weverse 공지에 APP, WEB, TV APP을 통한 독점 라이브가 안내됐다.",
+      "sourceUrl": "https://weverse.io/bts/notice/15664",
+      "keywords": [
+        "Weverse Live",
+        "정국 GOLDEN"
+      ]
+    },
+    {
+      "id": 49,
+      "difficulty": "easy",
+      "category": "Never Let Go",
+      "question": "정국의 팬송 'Never Let Go' 발매일은?",
+      "options": [
+        "2024년 3월 20일",
+        "2024년 6월 7일",
+        "2024년 9월 18일",
+        "2024년 12월 3일"
+      ],
+      "answerIndex": 1,
+      "answer": "2024년 6월 7일",
+      "explanation": "BIGHIT MUSIC 공지 기준 2024년 6월 7일 오후 1시(KST)에 발매됐다.",
+      "sourceUrl": "https://weverse.io/bts/notice/19878?hl=ko",
+      "keywords": [
+        "Never Let Go 정국",
+        "정국 팬송"
+      ]
+    },
+    {
+      "id": 50,
+      "difficulty": "medium",
+      "category": "Never Let Go",
+      "question": "'Never Let Go'가 전하는 핵심 메시지에 가장 가까운 것은?",
+      "options": [
+        "각자의 길을 가자",
+        "서로의 맞잡은 손을 놓지 말자",
+        "과거를 완전히 잊자",
+        "경쟁에서 반드시 이기자"
+      ],
+      "answerIndex": 1,
+      "answer": "서로의 맞잡은 손을 놓지 말자",
+      "explanation": "공식 공지는 ARMY를 향한 감사와 '맞잡은 서로의 손을 절대 놓지 말자'는 메시지를 담은 팬송이라고 설명한다.",
+      "sourceUrl": "https://weverse.io/bts/notice/19878?hl=ko",
+      "keywords": [
+        "Never Let Go 의미",
+        "정국 ARMY"
+      ]
+    },
+    {
+      "id": 51,
+      "difficulty": "easy",
+      "category": "다큐멘터리",
+      "question": "정국의 첫 다큐멘터리 영화 제목은?",
+      "options": [
+        "JUNG KOOK: I AM STILL",
+        "GOLDEN DAYS",
+        "SEVEN NIGHTS",
+        "STANDING ALONE"
+      ],
+      "answerIndex": 0,
+      "answer": "JUNG KOOK: I AM STILL",
+      "explanation": "공식 공지에서 'JUNG KOOK: I AM STILL'을 정국의 첫 다큐멘터리 영화로 소개한다.",
+      "sourceUrl": "https://weverse.io/bts/notice/21578?hl=ko",
+      "keywords": [
+        "JUNG KOOK I AM STILL",
+        "정국 다큐"
+      ]
+    },
+    {
+      "id": 52,
+      "difficulty": "medium",
+      "category": "다큐멘터리",
+      "question": "영화 'JUNG KOOK: I AM STILL'의 전 세계 극장 개봉일은?",
+      "options": [
+        "2024년 6월 7일",
+        "2024년 9월 18일",
+        "2024년 11월 3일",
+        "2024년 12월 3일"
+      ],
+      "answerIndex": 1,
+      "answer": "2024년 9월 18일",
+      "explanation": "공식 공지 기준 2024년 9월 18일 전 세계 극장에서 개봉했다.",
+      "sourceUrl": "https://weverse.io/bts/notice/21578?hl=ko",
+      "keywords": [
+        "I AM STILL 개봉일",
+        "정국 영화"
+      ]
+    },
+    {
+      "id": 53,
+      "difficulty": "medium",
+      "category": "다큐멘터리",
+      "question": "'JUNG KOOK: I AM STILL'이 따라가는 솔로 활동 여정은 약 얼마일까?",
+      "options": [
+        "약 3개월",
+        "약 5개월",
+        "약 8개월",
+        "약 2년"
+      ],
+      "answerIndex": 2,
+      "answer": "약 8개월",
+      "explanation": "공식 공지는 정국의 약 8개월 여정을 담았다고 소개한다.",
+      "sourceUrl": "https://weverse.io/bts/notice/21578?hl=ko",
+      "keywords": [
+        "I AM STILL 8개월",
+        "정국 다큐"
+      ]
+    },
+    {
+      "id": 54,
+      "difficulty": "hard",
+      "category": "다큐멘터리",
+      "question": "'<JUNG KOOK: I AM STILL> THE ORIGINAL'은 총 몇 개의 에피소드로 구성됐을까?",
+      "options": [
+        "2개",
+        "3개",
+        "4개",
+        "6개"
+      ],
+      "answerIndex": 1,
+      "answer": "3개",
+      "explanation": "공식 공지에 THE ORIGINAL은 총 3개 에피소드라고 명시돼 있다.",
+      "sourceUrl": "https://weverse.io/bts/notice/23503?hl=ko",
+      "keywords": [
+        "I AM STILL THE ORIGINAL",
+        "정국 Disney+"
+      ]
+    },
+    {
+      "id": 55,
+      "difficulty": "medium",
+      "category": "다큐멘터리",
+      "question": "'<JUNG KOOK: I AM STILL> THE ORIGINAL'의 글로벌 공개 플랫폼은?",
+      "options": [
+        "Netflix",
+        "Disney+",
+        "Prime Video",
+        "Weverse Only"
+      ],
+      "answerIndex": 1,
+      "answer": "Disney+",
+      "explanation": "공식 공지 기준 2024년 12월 3일 Disney+에서 글로벌 공개됐다.",
+      "sourceUrl": "https://weverse.io/bts/notice/23503?hl=ko",
+      "keywords": [
+        "정국 Disney+",
+        "I AM STILL THE ORIGINAL"
+      ]
+    },
+    {
+      "id": 56,
+      "difficulty": "hard",
+      "category": "다큐멘터리",
+      "question": "THE ORIGINAL에 풀버전으로 포함된 공연은?",
+      "options": [
+        "BTS THE COMEBACK LIVE | ARIRANG",
+        "Jung Kook 'GOLDEN' Live On Stage",
+        "PERMISSION TO DANCE ON STAGE",
+        "LOVE YOURSELF: SPEAK YOURSELF"
+      ],
+      "answerIndex": 1,
+      "answer": "Jung Kook 'GOLDEN' Live On Stage",
+      "explanation": "공식 공지는 'Jung Kook GOLDEN Live On Stage' 풀버전이 포함된다고 밝혔다.",
+      "sourceUrl": "https://weverse.io/bts/notice/23503?hl=ko",
+      "keywords": [
+        "GOLDEN Live On Stage 풀버전",
+        "정국 다큐"
+      ]
+    },
+    {
+      "id": 57,
+      "difficulty": "easy",
+      "category": "2026 BTS",
+      "question": "2026년 3월 발매된 BTS 정규 5집의 제목은?",
+      "options": [
+        "PROOF",
+        "ARIRANG",
+        "BE",
+        "MAP OF THE SOUL : 8"
+      ],
+      "answerIndex": 1,
+      "answer": "ARIRANG",
+      "explanation": "BIGHIT MUSIC 공식 공지에 2026년 정규 5집 제목은 'ARIRANG'으로 안내됐다.",
+      "sourceUrl": "https://weverse.io/bts/notice/33171?hl=ko",
+      "keywords": [
+        "BTS ARIRANG",
+        "정국 2026"
+      ]
+    },
+    {
+      "id": 58,
+      "difficulty": "medium",
+      "category": "2026 BTS",
+      "question": "BTS 정규 5집 'ARIRANG'의 발매 시각은?",
+      "options": [
+        "2026년 1월 16일 오전 11시",
+        "2026년 3월 20일 오후 1시",
+        "2026년 3월 21일 오후 8시",
+        "2026년 6월 12일 오후 1시"
+      ],
+      "answerIndex": 1,
+      "answer": "2026년 3월 20일 오후 1시",
+      "explanation": "공식 예약 구매 공지 기준 'ARIRANG'은 2026년 3월 20일 오후 1시(KST)에 발매됐다.",
+      "sourceUrl": "https://weverse.io/bts/notice/33171?hl=ko",
+      "keywords": [
+        "ARIRANG 발매일",
+        "BTS 2026"
+      ]
+    },
+    {
+      "id": 59,
+      "difficulty": "hard",
+      "category": "2026 BTS",
+      "question": "BTS THE COMEBACK LIVE | ARIRANG에서 신곡 무대가 처음 공개된 장소는?",
+      "options": [
+        "광화문 광장",
+        "서울월드컵경기장",
+        "고양종합운동장",
+        "잠실종합운동장"
+      ],
+      "answerIndex": 0,
+      "answer": "광화문 광장",
+      "explanation": "공식 공지에 2026년 3월 21일 광화문 광장에서 신곡 무대를 최초 공개한다고 안내됐다.",
+      "sourceUrl": "https://weverse.io/bts/notice/33624?hl=ko",
+      "keywords": [
+        "BTS 컴백 라이브",
+        "광화문 ARIRANG"
+      ]
+    },
+    {
+      "id": 60,
+      "difficulty": "hard",
+      "category": "2026 BTS",
+      "question": "ARIRANG Standard Vinyl 멤버 버전 중 Jung Kook 버전의 색상명은?",
+      "options": [
+        "ORCHID",
+        "BURGUNDY",
+        "VELVET RED",
+        "SILVER"
+      ],
+      "answerIndex": 0,
+      "answer": "ORCHID",
+      "explanation": "2026년 Weverse 이벤트 공지의 Standard Vinyl 목록에서 'JUNG KOOK ORCHID'로 표기됐다.",
+      "sourceUrl": "https://weverse.io/bts/notice/34357",
+      "keywords": [
+        "JUNG KOOK ORCHID",
+        "ARIRANG vinyl"
+      ]
+    }
+  ]
+}

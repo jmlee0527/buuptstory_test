@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "testId": "seventeen-true-fan",
-  "title": "세븐틴 찐팬 테스트",
+  "title": "세븐틴 팬 퀴즈",
   "subtitle": "멤버·유닛·노래·앨범으로 확인하는 나의 캐럿력",
   "verifiedAt": "2026-07-11",
   "sourcePolicy": "공식 프로필·공식 디스코그래피·공식 Weverse 공지를 우선 사용하고, 일부 유닛 자료는 신뢰 가능한 인터뷰 기사로 교차 검증함.",
@@ -73,7 +73,7 @@
     ]
   },
   "seo": {
-    "primaryKeyword": "세븐틴 찐팬 테스트",
+    "primaryKeyword": "세븐틴 팬 퀴즈",
     "secondaryKeywords": [
       "세븐틴 퀴즈",
       "세븐틴 팬 테스트",
@@ -82,8 +82,8 @@
       "세븐틴 노래 퀴즈",
       "SEVENTEEN quiz"
     ],
-    "recommendedTitle": "세븐틴 찐팬 테스트 | 멤버·노래·앨범 퀴즈",
-    "recommendedDescription": "세븐틴 멤버, 유닛, 대표곡, 앨범과 수록곡 문제 15개로 나의 캐럿력을 확인해 보세요. 난이도별 랜덤 출제되는 세븐틴 찐팬 테스트입니다.",
+    "recommendedTitle": "세븐틴 팬 퀴즈 | 멤버·노래·앨범 퀴즈",
+    "recommendedDescription": "세븐틴 멤버, 유닛, 대표곡, 앨범과 수록곡 문제 15개로 나의 캐럿력을 확인해 보세요. 난이도별 랜덤 출제되는 세븐틴 팬 퀴즈입니다.",
     "slug": "seventeen-true-fan"
   },
   "questions": [

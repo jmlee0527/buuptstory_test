@@ -18,10 +18,10 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return grade
     ? {
       ...createMetadata({
-        title: `${grade.name} | 리오넬 메시 찐팬 테스트 결과`,
+        title: `${grade.name} | 리오넬 메시 팬 퀴즈 결과`,
         description: `${grade.summary} 메시 퀴즈로 나의 리오넬 메시 찐팬력을 확인해 보세요.`,
         path: `/lionel-messi-true-fan-test/result/${slug}`,
-        keywords: ["리오넬 메시 찐팬 테스트 결과", "메시 퀴즈 결과", grade.name],
+        keywords: ["리오넬 메시 팬 퀴즈 결과", "메시 퀴즈 결과", grade.name],
         ogImage: false,
       }),
       robots: { index: false, follow: true },
@@ -46,7 +46,7 @@ export default async function Page({ params, searchParams }: Props) {
       <JsonLd data={{
         "@context": "https://schema.org",
         "@type": "WebPage",
-        name: `리오넬 메시 찐팬 테스트 결과: ${grade.name}`,
+        name: `리오넬 메시 팬 퀴즈 결과: ${grade.name}`,
         description: grade.summary,
         url: absoluteUrl(`/lionel-messi-true-fan-test/result/${slug}`),
         inLanguage: "ko-KR",

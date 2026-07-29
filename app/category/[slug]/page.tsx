@@ -17,7 +17,7 @@ const legacyCategoryRedirects: Record<string, string> = {
   성격: "성격.심리",
   운세: "건강.운세",
 };
-const fanQuizCategoryDescription = "아이돌·연예인·스포츠 팬퀴즈와 찐팬 테스트를 모아보세요.";
+const fanQuizCategoryDescription = "아이돌·연예인·스포츠 팬퀴즈와 팬 퀴즈를 모아보세요.";
 export function generateStaticParams() { return categories.map((slug) => ({ slug })); }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
@@ -35,7 +35,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       title: "팬퀴즈 테스트",
       description: fanQuizCategoryDescription,
       path: `/category/${encodeURIComponent(category)}`,
-      keywords: ["팬퀴즈", "팬 퀴즈", "찐팬 테스트", "찐팬 퀴즈", "아이돌 팬퀴즈", "팬덤 퀴즈"],
+      keywords: ["팬퀴즈", "팬 퀴즈", "팬 테스트", "찐팬 퀴즈", "아이돌 팬퀴즈", "팬덤 퀴즈"],
     });
   }
   return createMetadata({ title: `${category} 테스트`, description: `${category}에 관한 무료 테스트를 모아보세요.`, path: `/category/${encodeURIComponent(category)}`, keywords: [`${category} 테스트`] });

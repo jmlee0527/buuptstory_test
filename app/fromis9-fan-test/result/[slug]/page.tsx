@@ -21,10 +21,10 @@ export async function generateMetadata({ params, searchParams }: Props): Promise
   const result = answers ? calculateFromis9FanResult(answers) : null;
   const effectiveGrade = result?.grade ?? grade;
   return createMetadata({
-    title: result ? `${result.score}/15점, ${effectiveGrade.name} | 프로미스나인 찐팬 테스트 결과` : `${grade.name} | 프로미스나인 찐팬 테스트 결과`,
-    description: `프로미스나인 찐팬 테스트 결과 ${effectiveGrade.name}. ${effectiveGrade.subtitle} 멤버, 데뷔, 앨범, 공연, 음악방송 기록까지 15문제로 팬심을 확인해보세요.`,
+    title: result ? `${result.score}/15점, ${effectiveGrade.name} | 프로미스나인 팬 퀴즈 결과` : `${grade.name} | 프로미스나인 팬 퀴즈 결과`,
+    description: `프로미스나인 팬 퀴즈 결과 ${effectiveGrade.name}. ${effectiveGrade.subtitle} 멤버, 데뷔, 앨범, 공연, 음악방송 기록까지 15문제로 팬심을 확인해보세요.`,
     path: fromis9FanResultPath(grade.slug),
-    keywords: ["프로미스나인 찐팬 테스트", "프로미스나인 테스트", "프로미스나인 퀴즈", "fromis_9 테스트", "플로버 테스트", effectiveGrade.name],
+    keywords: ["프로미스나인 팬 퀴즈", "프로미스나인 테스트", "프로미스나인 퀴즈", "fromis_9 테스트", "플로버 테스트", effectiveGrade.name],
     ogImage: false,
   });
 }
@@ -54,7 +54,7 @@ export default async function Fromis9FanQuizResultPage({ params, searchParams }:
       <JsonLd data={{
         "@context": "https://schema.org",
         "@type": "WebPage",
-        name: `프로미스나인 찐팬 테스트 결과: ${grade.name}`,
+        name: `프로미스나인 팬 퀴즈 결과: ${grade.name}`,
         description: grade.subtitle,
         url: absoluteUrl(fromis9FanResultPath(grade.slug)),
         inLanguage: "ko-KR",

@@ -17,8 +17,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const grade = getArsenalFanGradeProfile(slug);
   if (!grade) return {};
   return createMetadata({
-    title: `${grade.title} | 아스날 팬 테스트 결과 | 미미테스트`,
-    description: `아스날 팬 테스트 결과 ${grade.title}. 15개의 아스날 퀴즈로 역사, 선수, 감독, 우승 기록을 얼마나 알고 있는지 확인해보세요.`,
+    title: `${grade.title} | 아스날 팬 퀴즈 결과 | 미미테스트`,
+    description: `아스날 팬 퀴즈 결과 ${grade.title}. 15개의 아스날 퀴즈로 역사, 선수, 감독, 우승 기록을 얼마나 알고 있는지 확인해보세요.`,
     path: arsenalFanResultPath(grade.slug),
     keywords: ["아스날 팬 테스트", "아스날 퀴즈", "아스날 팬 지수", "구너 테스트", grade.title],
     ogImage: false,
@@ -54,7 +54,7 @@ export default async function ArsenalFanQuizResultPage({ params, searchParams }:
       <JsonLd data={{
         "@context": "https://schema.org",
         "@type": "WebPage",
-        name: `아스날 팬 테스트 결과: ${grade.title}`,
+        name: `아스날 팬 퀴즈 결과: ${grade.title}`,
         description: grade.subtitle,
         url: absoluteUrl(arsenalFanResultPath(grade.slug)),
         inLanguage: "ko-KR",

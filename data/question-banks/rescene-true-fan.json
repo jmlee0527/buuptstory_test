@@ -4,8 +4,8 @@
   "verificationCutoff": "2026-07-11",
   "test": {
     "id": "rescene-true-fan-test",
-    "title": "리센트 찐팬 테스트",
-    "koreanTitle": "리센느 찐팬 테스트",
+    "title": "리센트 팬 퀴즈",
+    "koreanTitle": "리센느 팬 퀴즈",
     "topic": "RESCENE",
     "language": "ko-KR",
     "category": "fandom",
@@ -23,11 +23,11 @@
   "seo": {
     "slug": "rescene-true-fan-test",
     "canonicalPath": "/tests/rescene-true-fan-test",
-    "metaTitle": "리센트 찐팬 테스트 | 리센느 REMINE 덕력 퀴즈",
+    "metaTitle": "리센트 팬 퀴즈 | 리센느 REMINE 덕력 퀴즈",
     "metaDescription": "리센느 멤버, 데뷔, LOVE ATTACK, SCENEDROME, Glow Up, lip bomb과 최신곡 Pretty Girl을 맞히는 15문항 팬 테스트입니다.",
-    "primaryKeyword": "리센트 찐팬 테스트",
+    "primaryKeyword": "리센트 팬 퀴즈",
     "secondaryKeywords": [
-      "리센느 찐팬 테스트",
+      "리센느 팬 퀴즈",
       "RESCENE 퀴즈",
       "리센느 퀴즈",
       "REMINE 테스트",
@@ -38,7 +38,7 @@
       "리센느 Pretty Girl",
       "리센느 팬 테스트"
     ],
-    "shareTextTemplate": "나는 리센트 찐팬 테스트에서 {score}/15점, ‘{resultTitle}’이 나왔어요. 당신의 REMINE 덕력도 확인해 보세요!",
+    "shareTextTemplate": "나는 리센트 팬 퀴즈에서 {score}/15점, ‘{resultTitle}’이 나왔어요. 당신의 REMINE 덕력도 확인해 보세요!",
     "keywordPolicy": "제목, H1, 소개문, 메타 설명, 공유 문구에 자연스럽게 사용한다. 키워드 반복·숨김 텍스트·검색엔진용 문장 나열을 금지한다."
   },
   "selectionPolicy": {

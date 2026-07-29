@@ -3,8 +3,8 @@
   "test": {
     "id": "bigbang-true-fan-test",
     "slug": "bigbang-true-fan-test",
-    "title": "빅뱅 찐팬 테스트",
-    "displayTitle": "빅뱅 찐팬 테스트 – 나는 진짜 VIP일까?",
+    "title": "빅뱅 팬 퀴즈",
+    "displayTitle": "빅뱅 팬 퀴즈 – 나는 진짜 VIP일까?",
     "category": "팬덤",
     "subCategory": "가수·아이돌",
     "language": "ko-KR",
@@ -16,10 +16,10 @@
     "disclaimer": "이 테스트는 팬을 위한 비공식 퀴즈이며 BIGBANG, 소속사 및 관련 권리자와 공식적인 관계가 없습니다."
   },
   "seo": {
-    "metaTitle": "빅뱅 찐팬 테스트 | BIGBANG 퀴즈로 VIP 팬심 확인",
-    "metaDescription": "빅뱅 노래, 앨범, 수록곡, 콘서트 기록을 묻는 15문항 BIGBANG 찐팬 테스트. 난이도별 랜덤 퀴즈로 나의 VIP 팬 지수를 확인해 보세요.",
+    "metaTitle": "빅뱅 팬 퀴즈 | BIGBANG 퀴즈로 VIP 팬심 확인",
+    "metaDescription": "빅뱅 노래, 앨범, 수록곡, 콘서트 기록을 묻는 15문항 BIGBANG 팬 퀴즈. 난이도별 랜덤 퀴즈로 나의 VIP 팬 지수를 확인해 보세요.",
     "keywords": [
-      "빅뱅 찐팬 테스트",
+      "빅뱅 팬 퀴즈",
       "빅뱅 팬 테스트",
       "빅뱅 퀴즈",
       "BIGBANG 테스트",
@@ -27,11 +27,11 @@
       "VIP 팬 테스트",
       "빅뱅 노래 퀴즈",
       "빅뱅 앨범 퀴즈",
-      "KPOP 찐팬 테스트",
+      "KPOP 팬 퀴즈",
       "아이돌 팬 테스트"
     ],
     "canonicalPath": "/tests/bigbang-true-fan-test",
-    "ogTitle": "빅뱅 찐팬 테스트 – 나는 진짜 VIP일까?",
+    "ogTitle": "빅뱅 팬 퀴즈 – 나는 진짜 VIP일까?",
     "ogDescription": "BIGBANG의 명곡과 앨범 역사를 얼마나 기억하고 있는지 15문항으로 확인해 보세요."
   },
   "sampling": {

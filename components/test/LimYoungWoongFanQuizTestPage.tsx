@@ -61,7 +61,7 @@ export function LimYoungWoongFanQuizTestPage() {
           <div className="flex items-end justify-between gap-4">
             <div>
               <p className="text-xs font-black tracking-[.16em] text-blue-700">LIM YOUNG WOONG FAN INDEX QUIZ</p>
-              <h1 className="mt-2 text-xl font-black text-ink sm:text-2xl">임영웅 찐팬 테스트</h1>
+              <h1 className="mt-2 text-xl font-black text-ink sm:text-2xl">임영웅 팬 퀴즈</h1>
             </div>
             <strong className="shrink-0 text-sm text-slate-500">{Math.min(index + 1, LIM_YOUNG_WOONG_FAN_QUIZ_SIZE)} / {LIM_YOUNG_WOONG_FAN_QUIZ_SIZE}</strong>
           </div>

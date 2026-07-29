@@ -6,47 +6,51 @@ import { useEffect, useState } from "react";
 import { FanQuizProgress } from "@/components/fan-quiz/FanQuizProgress";
 import { FanQuizQuestionCard } from "@/components/fan-quiz/FanQuizQuestionCard";
 import { getTestFanQuizTheme } from "@/config/fanQuizThemes";
-import { MESSI_QUIZ_SIZE, lionelMessiFanTest } from "@/data/lionel-messi-fan";
-import { calculateMessiResult, createMessiSession, encodeMessiAnswers } from "@/lib/lionel-messi-fan-engine";
-import type { MessiPresentedQuestion } from "@/lib/lionel-messi-fan-engine";
+import { JUNGKOOK_QUIZ_SIZE, jungkookFanTest } from "@/data/jungkook-fan";
+import {
+  calculateJungkookResult,
+  createJungkookSession,
+  encodeJungkookAnswers,
+} from "@/lib/jungkook-fan-engine";
+import type { JungkookPresentedQuestion } from "@/lib/jungkook-fan-engine";
 
-const SESSION_KEY = "mimi-lionel-messi-true-fan-session";
-const RECENT_KEY = "mimi-lionel-messi-true-fan-recent";
+const SESSION_KEY = "mimi-bts-jungkook-true-fan-session";
+const RECENT_KEY = "mimi-bts-jungkook-true-fan-recent";
 const choiceBadges = ["A", "B", "C", "D"];
 
 const track = (event: string, params?: Record<string, string | number>) =>
-  typeof window !== "undefined" && (window as Window & { gtag?: (command: string, event: string, params?: Record<string, unknown>) => void }).gtag?.("event", event, params);
+  typeof window !== "undefined" &&
+  (window as Window & { gtag?: (command: string, event: string, params?: Record<string, unknown>) => void })
+    .gtag?.("event", event, params);
 
 const newSeed = () => `${Date.now()}-${Math.random().toString(36).slice(2)}`;
 
-export function LionelMessiFanQuizTestPage() {
+export function JungkookFanQuizTestPage() {
   const router = useRouter();
   const reduceMotion = useReducedMotion();
-  const theme = getTestFanQuizTheme(lionelMessiFanTest);
-  const [questions, setQuestions] = useState<MessiPresentedQuestion[]>([]);
+  const theme = getTestFanQuizTheme(jungkookFanTest);
+  const [questions, setQuestions] = useState<JungkookPresentedQuestion[]>([]);
   const [answers, setAnswers] = useState<number[]>([]);
   const [index, setIndex] = useState(0);
   const [locked, setLocked] = useState(false);
 
   useEffect(() => {
-    let recent: string[] = [];
+    let recent: number[] = [];
     try {
       recent = JSON.parse(localStorage.getItem(RECENT_KEY) ?? "[]");
     } catch {}
 
     const seed = newSeed();
-    const initialAnswers: number[] = [];
-    const initialIndex = 0;
-    setQuestions(createMessiSession(seed, Array.isArray(recent) ? recent : []));
-    setAnswers(initialAnswers);
-    setIndex(initialIndex);
-    sessionStorage.setItem(SESSION_KEY, JSON.stringify({ seed, answers: initialAnswers, index: initialIndex }));
-    track("test_start", { test_id: "lionel-messi-true-fan-test", category: "fan_quiz" });
+    setQuestions(createJungkookSession(seed, Array.isArray(recent) ? recent : []));
+    setAnswers([]);
+    setIndex(0);
+    sessionStorage.setItem(SESSION_KEY, JSON.stringify({ seed, answers: [], index: 0 }));
+    track("test_start", { test_id: jungkookFanTest.slug, category: "fan_quiz" });
   }, []);
 
   const current = questions[index];
   const selected = answers[index];
-  const progress = Math.round(((index + 1) / MESSI_QUIZ_SIZE) * 100);
+  const progress = Math.round(((index + 1) / JUNGKOOK_QUIZ_SIZE) * 100);
 
   const choose = (shownIndex: number) => {
     if (!current || locked) return;
@@ -55,15 +59,15 @@ export function LionelMessiFanQuizTestPage() {
     next[index] = originalChoice;
     setAnswers(next);
     setLocked(true);
-    track("test_answer", { test_id: "lionel-messi-true-fan-test", question_number: index + 1 });
+    track("test_answer", { test_id: jungkookFanTest.slug, question_number: index + 1 });
 
-    const nextIndex = Math.min(index + 1, MESSI_QUIZ_SIZE - 1);
+    const nextIndex = Math.min(index + 1, JUNGKOOK_QUIZ_SIZE - 1);
     const stored = JSON.parse(sessionStorage.getItem(SESSION_KEY) ?? "{}");
     sessionStorage.setItem(SESSION_KEY, JSON.stringify({ ...stored, answers: next, index: nextIndex }));
 
     window.setTimeout(() => {
       setLocked(false);
-      if (index < MESSI_QUIZ_SIZE - 1) {
+      if (index < JUNGKOOK_QUIZ_SIZE - 1) {
         setIndex(index + 1);
         return;
       }
@@ -72,10 +76,11 @@ export function LionelMessiFanQuizTestPage() {
         questionId: question.originalId,
         choice: next[questionIndex],
       }));
-      const result = calculateMessiResult(payload);
+      const result = calculateJungkookResult(payload);
       localStorage.setItem(RECENT_KEY, JSON.stringify(questions.map((question) => question.originalId)));
-      track("test_complete", { test_id: "lionel-messi-true-fan-test", result_level: result.grade.slug, score: result.score });
-      router.push(`/lionel-messi-true-fan-test/result/${result.grade.slug}?r=${encodeMessiAnswers(payload)}`);
+      sessionStorage.removeItem(SESSION_KEY);
+      track("test_complete", { test_id: jungkookFanTest.slug, result_level: result.grade.slug, score: result.score });
+      router.push(`/bts-jungkook-true-fan-test/result/${result.grade.slug}?r=${encodeJungkookAnswers(payload)}`);
     }, reduceMotion ? 0 : 220);
   };
 
@@ -85,17 +90,19 @@ export function LionelMessiFanQuizTestPage() {
         <header className="mb-6">
           <div className="flex items-end justify-between gap-4">
             <div>
-              <p className="text-xs font-black tracking-[.16em]" style={{ color: theme.primary }}>MESSI TRUE FAN QUIZ</p>
-              <h1 className="mt-2 text-xl font-black sm:text-2xl" style={{ color: theme.text }}>리오넬 메시 팬 퀴즈</h1>
+              <p className="text-xs font-black tracking-[.16em]" style={{ color: theme.primary }}>BTS JUNG KOOK TRUE FAN QUIZ</p>
+              <h1 className="mt-2 text-xl font-black sm:text-2xl" style={{ color: theme.text }}>BTS 정국 팬 퀴즈</h1>
             </div>
-            <strong className="shrink-0 rounded-full bg-white px-3 py-1.5 text-sm shadow-sm" style={{ color: theme.mutedText }}>{index + 1} / {MESSI_QUIZ_SIZE}</strong>
+            <strong className="shrink-0 rounded-full bg-white px-3 py-1.5 text-sm shadow-sm" style={{ color: theme.mutedText }}>
+              {index + 1} / {JUNGKOOK_QUIZ_SIZE}
+            </strong>
           </div>
           <FanQuizProgress progress={progress} theme={theme} reduceMotion={reduceMotion} />
         </header>
 
         {!current ? (
           <section className="grid min-h-72 place-items-center rounded-[2rem] border bg-white/90 p-10 shadow-2xl" style={{ borderColor: theme.border, boxShadow: `0 24px 50px ${theme.shadow}` }} aria-busy="true">
-            <p className="font-bold text-slate-500">⚽ 검증된 문제를 구성하는 중...</p>
+            <p className="font-bold text-slate-500">검증된 정국 퀴즈를 구성하는 중...</p>
           </section>
         ) : (
           <AnimatePresence mode="wait">

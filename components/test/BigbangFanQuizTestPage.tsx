@@ -58,7 +58,7 @@ export function BigbangFanQuizTestPage() {
   return <main className="min-h-[calc(100vh-5rem)] bg-[radial-gradient(circle_at_top,#ede9fe_0,#fff7ed_42%,#f8fafc_100%)] py-6 sm:py-12">
     <div className="container-page mx-auto max-w-2xl">
       <header className="mb-6">
-        <div className="flex items-end justify-between gap-4"><div><p className="text-xs font-black tracking-[.16em] text-violet-600">BIGBANG TRUE FAN QUIZ</p><h1 className="mt-2 text-xl font-black text-ink sm:text-2xl">빅뱅 찐팬 테스트</h1></div><strong className="text-sm text-slate-500">{index + 1} / 15</strong></div>
+        <div className="flex items-end justify-between gap-4"><div><p className="text-xs font-black tracking-[.16em] text-violet-600">BIGBANG TRUE FAN QUIZ</p><h1 className="mt-2 text-xl font-black text-ink sm:text-2xl">빅뱅 팬 퀴즈</h1></div><strong className="text-sm text-slate-500">{index + 1} / 15</strong></div>
         <div className="mt-4 h-2.5 overflow-hidden rounded-full bg-white shadow-inner" role="progressbar" aria-label="퀴즈 진행률" aria-valuenow={progress} aria-valuemin={0} aria-valuemax={100}><motion.div className="h-full rounded-full bg-gradient-to-r from-violet-500 to-rose-400" animate={{ width: `${progress}%` }} /></div>
       </header>
       {!current ? <section className="grid min-h-72 place-items-center rounded-[2rem] bg-white p-10 shadow-xl" aria-busy="true"><p className="font-bold text-slate-500">💎 검증된 문제를 구성하는 중...</p></section> :

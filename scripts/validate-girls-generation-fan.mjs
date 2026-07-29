@@ -1,7 +1,7 @@
 import assert from "node:assert/strict";
 import fs from "node:fs";
 
-// 소녀시대 찐팬 테스트 문제은행·출제 정책 검증 (prebuild에서 실행)
+// 소녀시대 팬 퀴즈 문제은행·출제 정책 검증 (prebuild에서 실행)
 const bank = JSON.parse(fs.readFileSync(new URL("../data/question-banks/girls-generation-true-fan.json", import.meta.url), "utf8"));
 const questions = bank.questions.filter((q) => q.verificationStatus === "verified");
 const quota = bank.selectionPolicy.difficultyQuota;

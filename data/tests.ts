@@ -56,6 +56,7 @@ import { egoResilienceTest } from "@/data/ego-resilience";
 import { bigbangFanTest } from "@/data/bigbang-fan";
 import { nctDreamFanTest } from "@/data/nct-dream-fan";
 import { lionelMessiFanTest } from "@/data/lionel-messi-fan";
+import { jungkookFanTest } from "@/data/jungkook-fan";
 import { workPersonaTest } from "@/data/work-persona";
 
 export const questions = [
@@ -122,7 +123,7 @@ export const resultProfiles: ResultProfile[] = [
   profile("digital-template", "디지털 템플릿 판매", "🧩", "정리 능력을 반복 판매 가능한 상품으로 만드는 설계형", [2,2,0,1,2,2,-2,-1,2,-2,-1,0], { initialCost:"0~5만 원", monetizationSpeed:"1~3개월", platforms:["크몽","Gumroad","Notion 템플릿 갤러리"] }),
 ];
 
-export const tests: TestDefinition[] = [lionelMessiFanTest, interpersonalAbilityTest, relationshipSatisfactionTest, egoResilienceTest, workaholicTest, {
+export const tests: TestDefinition[] = [jungkookFanTest, lionelMessiFanTest, interpersonalAbilityTest, relationshipSatisfactionTest, egoResilienceTest, workaholicTest, {
   slug: "side-job-recommendation",
   title: "나에게 맞는 부업 추천 테스트",
   shortTitle: "부업 추천 테스트",

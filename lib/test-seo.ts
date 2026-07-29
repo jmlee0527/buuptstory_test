@@ -30,7 +30,7 @@ export function getFanQuizEntityName(test: TestDefinition) {
   const source = test.shortTitle || test.title;
   const cleaned = source
     .replace(/\s*[|–-].*$/u, "")
-    .replace(/\s*(찐팬|팬)?\s*테스트.*$/u, "")
+    .replace(/\s*(찐팬|진성팬|팬)?\s*(테스트|퀴즈).*$/u, "")
     .trim();
 
   return cleaned || source.replace(/\s*테스트.*$/u, "").trim() || source;
@@ -38,14 +38,14 @@ export function getFanQuizEntityName(test: TestDefinition) {
 
 export function getTestSeoTitle(test: TestDefinition) {
   const title = test.seoTitle ?? test.title;
-  if (!isFanQuizTest(test) || !hasFandomSearchIntent(test) || /팬\s?퀴즈/u.test(title)) return title;
+  if (!isFanQuizTest(test) || !hasFandomSearchIntent(test) || /(팬\s?퀴즈|진성팬\s*테스트)/u.test(title)) return title;
 
   return `${getFanQuizEntityName(test)} 팬퀴즈 | ${test.shortTitle}`;
 }
 
 export function getTestSeoDescription(test: TestDefinition) {
   const description = test.seoDescription ?? test.description;
-  if (!isFanQuizTest(test) || !hasFandomSearchIntent(test) || /팬\s?퀴즈/u.test(description)) return description;
+  if (!isFanQuizTest(test) || !hasFandomSearchIntent(test) || /(팬\s?퀴즈|진성팬\s*테스트)/u.test(description)) return description;
 
   const summary = test.description.replace(/[.!?。！？]\s*$/u, "");
   return `${getFanQuizEntityName(test)} 팬퀴즈로 ${summary}. ${description}`;
@@ -66,11 +66,10 @@ export function getTestSeoKeywords(test: TestDefinition) {
       `${entity} 팬 퀴즈`,
       `${entity} 퀴즈`,
       `${entity} 팬 테스트`,
-      `${entity} 찐팬 테스트`,
       `${entity} 찐팬 퀴즈`,
       "팬퀴즈",
       "팬 퀴즈",
-      "찐팬 테스트",
+      "팬 테스트",
       "찐팬 퀴즈",
       "팬덤 퀴즈",
     );

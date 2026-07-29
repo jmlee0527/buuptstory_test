@@ -21,10 +21,10 @@ export async function generateMetadata({ params, searchParams }: Props): Promise
   const result = answers ? calculateBtsFanResult(answers) : null;
   const effectiveGrade = result?.grade ?? grade;
   return createMetadata({
-    title: result ? `${result.score}/15점, ${effectiveGrade.name} | BTS 찐팬 테스트 결과` : `${grade.name} | BTS 찐팬 테스트 결과`,
-    description: `BTS 찐팬 테스트 결과 ${effectiveGrade.name}. ${effectiveGrade.subtitle} 멤버, 데뷔, 노래, 공연, 빌보드 기록까지 15문제로 BTS 팬심을 확인해보세요.`,
+    title: result ? `${result.score}/15점, ${effectiveGrade.name} | BTS 팬 퀴즈 결과` : `${grade.name} | BTS 팬 퀴즈 결과`,
+    description: `BTS 팬 퀴즈 결과 ${effectiveGrade.name}. ${effectiveGrade.subtitle} 멤버, 데뷔, 노래, 공연, 빌보드 기록까지 15문제로 BTS 팬심을 확인해보세요.`,
     path: btsFanResultPath(grade.slug),
-    keywords: ["BTS 찐팬 테스트", "BTS 테스트", "BTS 퀴즈", "방탄소년단 테스트", "ARMY 테스트", effectiveGrade.name],
+    keywords: ["BTS 팬 퀴즈", "BTS 테스트", "BTS 퀴즈", "방탄소년단 테스트", "ARMY 테스트", effectiveGrade.name],
     ogImage: false,
   });
 }
@@ -54,7 +54,7 @@ export default async function BtsFanQuizResultPage({ params, searchParams }: Pro
       <JsonLd data={{
         "@context": "https://schema.org",
         "@type": "WebPage",
-        name: `BTS 찐팬 테스트 결과: ${grade.name}`,
+        name: `BTS 팬 퀴즈 결과: ${grade.name}`,
         description: grade.subtitle,
         url: absoluteUrl(btsFanResultPath(grade.slug)),
         inLanguage: "ko-KR",

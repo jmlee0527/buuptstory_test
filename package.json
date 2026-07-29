@@ -5,7 +5,7 @@
   "scripts": {
     "predev": "node scripts/sync-ads-txt.mjs",
     "dev": "next dev --turbopack",
-    "prebuild": "node scripts/sync-ads-txt.mjs && node scripts/validate-lionel-messi-fan.mjs && node scripts/validate-interpersonal-ability.mjs && node scripts/validate-relationship-satisfaction.mjs && node scripts/validate-ego-resilience.mjs && node scripts/validate-workaholic.mjs && node scripts/validate-job-stress.mjs && node scripts/validate-stray-kids-fan.mjs && node scripts/validate-manchester-united-fan.mjs && node scripts/validate-ateez-fan.mjs && node scripts/validate-rescene-fan.mjs && node scripts/validate-girls-generation-fan.mjs && node scripts/validate-bigbang-fan.mjs && node scripts/validate-nct-dream-fan.mjs && node scripts/validate-work-persona.mjs && node scripts/validate-turnover-intention.mjs && node scripts/validate-feedback.mjs",
+    "prebuild": "node scripts/sync-ads-txt.mjs && node scripts/validate-jungkook-fan.mjs && node scripts/validate-lionel-messi-fan.mjs && node scripts/validate-interpersonal-ability.mjs && node scripts/validate-relationship-satisfaction.mjs && node scripts/validate-ego-resilience.mjs && node scripts/validate-workaholic.mjs && node scripts/validate-job-stress.mjs && node scripts/validate-stray-kids-fan.mjs && node scripts/validate-manchester-united-fan.mjs && node scripts/validate-ateez-fan.mjs && node scripts/validate-rescene-fan.mjs && node scripts/validate-girls-generation-fan.mjs && node scripts/validate-bigbang-fan.mjs && node scripts/validate-nct-dream-fan.mjs && node scripts/validate-work-persona.mjs && node scripts/validate-turnover-intention.mjs && node scripts/validate-feedback.mjs",
     "build": "next build",
     "sync:ads": "node scripts/sync-ads-txt.mjs",
     "generate:favicon": "node scripts/generate-favicon.mjs",
@@ -29,7 +29,8 @@
     "validate:ego-resilience": "node scripts/validate-ego-resilience.mjs",
     "validate:relationship-satisfaction": "node scripts/validate-relationship-satisfaction.mjs",
     "validate:interpersonal-ability": "node scripts/validate-interpersonal-ability.mjs",
-    "validate:lionel-messi-fan": "node scripts/validate-lionel-messi-fan.mjs"
+    "validate:lionel-messi-fan": "node scripts/validate-lionel-messi-fan.mjs",
+    "validate:jungkook-fan": "node scripts/validate-jungkook-fan.mjs"
   },
   "dependencies": {
     "@vercel/analytics": "^2.0.1",

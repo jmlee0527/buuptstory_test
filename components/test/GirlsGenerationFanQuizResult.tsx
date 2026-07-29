@@ -36,7 +36,7 @@ export function GirlsGenerationFanQuizResult({ answers }: { answers: GirlsGenera
       wrongReviews={wrongReviews}
       resultPath={resultPath}
       imageSrc={girlsGenerationFanTest.thumbnail}
-      imageAlt="소녀시대 찐팬 테스트 썸네일"
+      imageAlt="소녀시대 팬 퀴즈 썸네일"
       shareDescription="당신의 SONE 덕력도 확인해 보세요."
     />
   );

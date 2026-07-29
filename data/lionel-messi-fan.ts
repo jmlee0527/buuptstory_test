@@ -68,9 +68,9 @@ export const getMessiGradeBySlug = (slug: string) => messiGrades.find((grade) =>
 export const lionelMessiFanTest: TestDefinition = {
   type: "quiz",
   slug: "lionel-messi-true-fan-test",
-  title: "리오넬 메시 찐팬 테스트",
-  shortTitle: "메시 찐팬 테스트",
-  cardTitle: "리오넬 메시 찐팬 테스트",
+  title: "리오넬 메시 팬 퀴즈",
+  shortTitle: "메시 팬 퀴즈",
+  cardTitle: "리오넬 메시 팬 퀴즈",
   description: "바르셀로나의 전설적인 기록부터 아르헨티나 월드컵 우승, 인터 마이애미 활약까지 12문제로 확인해 보세요.",
   category: "팬 퀴즈",
   duration: "약 3분",
@@ -87,9 +87,9 @@ export const lionelMessiFanTest: TestDefinition = {
   seoDescription: messiBank.seo.metaDescription,
   keywords: messiBank.seo.keywords,
   seoContent: {
-    heading: "리오넬 메시 찐팬 테스트란?",
+    heading: "리오넬 메시 팬 퀴즈란?",
     paragraphs: [
-      "리오넬 메시 찐팬 테스트는 FC 바르셀로나 시절의 주요 기록, 아르헨티나 대표팀의 월드컵과 코파 아메리카 우승, PSG와 인터 마이애미에서의 활동까지 공식 기록을 바탕으로 구성한 축구 퀴즈입니다.",
+      "리오넬 메시 팬 퀴즈는 FC 바르셀로나 시절의 주요 기록, 아르헨티나 대표팀의 월드컵과 코파 아메리카 우승, PSG와 인터 마이애미에서의 활동까지 공식 기록을 바탕으로 구성한 축구 퀴즈입니다.",
       "60문항 문제은행에서 매번 하 4문항, 중 5문항, 상 3문항을 뽑아 총 12문항을 제공합니다. 문제와 보기 순서는 섞이지만 정답 매핑은 유지되며, 바르셀로나·아르헨티나·PSG·인터 마이애미 영역이 한쪽으로 치우치지 않도록 구성합니다.",
       "결과에서는 맞힌 문제 수, 정답률, 메시 팬 등급, 문제별 정답과 해설을 확인할 수 있습니다. 이 테스트는 미미테스트가 자체 제작한 비공식 팬 퀴즈이며, 선수나 구단의 공식 서비스가 아닙니다.",
     ],

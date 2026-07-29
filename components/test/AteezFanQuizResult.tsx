@@ -36,7 +36,7 @@ export function AteezFanQuizResult({ answers }: { answers: AteezAnswer[] | null 
       wrongReviews={wrongReviews}
       resultPath={resultPath}
       imageSrc={ateezFanTest.thumbnail}
-      imageAlt="ATEEZ 찐팬 테스트 썸네일"
+      imageAlt="ATEEZ 팬 퀴즈 썸네일"
       shareDescription="당신의 에이티니 덕력도 확인해 보세요."
     />
   );

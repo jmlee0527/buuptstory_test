@@ -46,7 +46,7 @@ export function SearchForm({ initialQuery }: { initialQuery: string }) {
               event.currentTarget.blur();
             }
           }}
-          placeholder="예: NCT DREAM, 엔시티 드림, 시즈니"
+          placeholder="테스트를 검색해보세요"
           autoComplete="off"
           className="min-h-12 min-w-0 flex-1 rounded-xl border-0 bg-slate-50 px-4 text-base text-ink outline-none placeholder:text-slate-400 focus:ring-2 focus:ring-primary"
         />

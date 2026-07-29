@@ -97,12 +97,10 @@ assert.deepEqual(session("stable").map((question) => [question.id, question.orde
 assert.ok(Math.max(...positions) / Math.min(...positions) < 1.15);
 
 const header = fs.readFileSync(new URL("../components/layout/Header.tsx", import.meta.url), "utf8");
-for (const [label, path] of [["홈", "/"], ["카테고리", "/categories"], ["검색", "/search"]]) {
+for (const [label, path] of [["Home", "/"], ["Category", "/categories"], ["Column", "/blog"], ["Search", "/search"]]) {
   assert.ok(header.includes(`href="${path}"`));
   assert.ok(header.includes(label));
 }
-assert.ok(!header.includes("컬럼"));
-assert.ok(!header.includes("칼럼"));
 
 const search = fs.readFileSync(new URL("../components/search/SearchForm.tsx", import.meta.url), "utf8");
 assert.ok(search.includes("300"));

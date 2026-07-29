@@ -43,7 +43,7 @@ export function LionelMessiFanQuizResult({ answers }: { answers: MessiAnswer[] |
       wrongReviews={wrongReviews}
       resultPath={resultPath}
       imageSrc={lionelMessiFanTest.thumbnail}
-      imageAlt="리오넬 메시 찐팬 테스트 썸네일"
+      imageAlt="리오넬 메시 팬 퀴즈 썸네일"
       shareDescription="당신의 메시 찐팬력도 확인해 보세요."
       disclaimer={messiBank.test.disclaimer}
     />

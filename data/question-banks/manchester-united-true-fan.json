@@ -5,12 +5,12 @@
   "language": "ko-KR",
   "test": {
     "id": "manchester-united-true-fan-test",
-    "title": "맨유 찐팬 테스트",
+    "title": "맨유 팬 퀴즈",
     "englishTitle": "Manchester United True Fan Test",
     "slug": "manchester-united-true-fan-test",
     "category": "fandom-quiz",
     "topic": "Manchester United FC",
-    "description": "맨체스터 유나이티드의 창단 역사, 올드 트래포드, 우승 기록, 레전드 선수와 유럽대항전 명장면을 묻는 15문항 찐팬 테스트입니다.",
+    "description": "맨체스터 유나이티드의 창단 역사, 올드 트래포드, 우승 기록, 레전드 선수와 유럽대항전 명장면을 묻는 15문항 팬 퀴즈입니다.",
     "questionPoolSize": 60,
     "questionsPerAttempt": 15,
     "difficultyDistribution": {
@@ -84,9 +84,9 @@
       }
     ],
     "seo": {
-      "primaryKeyword": "맨유 찐팬 테스트",
+      "primaryKeyword": "맨유 팬 퀴즈",
       "secondaryKeywords": [
-        "맨유 찐팬 테스트",
+        "맨유 팬 퀴즈",
         "맨체스터 유나이티드 퀴즈",
         "맨유 퀴즈",
         "맨유 테스트",
@@ -100,9 +100,9 @@
         "맨유 레전드",
         "맨유 우승 기록"
       ],
-      "metaTitle": "맨유 찐팬 테스트 | 나는 몇 점짜리 맨유 팬?",
+      "metaTitle": "맨유 팬 퀴즈 | 나는 몇 점짜리 맨유 팬?",
       "metaDescription": "맨유 창단 역사, 올드 트래포드, 프리미어리그·챔피언스리그 우승, 레전드 선수와 명경기를 묻는 15문항 퀴즈로 나의 팬심을 확인해 보세요.",
-      "h1": "맨유 찐팬 테스트",
+      "h1": "맨유 팬 퀴즈",
       "intro": "뉴턴 히스 시절부터 올드 트래포드, 버스비 베이브스, 1999 트레블과 유럽 정상의 순간까지 얼마나 기억하고 있나요? 난이도별로 무작위 출제되는 15문항으로 맨유 팬심을 확인해 보세요.",
       "recommendedCanonicalPath": "/tests/manchester-united-true-fan-test"
     },

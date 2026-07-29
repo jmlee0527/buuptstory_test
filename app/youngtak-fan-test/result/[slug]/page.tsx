@@ -17,10 +17,10 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const grade = getYoungtakFanGradeProfile(slug);
   if (!grade) return {};
   return createMetadata({
-    title: `${grade.title} | 영탁 찐팬 테스트 결과 | 미미테스트`,
-    description: `영탁 찐팬 테스트 결과 ${grade.title}. 노래, 앨범, 방송, 무대와 활동 기록을 얼마나 알고 있는지 15문제 퀴즈로 확인해보세요.`,
+    title: `${grade.title} | 영탁 팬 퀴즈 결과 | 미미테스트`,
+    description: `영탁 팬 퀴즈 결과 ${grade.title}. 노래, 앨범, 방송, 무대와 활동 기록을 얼마나 알고 있는지 15문제 퀴즈로 확인해보세요.`,
     path: youngtakFanResultPath(grade.slug),
-    keywords: ["영탁 찐팬 테스트", "영탁 팬 테스트", "영탁 퀴즈", "영탁 팬심 지수", grade.title],
+    keywords: ["영탁 팬 퀴즈", "영탁 팬 테스트", "영탁 퀴즈", "영탁 팬심 지수", grade.title],
     ogImage: false,
   });
 }
@@ -55,7 +55,7 @@ export default async function YoungtakFanQuizResultPage({ params, searchParams }
       <JsonLd data={{
         "@context": "https://schema.org",
         "@type": "WebPage",
-        name: `영탁 찐팬 테스트 결과: ${grade.title}`,
+        name: `영탁 팬 퀴즈 결과: ${grade.title}`,
         description: grade.summary,
         url: absoluteUrl(youngtakFanResultPath(grade.slug)),
         inLanguage: "ko-KR",

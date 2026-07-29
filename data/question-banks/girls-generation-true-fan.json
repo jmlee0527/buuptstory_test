@@ -4,9 +4,9 @@
   "verificationCutoff": "2026-07-11",
   "test": {
     "id": "girls-generation-true-fan-test",
-    "title": "소녀시대 찐팬 테스트",
+    "title": "소녀시대 팬 퀴즈",
     "englishTitle": "Girls' Generation True Fan Test",
-    "alternativeTitle": "SNSD 찐팬 테스트",
+    "alternativeTitle": "SNSD 팬 퀴즈",
     "topic": "Girls' Generation",
     "language": "ko-KR",
     "category": "fandom",
@@ -24,12 +24,12 @@
   "seo": {
     "slug": "girls-generation-true-fan-test",
     "canonicalPath": "/tests/girls-generation-true-fan-test",
-    "metaTitle": "소녀시대 찐팬 테스트 | S♡NE 소원 덕력 퀴즈",
-    "metaDescription": "소녀시대 멤버, 다시 만난 세계, Gee, 소원을 말해봐, 정규앨범, 태티서와 Oh!GG를 맞히는 15문항 찐팬 테스트입니다.",
-    "primaryKeyword": "소녀시대 찐팬 테스트",
+    "metaTitle": "소녀시대 팬 퀴즈 | S♡NE 소원 덕력 퀴즈",
+    "metaDescription": "소녀시대 멤버, 다시 만난 세계, Gee, 소원을 말해봐, 정규앨범, 태티서와 Oh!GG를 맞히는 15문항 팬 퀴즈입니다.",
+    "primaryKeyword": "소녀시대 팬 퀴즈",
     "secondaryKeywords": [
-      "Girls' Generation 찐팬 테스트",
-      "SNSD 찐팬 테스트",
+      "Girls' Generation 팬 퀴즈",
+      "SNSD 팬 퀴즈",
       "소녀시대 퀴즈",
       "Girls' Generation 퀴즈",
       "SNSD 퀴즈",
@@ -41,7 +41,7 @@
       "Gee",
       "FOREVER 1"
     ],
-    "shareTextTemplate": "나는 소녀시대 찐팬 테스트에서 {score}/15점, ‘{resultTitle}’이 나왔어요. 당신의 S♡NE 덕력도 확인해 보세요!",
+    "shareTextTemplate": "나는 소녀시대 팬 퀴즈에서 {score}/15점, ‘{resultTitle}’이 나왔어요. 당신의 S♡NE 덕력도 확인해 보세요!",
     "keywordPolicy": "핵심 키워드는 title, H1, 소개문, meta description, 결과 공유 문구에 자연스럽게 사용한다. 반복 나열, 숨김 텍스트, 무관한 키워드 삽입은 금지한다."
   },
   "selectionPolicy": {

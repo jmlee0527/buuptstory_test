@@ -43,7 +43,7 @@ export function NctDreamFanQuizResult({ answers }: { answers: NctDreamAnswer[] |
       wrongReviews={wrongReviews}
       resultPath={resultPath}
       imageSrc={nctDreamFanTest.thumbnail}
-      imageAlt="NCT DREAM 찐팬 테스트 썸네일"
+      imageAlt="NCT DREAM 팬 퀴즈 썸네일"
       shareDescription="당신의 NCT DREAM 팬심도 확인해 보세요."
       disclaimer="공식 사이트·공식 음원·공식 공연 공지를 기준으로 검증한 미미테스트의 비공식 팬 퀴즈입니다."
     />

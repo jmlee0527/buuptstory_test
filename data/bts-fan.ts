@@ -1,6 +1,6 @@
 import type { BtsFanGradeProfile, BtsQuizQuestion, TestDefinition } from "@/lib/types";
 
-// BTS 찐팬 테스트 문제은행 (총 60문항: easy 20 / medium 20 / hard 20)
+// BTS 팬 퀴즈 문제은행 (총 60문항: easy 20 / medium 20 / hard 20)
 // - 모든 문제는 공식 확인 가능한 사실만 사용하며, source에 검증 출처를 기록합니다.
 // - 보기는 실제 존재하는 이름·정보로 구성해 오답도 자연스럽게 헷갈리도록 만들었습니다.
 // - 매 테스트는 하 5 / 중 5 / 상 5 = 15문항이 랜덤 출제됩니다.
@@ -272,42 +272,42 @@ export const btsFanGradeProfiles: BtsFanGradeProfile[] = [
     subtitle: "BTS를 이제 막 알아가는 단계입니다.",
     description: "아직은 멤버와 대표곡이 조금 헷갈리는 단계지만, 모든 아미에게도 입덕 첫날은 있었습니다. 지금부터 알아가는 재미가 가장 큰 시기예요. 멤버 이름과 데뷔 이야기, 'Dynamite' 같은 대표곡부터 차근차근 시작해 보세요.",
     recommendation: "추천: 'Dynamite'·'봄날' 뮤직비디오와 달려라 방탄 인기 회차부터 시작해 보세요.",
-    shareText: "BTS 찐팬 테스트 결과: 입덕 준비생 🐣 {score}점! 너는 몇 점 나올까?",
+    shareText: "BTS 팬 퀴즈 결과: 입덕 준비생 🐣 {score}점! 너는 몇 점 나올까?",
   },
   {
     slug: "bts-casual-fan", minScore: 5, maxScore: 7, name: "관심 있는 팬", icon: "💜",
     subtitle: "좋아하는 마음은 충분합니다.",
     description: "대표곡과 멤버는 알고 있지만 앨범 순서나 세부 기록에서는 아직 아리송한 단계입니다. 좋아하는 마음은 이미 충분하니, 앨범 시리즈의 흐름과 자체 콘텐츠를 따라가다 보면 금방 진성 팬 구간에 진입할 수 있어요.",
     recommendation: "추천: LOVE YOURSELF 시리즈를 순서대로 듣고 In the SOOP으로 멤버들의 케미를 느껴보세요.",
-    shareText: "BTS 찐팬 테스트 결과: 관심 있는 팬 💜 {score}점! 너는 몇 점 나올까?",
+    shareText: "BTS 팬 퀴즈 결과: 관심 있는 팬 💜 {score}점! 너는 몇 점 나올까?",
   },
   {
     slug: "bts-true-fan", minScore: 8, maxScore: 10, name: "진성 팬", icon: "🎵",
     subtitle: "꽤 많은 BTS 정보를 알고 있습니다.",
     description: "앨범, 콘텐츠, 주요 기록까지 폭넓게 알고 있는 진성 팬입니다. 하 난이도와 중 난이도 문제는 대부분 해결했을 가능성이 높아요. 빌보드·그래미 기록과 데뷔 초 활동까지 챙기면 찐팬 구간이 눈앞입니다.",
     recommendation: "추천: FESTA 콘텐츠와 데뷔 초 학교 3부작 활동을 복습하면 점수가 확 오릅니다.",
-    shareText: "BTS 찐팬 테스트 결과: 진성 팬 🎵 {score}점! 너는 몇 점 나올까?",
+    shareText: "BTS 팬 퀴즈 결과: 진성 팬 🎵 {score}점! 너는 몇 점 나올까?",
   },
   {
     slug: "bts-jjin-fan", minScore: 11, maxScore: 12, name: "찐팬", icon: "🔥",
     subtitle: "웬만한 문제는 대부분 맞힙니다.",
     description: "수록곡, 솔로 활동, 수상 기록까지 두루 꿰고 있는 찐팬입니다. 상 난이도 문제에서도 답을 골라내는 감각이 있다는 뜻이에요. 세부 연도와 기록 몇 개만 더 정리하면 슈퍼 아미 등급도 충분히 노려볼 수 있습니다.",
     recommendation: "추천: 멤버별 솔로 앨범 크레딧과 연도별 수상 기록을 정리해 보세요.",
-    shareText: "BTS 찐팬 테스트 결과: 찐팬 🔥 {score}점! 너는 몇 점 나올까?",
+    shareText: "BTS 팬 퀴즈 결과: 찐팬 🔥 {score}점! 너는 몇 점 나올까?",
   },
   {
     slug: "bts-super-army", minScore: 13, maxScore: 14, name: "슈퍼 ARMY", icon: "👑",
     subtitle: "상당한 팬심을 자랑하는 팬입니다.",
     description: "기네스 기록, 그래미 후보 부문, 데뷔 초 콘서트까지 상 난이도 문제를 거의 다 맞힌 슈퍼 아미입니다. 이 정도면 주변 친구들이 BTS에 대해 궁금할 때 가장 먼저 찾는 사람일 거예요. 레전드까지 단 한 걸음 남았습니다.",
     recommendation: "추천: 틀린 문제의 해설만 확인하면 만점 도전이 가능합니다. 다시 도전해 보세요!",
-    shareText: "BTS 찐팬 테스트 결과: 슈퍼 ARMY 👑 {score}점! 너는 몇 점 나올까?",
+    shareText: "BTS 팬 퀴즈 결과: 슈퍼 ARMY 👑 {score}점! 너는 몇 점 나올까?",
   },
   {
     slug: "bts-legend-army", minScore: 15, maxScore: 15, name: "레전드 ARMY", icon: "🏆",
     subtitle: "공식 콘텐츠까지 섭렵한 최고의 BTS 팬입니다.",
     description: "15문제 전부 정답! 데뷔부터 최신 활동, 빌보드·기네스 기록과 공식 콘텐츠 세부 내용까지 완벽하게 알고 있는 레전드 아미입니다. 이 테스트는 매번 다른 문제가 출제되니, 다시 도전해서 연속 만점 기록에 도전해 보세요.",
     recommendation: "추천: 친구에게 공유해서 누가 진짜 찐팬인지 가려보세요. 문제는 매번 새로 출제됩니다.",
-    shareText: "BTS 찐팬 테스트 결과: 레전드 ARMY 🏆 15점 만점! 너도 만점 가능해?",
+    shareText: "BTS 팬 퀴즈 결과: 레전드 ARMY 🏆 15점 만점! 너도 만점 가능해?",
   },
 ];
 
@@ -342,9 +342,9 @@ export function validateBtsQuestionBank() {
 export const btsFanTest: TestDefinition = {
   type: "quiz",
   slug: "bts-fan-test",
-  title: "BTS 찐팬 테스트: 나는 진짜 ARMY일까?",
-  shortTitle: "BTS 찐팬 테스트",
-  cardTitle: "BTS 찐팬 테스트",
+  title: "BTS 팬 퀴즈: 나는 진짜 ARMY일까?",
+  shortTitle: "BTS 팬 퀴즈",
+  cardTitle: "BTS 팬 퀴즈",
   description: "데뷔부터 최신 활동까지! 멤버, 노래, 앨범, 공연, 기록까지 15문제로 나의 BTS 팬심을 확인해보세요.",
   category: "팬 퀴즈",
   duration: "약 3~5분",
@@ -357,13 +357,13 @@ export const btsFanTest: TestDefinition = {
   itemCount: BTS_FAN_QUIZ_SIZE,
   questions: [],
   resultSlugs: [],
-  seoTitle: "BTS 찐팬 테스트 | 나는 진짜 ARMY일까?",
+  seoTitle: "BTS 팬 퀴즈 | 나는 진짜 ARMY일까?",
   seoDescription: "BTS를 얼마나 알고 있을까? 멤버, 데뷔, 노래, 공연, 빌보드 기록까지 다양한 문제를 통해 나의 BTS 팬심을 확인해보세요.",
-  keywords: ["BTS 찐팬 테스트", "BTS 테스트", "BTS 퀴즈", "BTS 팬 테스트", "방탄소년단 테스트", "방탄소년단 퀴즈", "ARMY 테스트", "아미 테스트", "K팝 퀴즈", "팬 테스트"],
+  keywords: ["BTS 팬 퀴즈", "BTS 테스트", "BTS 퀴즈", "BTS 팬 테스트", "방탄소년단 테스트", "방탄소년단 퀴즈", "ARMY 테스트", "아미 테스트", "K팝 퀴즈", "팬 테스트"],
   seoContent: {
-    heading: "BTS 찐팬 테스트란?",
+    heading: "BTS 팬 퀴즈란?",
     paragraphs: [
-      "BTS 찐팬 테스트는 방탄소년단의 데뷔부터 최신 활동까지를 다루는 팬 지식 퀴즈입니다. 멤버, 데뷔, 음반, 타이틀곡, 수록곡, 콘서트, 자체 콘텐츠(달려라 방탄·본 보야지·In the SOOP), 빌보드·기네스·그래미 기록, 솔로 활동까지 폭넓은 카테고리에서 출제되며, 모든 문제는 공식 발표와 공식 기록을 기반으로 사실 검증을 거쳐 제작했습니다.",
+      "BTS 팬 퀴즈는 방탄소년단의 데뷔부터 최신 활동까지를 다루는 팬 지식 퀴즈입니다. 멤버, 데뷔, 음반, 타이틀곡, 수록곡, 콘서트, 자체 콘텐츠(달려라 방탄·본 보야지·In the SOOP), 빌보드·기네스·그래미 기록, 솔로 활동까지 폭넓은 카테고리에서 출제되며, 모든 문제는 공식 발표와 공식 기록을 기반으로 사실 검증을 거쳐 제작했습니다.",
       "60개 이상의 문제은행에서 매번 15문제가 랜덤으로 출제됩니다. 난이도는 입문 팬도 맞힐 수 있는 '하' 5문제, 팬이라면 알 수 있는 '중' 5문제, 찐팬도 고민하게 되는 '상' 5문제로 항상 균형이 유지되고, 보기 순서도 매번 바뀌기 때문에 다시 풀 때마다 새로운 테스트처럼 즐길 수 있습니다.",
       "결과는 정답 수에 따라 입덕 준비생부터 레전드 ARMY까지 6단계로 나뉘며, 틀린 문제는 해설과 함께 오답노트로 다시 확인할 수 있습니다. 본 테스트는 BTS와 소속사의 공식 서비스가 아닌 비공식 팬 콘텐츠이며, 실제 사진이나 공식 로고를 사용하지 않습니다.",
     ],

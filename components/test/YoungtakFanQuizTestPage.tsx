@@ -61,7 +61,7 @@ export function YoungtakFanQuizTestPage() {
           <div className="flex items-end justify-between gap-4">
             <div>
               <p className="text-xs font-black tracking-[.16em] text-pink-600">YOUNGTAK FAN INDEX QUIZ</p>
-              <h1 className="mt-2 text-xl font-black text-ink sm:text-2xl">영탁 찐팬 테스트</h1>
+              <h1 className="mt-2 text-xl font-black text-ink sm:text-2xl">영탁 팬 퀴즈</h1>
             </div>
             <strong className="shrink-0 text-sm text-slate-500">{Math.min(index + 1, YOUNGTAK_FAN_QUIZ_SIZE)} / {YOUNGTAK_FAN_QUIZ_SIZE}</strong>
           </div>

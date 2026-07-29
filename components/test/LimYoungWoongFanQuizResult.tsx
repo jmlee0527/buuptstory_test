@@ -52,7 +52,7 @@ export function LimYoungWoongFanQuizResult({ grade, fanIndex, totalCorrect, tota
       wrongReviews={toWrongReviews(wrong)}
       resultPath={resultPath}
       imageSrc={limYoungWoongFanTest.thumbnail}
-      imageAlt="임영웅 찐팬 테스트 썸네일"
+      imageAlt="임영웅 팬 퀴즈 썸네일"
       shareDescription={grade.summary}
       disclaimer="본 테스트는 임영웅 또는 소속사의 공식 서비스가 아닌 비공식 팬 퀴즈입니다. 응답은 서버에 저장되지 않습니다."
     />
