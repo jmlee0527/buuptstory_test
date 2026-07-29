@@ -1,5 +1,4 @@
 import type { MetadataRoute } from "next";
-import { blogPosts } from "@/data/blog";
 import { tests } from "@/data/tests";
 import { absoluteUrl } from "@/lib/site";
 
@@ -10,14 +9,13 @@ type SitemapEntry = MetadataRoute.Sitemap[number];
  * 테스트 데이터가 단일 기준이므로 새 테스트를 등록하면 대표 랜딩 URL도 자동 반영됩니다.
  *
  * 테스트에는 신뢰할 수 있는 공개/수정일 필드가 아직 없으므로 임의의 lastModified를
- * 만들지 않습니다. 날짜가 명시된 블로그 글에만 실제 updatedAt을 사용합니다.
+ * 만들지 않습니다.
  */
 export default function sitemap(): MetadataRoute.Sitemap {
   const coreRoutes: MetadataRoute.Sitemap = [
     { url: absoluteUrl("/"), changeFrequency: "weekly", priority: 1 },
     { url: absoluteUrl("/tests"), changeFrequency: "weekly", priority: 0.9 },
     { url: absoluteUrl("/categories"), changeFrequency: "weekly", priority: 0.85 },
-    { url: absoluteUrl("/blog"), changeFrequency: "weekly", priority: 0.8 },
     { url: absoluteUrl("/about"), changeFrequency: "monthly", priority: 0.5 },
     { url: absoluteUrl("/contact"), changeFrequency: "yearly", priority: 0.4 },
     { url: absoluteUrl("/privacy"), changeFrequency: "yearly", priority: 0.3 },
@@ -38,15 +36,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.6,
   }));
 
-  const postRoutes: MetadataRoute.Sitemap = blogPosts.map((post) => ({
-    url: absoluteUrl(`/blog/${post.slug}`),
-    lastModified: post.updatedAt,
-    changeFrequency: "monthly",
-    priority: 0.75,
-  }));
-
   const uniqueRoutes = new Map<string, SitemapEntry>();
-  for (const route of [...coreRoutes, ...testRoutes, ...categoryRoutes, ...postRoutes]) {
+  for (const route of [...coreRoutes, ...testRoutes, ...categoryRoutes]) {
     uniqueRoutes.set(route.url, route);
   }
 

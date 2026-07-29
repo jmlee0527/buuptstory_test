@@ -1247,15 +1247,3 @@ export type TetoEgenResultProfile = {
   growth: string;
   shareText: string;
 };
-
-export type BlogPost = {
-  slug: string;
-  title: string;
-  description: string;
-  category: string;
-  publishedAt: string;
-  updatedAt: string;
-  readTime: string;
-  keywords: string[];
-  sections: { heading: string; paragraphs: string[]; bullets?: string[] }[];
-};
