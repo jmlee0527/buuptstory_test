@@ -1,4 +1,3 @@
-import type { CSSProperties } from "react";
 import type { FanQuizTheme } from "@/config/fanQuizThemes";
 
 type Badge = {
@@ -6,20 +5,15 @@ type Badge = {
   value: string;
 };
 
-export function FanQuizMetaBadges({ badges, theme }: { badges: Badge[]; theme: FanQuizTheme }) {
-  const style = {
-    "--fan-primary": theme.primary,
-    "--fan-border": theme.border,
-    "--fan-surface": theme.surface,
-  } as CSSProperties;
-
+export function FanQuizMetaBadges({ badges, theme: _theme }: { badges: Badge[]; theme: FanQuizTheme }) {
   return (
-    <ul style={style} className="flex flex-wrap gap-2">
+    <dl className="border-y border-[var(--fan-border)]">
       {badges.map((badge) => (
-        <li key={`${badge.label}-${badge.value}`} className="rounded-full border border-[var(--fan-border)] bg-[var(--fan-surface)] px-3 py-1.5 text-xs font-black text-[var(--fan-primary)] shadow-sm">
-          <span className="sr-only">{badge.label}: </span>{badge.value}
-        </li>
+        <div key={`${badge.label}-${badge.value}`} className="grid grid-cols-[6.5rem_1fr] border-b border-[var(--fan-border)] py-3 text-sm last:border-b-0">
+          <dt className="font-bold text-[var(--fan-text-secondary)]">{badge.label}</dt>
+          <dd className="font-semibold text-[var(--fan-text-primary)]">{badge.value}</dd>
+        </div>
       ))}
-    </ul>
+    </dl>
   );
 }

@@ -1,8 +1,6 @@
 import type { Metadata } from "next";
 import { notFound, permanentRedirect } from "next/navigation";
-import { TestCard } from "@/components/cards/TestCard";
-import { CategoryTiles } from "@/components/category/CategoryTiles";
-import { Breadcrumbs } from "@/components/seo/Breadcrumbs";
+import { CategoryPageContent } from "@/components/pages/CategoryPageContent";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { tests } from "@/data/tests";
 import { absoluteUrl, createMetadata } from "@/lib/site";
@@ -54,17 +52,8 @@ export default async function CategoryPage({ params }: Props) {
       ? fanQuizCategoryDescription
       : `${category}에 관한 테스트입니다.`;
   return (
-    <div className="container-page py-10 sm:py-14">
-      <Breadcrumbs items={[{ name: "테스트", href: "/tests" }, { name: category }]} />
-      <h1 className="text-3xl font-black tracking-tight text-ink sm:text-4xl">{category}</h1>
-      <p className="mt-3 text-slate-600">{description}</p>
-      <div className="mt-8"><CategoryTiles activeCategory={category} /></div>
-      {matchingTests.length > 0 && (
-        <section className="mt-10">
-          <h2 className="text-xl font-black text-ink">테스트</h2>
-          <div className="test-card-grid mt-5">{matchingTests.map((test) => <TestCard key={test.slug} test={test} />)}</div>
-        </section>
-      )}
+    <>
+      <CategoryPageContent category={category} description={description} tests={matchingTests} />
       <JsonLd data={{
         "@context": "https://schema.org",
         "@type": "CollectionPage",
@@ -82,6 +71,6 @@ export default async function CategoryPage({ params }: Props) {
           })),
         },
       }} />
-    </div>
+    </>
   );
 }

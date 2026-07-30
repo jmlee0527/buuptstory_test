@@ -20,15 +20,19 @@ import { calculateSelfEsteemResult, serializeSelfEsteemAnswers } from "@/lib/sel
 import { calculateAdhdResult, serializeAdhdAnswers } from "@/lib/adhd-screening-engine";
 import { calculateDementiaResult, serializeDementiaAnswers } from "@/lib/dementia-risk-engine";
 import { calculateLoverFruitResult, serializeLoverFruitAnswers } from "@/lib/lover-fruit-engine";
+import { useLanguage } from "@/components/i18n/LanguageProvider";
+import { localizeTest } from "@/lib/test-i18n";
 
 export function TestRunner({ test, currentAge }: { test: TestDefinition; currentAge?: number }) {
   const router = useRouter();
+  const { locale, t } = useLanguage();
+  const localizedTest = localizeTest(test, locale);
   const [index, setIndex] = useState(0);
   const [answers, setAnswers] = useState<(boolean | number | null)[]>(Array(test.questions.length).fill(null));
   const [loading, setLoading] = useState(false);
   const selected = answers[index];
   const progress = ((index + 1) / test.questions.length) * 100;
-  const question = test.questions[index];
+  const question = localizedTest.questions[index];
   const isMultipleChoice = Boolean(question.options?.length);
   const shouldAutoAdvance = isMultipleChoice && !["joseon-destiny-test", "personality-country-test", "color-personality-test", "harry-potter-character-test", "coffee-brand-test", "self-esteem-test", "lover-fruit-test"].includes(test.slug);
 
@@ -165,10 +169,10 @@ export function TestRunner({ test, currentAge }: { test: TestDefinition; current
     <section className="container-readable max-w-2xl" aria-labelledby="question-title">
       <div className="mb-8">
         <div className="mb-3 flex items-center justify-between text-sm font-bold">
-          <span className="text-primary">질문 {index + 1}</span>
-          <span className="text-slate-400">{test.questions.length}개 중 {index + 1}개</span>
+          <span className="text-primary">{t("runner.question", { current: index + 1 })}</span>
+          <span className="text-slate-400">{t("runner.progress", { total: test.questions.length, current: index + 1 })}</span>
         </div>
-        <div className="h-2 overflow-hidden rounded-full bg-slate-200" role="progressbar" aria-valuemin={1} aria-valuemax={test.questions.length} aria-valuenow={index + 1} aria-label="테스트 진행률">
+        <div className="h-2 overflow-hidden rounded-full bg-slate-200" role="progressbar" aria-valuemin={1} aria-valuemax={test.questions.length} aria-valuenow={index + 1} aria-label={t("runner.progressLabel")}>
           <div className="h-full rounded-full bg-primary transition-[width] duration-500 ease-out" style={{ width: `${progress}%` }} />
         </div>
       </div>
@@ -184,7 +188,7 @@ export function TestRunner({ test, currentAge }: { test: TestDefinition; current
             const active = selected === answer;
             return (
               <button key={String(answer)} type="button" aria-pressed={active} onClick={() => select(answer)} className={`min-h-24 rounded-2xl border-2 text-2xl font-black transition duration-200 active:scale-[0.98] ${active ? "border-primary bg-blue-50 text-primary shadow-sm" : "border-slate-200 bg-white text-slate-500 hover:border-blue-300 hover:bg-slate-50"}`}>
-                {answer ? "O" : "X"}<span className="mt-1 block text-xs font-semibold">{answer ? "그렇다" : "아니다"}</span>
+                {answer ? "O" : "X"}<span className="mt-1 block text-xs font-semibold">{answer ? t("runner.yes") : t("runner.no")}</span>
               </button>
             );
           })}
@@ -192,10 +196,10 @@ export function TestRunner({ test, currentAge }: { test: TestDefinition; current
       </div>
 
       <div className="mt-6 flex items-center justify-between gap-3">
-        <button type="button" onClick={() => setIndex((current) => Math.max(0, current - 1))} disabled={index === 0 || loading} className="rounded-xl border border-slate-200 bg-white px-5 py-3 text-sm font-bold text-slate-600 transition hover:bg-slate-50 disabled:cursor-not-allowed disabled:opacity-40">이전</button>
+        <button type="button" onClick={() => setIndex((current) => Math.max(0, current - 1))} disabled={index === 0 || loading} className="rounded-xl border border-slate-200 bg-white px-5 py-3 text-sm font-bold text-slate-600 transition hover:bg-slate-50 disabled:cursor-not-allowed disabled:opacity-40">{t("runner.previous")}</button>
         {(!shouldAutoAdvance || index === test.questions.length - 1) ? <button type="button" onClick={moveNext} disabled={selected === null || loading} className="min-w-32 rounded-xl bg-primary px-6 py-3 text-sm font-bold text-white shadow-lg shadow-blue-200 transition hover:bg-blue-700 active:scale-[0.98] disabled:cursor-not-allowed disabled:bg-slate-300 disabled:shadow-none">
-          {loading ? test.slug === "enneagram" ? "내면의 성격 유형을 분석하는 중…" : test.slug === "eq-test" ? "감정 패턴을 분석하는 중…" : test.slug === "big-five" ? "OCEAN 프로필을 계산하는 중…" : "분석 중…" : index === test.questions.length - 1 ? "결과 보기" : "다음"}
-        </button> : <span className="text-xs font-bold text-slate-400">선택하면 자동으로 이동해요</span>}
+          {loading ? t("runner.analyzing") : index === test.questions.length - 1 ? t("runner.result") : t("runner.next")}
+        </button> : <span className="text-xs font-bold text-slate-400">{t("runner.autoAdvance")}</span>}
       </div>
     </section>
   );

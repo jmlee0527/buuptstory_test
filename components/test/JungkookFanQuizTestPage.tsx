@@ -85,7 +85,7 @@ export function JungkookFanQuizTestPage() {
   };
 
   return (
-    <main className="min-h-[calc(100vh-5rem)] py-6 sm:py-12" style={{ background: `linear-gradient(180deg, ${theme.background} 0%, #f8fafc 100%)` }}>
+    <main className="fan-quiz-theme fan-quiz-exam-page min-h-[calc(100vh-5rem)] py-6 sm:py-12">
       <div className="container-page mx-auto max-w-2xl">
         <header className="mb-6">
           <div className="flex items-end justify-between gap-4">
@@ -110,7 +110,6 @@ export function JungkookFanQuizTestPage() {
               <FanQuizQuestionCard
                 theme={theme}
                 questionNumber={index + 1}
-                category={current.category}
                 question={current.prompt}
                 options={current.choices.map((choice, shownIndex) => ({
                   label: choiceBadges[shownIndex],

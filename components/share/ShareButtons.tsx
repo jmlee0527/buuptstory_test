@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { absoluteUrl } from "@/lib/site";
+import { useLanguage } from "@/components/i18n/LanguageProvider";
 
 declare global {
   interface Window {
@@ -17,6 +18,7 @@ type Props = { title: string; description: string; path: string };
 
 export function ShareButtons({ title, description, path }: Props) {
   const [copied, setCopied] = useState(false);
+  const { t } = useLanguage();
   const url = absoluteUrl(path);
 
   const copy = async () => {
@@ -52,20 +54,20 @@ export function ShareButtons({ title, description, path }: Props) {
     window.Kakao.Share.sendDefault({
       objectType: "feed",
       content: { title, description, imageUrl: `${window.location.origin}/opengraph-image`, link: { mobileWebUrl: url, webUrl: url } },
-      buttons: [{ title: "결과 보기", link: { mobileWebUrl: url, webUrl: url } }],
+      buttons: [{ title: t("runner.result"), link: { mobileWebUrl: url, webUrl: url } }],
     });
   };
 
   const items = [
-    { label: "카카오톡", className: "bg-[#FEE500] text-[#191919]", onClick: shareKakao },
-    { label: copied ? "복사됨!" : "링크 복사", className: "bg-slate-100 text-slate-700", onClick: copy },
-    { label: "공유", className: "bg-white text-slate-700", onClick: nativeShare },
+    { label: t("share.kakao"), className: "bg-[#FEE500] text-[#191919]", onClick: shareKakao },
+    { label: copied ? t("share.copied") : t("share.copy"), className: "bg-slate-100 text-slate-700", onClick: copy },
+    { label: t("share.native"), className: "bg-white text-slate-700", onClick: nativeShare },
     { label: "X", className: "bg-black text-white", href: `https://twitter.com/intent/tweet?text=${encodeURIComponent(title)}&url=${encodeURIComponent(url)}` },
-    { label: "페이스북", className: "bg-[#1877F2] text-white", href: `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}` },
+    { label: t("share.facebook"), className: "bg-[#1877F2] text-white", href: `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}` },
   ];
 
   return (
-    <div className="grid grid-cols-2 gap-2 sm:grid-cols-5" aria-label="결과 공유">
+    <div className="grid grid-cols-2 gap-2 sm:grid-cols-5" aria-label={t("share.aria")}>
       {items.map((item) => item.href ? (
         <a key={item.label} href={item.href} target="_blank" rel="noopener noreferrer" className={`rounded-xl px-3 py-3 text-center text-sm font-bold transition hover:opacity-90 ${item.className}`}>{item.label}</a>
       ) : (

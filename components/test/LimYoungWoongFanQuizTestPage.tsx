@@ -55,7 +55,7 @@ export function LimYoungWoongFanQuizTestPage() {
   };
 
   return (
-    <main className="min-h-[calc(100vh-5rem)] bg-[radial-gradient(circle_at_top,#dbeafe_0,#fffbeb_38%,#f8fafc_100%)] py-6 sm:py-12">
+    <main className="fan-quiz-theme fan-quiz-exam-page min-h-[calc(100vh-5rem)] py-6 sm:py-12">
       <div className="container-page mx-auto max-w-2xl">
         <header className="mb-6">
           <div className="flex items-end justify-between gap-4">
@@ -79,7 +79,7 @@ export function LimYoungWoongFanQuizTestPage() {
           </section>
         ) : (
           <AnimatePresence mode="wait">
-            <motion.section key={current.id} initial={reduceMotion ? false : { opacity: 0, x: 28 }} animate={{ opacity: 1, x: 0 }} exit={reduceMotion ? undefined : { opacity: 0, x: -24 }} transition={{ duration: 0.22 }} className="rounded-[2rem] border border-white/90 bg-white/95 p-6 shadow-2xl shadow-pink-100/60 backdrop-blur sm:p-10">
+            <motion.section data-question-number={index + 1} key={current.id} initial={reduceMotion ? false : { opacity: 0, x: 28 }} animate={{ opacity: 1, x: 0 }} exit={reduceMotion ? undefined : { opacity: 0, x: -24 }} transition={{ duration: 0.22 }} className="rounded-[2rem] border border-white/90 bg-white/95 p-6 shadow-2xl shadow-pink-100/60 backdrop-blur sm:p-10">
               <div className="flex items-center justify-between gap-3">
                 <span className="rounded-full bg-pink-50 px-3 py-1.5 text-xs font-black text-pink-700">문제 {index + 1}</span>
               </div>

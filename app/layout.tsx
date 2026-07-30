@@ -8,6 +8,8 @@ import { JsonLd } from "@/components/seo/JsonLd";
 import { absoluteUrl, siteConfig } from "@/lib/site";
 import { adsenseClientId } from "@/lib/adsense";
 import { FeedbackReportButton } from "@/components/feedback/FeedbackReportButton";
+import { LanguageProvider } from "@/components/i18n/LanguageProvider";
+import { SkipLink } from "@/components/i18n/SkipLink";
 
 const googleTagManagerId = "GTM-N355VCGN";
 const googleAnalyticsId = "G-QPDN3ZJ32G";
@@ -91,16 +93,18 @@ function gtag(){dataLayer.push(arguments);}
 gtag('js', new Date());
 gtag('config', '${googleAnalyticsId}');`}
         </Script>
-        <a href="#main-content" className="skip-link">메인 콘텐츠로 건너뛰기</a>
-        <JsonLd data={{
-          "@context":"https://schema.org", "@type":"Organization", "@id":absoluteUrl("/#organization"),
-          name:siteConfig.name, alternateName:[siteConfig.englishName, "미미 테스트", "memetest.co.kr"], url:siteConfig.url,
-          logo:absoluteUrl("/icon.svg"), description:siteConfig.description,
-        }} />
-        <Header />
-        <main id="main-content">{children}</main>
-        <Footer />
-        <FeedbackReportButton />
+        <LanguageProvider>
+          <SkipLink />
+          <JsonLd data={{
+            "@context":"https://schema.org", "@type":"Organization", "@id":absoluteUrl("/#organization"),
+            name:siteConfig.name, alternateName:[siteConfig.englishName, "미미 테스트", "memetest.co.kr"], url:siteConfig.url,
+            logo:absoluteUrl("/icon.svg"), description:siteConfig.description,
+          }} />
+          <Header />
+          <main id="main-content">{children}</main>
+          <Footer />
+          <FeedbackReportButton />
+        </LanguageProvider>
         <Analytics />
       </body>
     </html>

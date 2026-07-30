@@ -1,7 +1,7 @@
 import assert from "node:assert/strict";
 import fs from "node:fs";
 const read = (path) => fs.readFileSync(new URL(`../${path}`, import.meta.url), "utf8");
-const shared = read("lib/feedback.ts"), server = read("lib/feedback-server.ts"), route = read("app/api/feedback/route.ts"), rateLimit = read("lib/feedback-rate-limit.ts"), form = read("components/feedback/FeedbackReportForm.tsx"), modal = read("components/feedback/FeedbackReportModal.tsx"), button = read("components/feedback/FeedbackReportButton.tsx"), visibility = read("components/feedback/feedback-visibility.ts"), layout = read("app/layout.tsx"), env = read(".env.example");
+const shared = read("lib/feedback.ts"), server = read("lib/feedback-server.ts"), route = read("app/api/feedback/route.ts"), rateLimit = read("lib/feedback-rate-limit.ts"), form = read("components/feedback/FeedbackReportForm.tsx"), modal = read("components/feedback/FeedbackReportModal.tsx"), button = read("components/feedback/FeedbackReportButton.tsx"), visibility = read("components/feedback/feedback-visibility.ts"), layout = read("app/layout.tsx"), env = read(".env.example"), koreanDictionary = JSON.parse(read("locales/ko.json"));
 const allowed = ["개선 의견", "문제 및 정답 오류", "기능 작동 오류", "기타"];
 for (const type of allowed) assert.ok(shared.includes(`"${type}"`), `${type} 상수`);
 assert.equal((shared.match(/"개선 의견"|"문제 및 정답 오류"|"기능 작동 오류"|"기타"/g) ?? []).length, 4);
@@ -10,8 +10,8 @@ assert.ok(server.includes('replace(/@/g,"@\\u200b")') && server.includes("allowe
 assert.ok(route.includes("DISCORD_FEEDBACK_WEBHOOK_URL") && route.includes("request.text()") && route.includes("TextEncoder"));
 assert.ok(route.includes("validated.data.website") && route.includes("checkFeedbackRateLimit"));
 assert.ok(rateLimit.includes("WINDOW=10*60_000") && rateLimit.includes("MAX=20") && rateLimit.includes("DUPLICATE_WINDOW=60_000"));
-assert.ok(form.includes("30_000") && form.includes("30초 후"));
-assert.ok(form.includes("maxLength={FEEDBACK_LIMITS.maximumContent}") && form.includes("전송 중...") && form.includes("mimi-feedback-last-success"));
+assert.ok(form.includes("30_000") && form.includes('t("feedback.error.rate")') && koreanDictionary["feedback.error.rate"].includes("30초 후"));
+assert.ok(form.includes("maxLength={FEEDBACK_LIMITS.maximumContent}") && form.includes('t("feedback.submitting")') && koreanDictionary["feedback.submitting"] === "전송 중..." && form.includes("mimi-feedback-last-success"));
 assert.ok(modal.includes('aria-modal="true"') && modal.includes('event.key === "Escape"') && modal.includes("returnFocusRef.current?.focus()"));
 assert.ok(button.includes("env(safe-area-inset-bottom)") && visibility.includes("reaction-time-test") && visibility.includes("weekend-food-worldcup"));
 assert.ok(layout.includes("<FeedbackReportButton />") && env.includes("DISCORD_FEEDBACK_WEBHOOK_URL="));

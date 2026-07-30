@@ -36,7 +36,9 @@ import { dementiaRiskTest } from "@/data/dementia-risk";
 import { loverFruitTest } from "@/data/lover-fruit";
 import { arsenalFanTest } from "@/data/arsenal-fan";
 import { youngtakFanTest } from "@/data/youngtak-fan";
+import { youngtakSongQuizTest } from "@/data/youngtak-song-quiz";
 import { limYoungWoongFanTest } from "@/data/limyoungwoong-fan";
+import { limYoungWoongSongQuizTest } from "@/data/limyoungwoong-song-quiz";
 import { tetoEgenTest } from "@/data/teto-egen";
 import { btsFanTest } from "@/data/bts-fan";
 import { fromis9FanTest } from "@/data/fromis9-fan";
@@ -123,7 +125,7 @@ export const resultProfiles: ResultProfile[] = [
   profile("digital-template", "디지털 템플릿 판매", "🧩", "정리 능력을 반복 판매 가능한 상품으로 만드는 설계형", [2,2,0,1,2,2,-2,-1,2,-2,-1,0], { initialCost:"0~5만 원", monetizationSpeed:"1~3개월", platforms:["크몽","Gumroad","Notion 템플릿 갤러리"] }),
 ];
 
-export const tests: TestDefinition[] = [jungkookFanTest, lionelMessiFanTest, interpersonalAbilityTest, relationshipSatisfactionTest, egoResilienceTest, workaholicTest, {
+export const tests: TestDefinition[] = [limYoungWoongSongQuizTest, youngtakSongQuizTest, jungkookFanTest, lionelMessiFanTest, interpersonalAbilityTest, relationshipSatisfactionTest, egoResilienceTest, workaholicTest, {
   slug: "side-job-recommendation",
   title: "나에게 맞는 부업 추천 테스트",
   shortTitle: "부업 추천 테스트",

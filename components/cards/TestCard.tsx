@@ -5,6 +5,9 @@ import Link from "next/link";
 import { motion, useReducedMotion } from "framer-motion";
 import { usePathname } from "next/navigation";
 import type { TestDefinition } from "@/lib/types";
+import { useLanguage } from "@/components/i18n/LanguageProvider";
+import { categoryKey, localeNumber } from "@/lib/i18n";
+import { localizeDuration, localizeTest } from "@/lib/test-i18n";
 
 const accentClasses = {
   blue: "from-blue-100 via-sky-50 to-indigo-100 text-blue-700",
@@ -19,16 +22,26 @@ const accentClasses = {
 export function TestCard({ test, rank }: { test: TestDefinition; rank?: number }) {
   const reduceMotion = useReducedMotion();
   const pathname = usePathname();
+  const { locale, t } = useLanguage();
+  const localizedTest = localizeTest(test, locale);
 
   const href = test.href ?? `/tests/${test.slug}`;
-  const countLabel = test.type === "worldcup" ? `${test.itemCount}강` : test.type === "fortune" ? `${test.itemCount ?? 5}장 카드` : test.type === "calculator" ? "이름 2개" : `${test.itemCount ?? test.questions.length}문항`;
+  const count = test.itemCount ?? test.questions.length;
+  const countLabel = test.type === "worldcup"
+    ? t("common.round", { count: test.itemCount ?? 0 })
+    : test.type === "fortune"
+      ? t("common.cards", { count: test.itemCount ?? 5 })
+      : test.type === "calculator"
+        ? t("common.names")
+        : t("common.questions", { count });
+  const translatedCategoryKey = categoryKey(test.category);
   return (
     <motion.article whileHover={reduceMotion ? undefined : { y: -4, scale: 1.01 }} transition={{ type: "spring", stiffness: 320, damping: 24 }} className="group relative overflow-hidden rounded-[1.5rem] border border-white bg-white shadow-card transition-shadow duration-300 hover:shadow-xl hover:shadow-slate-300/40">
       {rank && <span className="absolute left-3 top-3 z-10 grid size-8 place-items-center rounded-xl border border-white/80 bg-white/90 text-sm font-black shadow-sm backdrop-blur sm:size-9" aria-label={`인기 ${rank}위`}>{["🥇","🥈","🥉"][rank-1] ?? rank}</span>}
       <Link href={href} onClick={() => { if (pathname === "/search") (window as Window & { gtag?: (command:string,event:string,params?:Record<string,string>)=>void }).gtag?.("event","search_result_click",{test_id:test.slug}); }} className="block focus-visible:outline focus-visible:outline-3 focus-visible:outline-offset-[-4px] focus-visible:outline-primary">
         <div className={`relative grid aspect-[4/3] place-items-center overflow-hidden bg-gradient-to-br ${accentClasses[test.accent]}`}>
           {test.thumbnail ? (
-            <Image src={test.thumbnail} alt={test.title} fill sizes="(max-width:640px) 50vw, (max-width:1024px) 33vw, 25vw" className="object-cover object-[center_18%] transition duration-500 group-hover:scale-105" priority={Boolean(rank && rank <= 3)} />
+            <Image src={test.thumbnail} alt={localizedTest.title} fill sizes="(max-width:640px) 50vw, (max-width:1024px) 33vw, 25vw" className="object-cover object-[center_18%] transition duration-500 group-hover:scale-105" priority={Boolean(rank && rank <= 3)} />
           ) : (
             <>
               <div className="absolute -right-12 -top-12 size-44 rounded-full bg-white/55 blur-2xl" /><div className="absolute -bottom-16 -left-12 size-48 rounded-full bg-white/45 blur-3xl" />
@@ -39,12 +52,12 @@ export function TestCard({ test, rank }: { test: TestDefinition; rank?: number }
         </div>
         <div className="p-3.5 sm:p-4">
           <div className="flex items-center justify-between gap-2 text-[11px] font-bold sm:text-xs">
-            <span className={`max-w-[58%] truncate rounded-full bg-slate-100 px-2.5 py-1 ${accentClasses[test.accent].split(" ").at(-1)}`}>{test.category}</span>
-            <span className="shrink-0 text-slate-400">{test.duration}</span>
+            <span className={`max-w-[58%] truncate rounded-full bg-slate-100 px-2.5 py-1 ${accentClasses[test.accent].split(" ").at(-1)}`}>{translatedCategoryKey ? t(translatedCategoryKey) : test.category}</span>
+            <span className="shrink-0 text-slate-400">{localizeDuration(test.duration, locale)}</span>
           </div>
-          <h3 className="mt-3 min-h-[2.75rem] line-clamp-2 text-sm font-black leading-5 tracking-tight text-ink transition group-hover:text-primary sm:text-base sm:leading-6">{test.cardTitle ?? test.title}</h3>
-          <p className="mt-1.5 min-h-10 line-clamp-2 text-xs leading-5 text-slate-600 sm:text-sm">{test.description}</p>
-          <div className="mt-3 flex items-center justify-between gap-2 border-t border-slate-100 pt-3 text-[10px] font-bold text-slate-400 sm:text-[11px]"><span className="shrink-0">{countLabel}</span><span className="truncate text-right">{test.participants.toLocaleString("ko-KR")}명 참여</span></div>
+          <h3 className="mt-3 min-h-[2.75rem] line-clamp-2 text-sm font-black leading-5 tracking-tight text-ink transition group-hover:text-primary sm:text-base sm:leading-6">{localizedTest.cardTitle ?? localizedTest.title}</h3>
+          <p className="mt-1.5 min-h-10 line-clamp-2 text-xs leading-5 text-slate-600 sm:text-sm">{localizedTest.description}</p>
+          <div className="mt-3 flex items-center justify-between gap-2 border-t border-slate-100 pt-3 text-[10px] font-bold text-slate-400 sm:text-[11px]"><span className="shrink-0">{countLabel}</span><span className="truncate text-right">{t("common.participants", { count: localeNumber(locale, test.participants) })}</span></div>
         </div>
       </Link>
     </motion.article>

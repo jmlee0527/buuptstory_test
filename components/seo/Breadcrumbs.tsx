@@ -1,14 +1,18 @@
+"use client";
+
 import Link from "next/link";
 import { absoluteUrl } from "@/lib/site";
 import { JsonLd } from "./JsonLd";
+import { useLanguage } from "@/components/i18n/LanguageProvider";
 
 type Item = { name: string; href?: string };
 
 export function Breadcrumbs({ items }: { items: Item[] }) {
-  const allItems: Item[] = [{ name: "홈", href: "/" }, ...items];
+  const { t } = useLanguage();
+  const allItems: Item[] = [{ name: t("nav.home"), href: "/" }, ...items];
   return (
     <>
-      <nav aria-label="현재 위치" className="mb-6 flex flex-wrap items-center gap-2 text-xs font-medium text-slate-500">
+      <nav aria-label={t("breadcrumb.current")} className="mb-6 flex flex-wrap items-center gap-2 text-xs font-medium text-slate-500">
         {allItems.map((item, index) => (
           <span key={`${item.name}-${index}`} className="flex items-center gap-2">
             {index > 0 && <span aria-hidden="true">/</span>}

@@ -36,7 +36,9 @@ import { StandardTestLanding } from "@/components/test/StandardTestLanding";
 import { FanQuizLanding } from "@/components/fan-quiz/FanQuizLanding";
 import { ArsenalFanQuizTestPage } from "@/components/test/ArsenalFanQuizTestPage";
 import { YoungtakFanQuizTestPage } from "@/components/test/YoungtakFanQuizTestPage";
+import { YoungtakSongQuizTestPage } from "@/components/test/YoungtakSongQuizTestPage";
 import { LimYoungWoongFanQuizTestPage } from "@/components/test/LimYoungWoongFanQuizTestPage";
+import { LimYoungWoongSongQuizTestPage } from "@/components/test/LimYoungWoongSongQuizTestPage";
 import { TetoEgenTestPage } from "@/components/test/TetoEgenTestPage";
 import { BtsFanQuizTestPage } from "@/components/test/BtsFanQuizTestPage";
 import { Fromis9FanQuizTestPage } from "@/components/test/Fromis9FanQuizTestPage";
@@ -124,7 +126,9 @@ export default async function TestDetailPage({ params, searchParams }: Props) {
   const isDementiaRisk = test.slug === "dementia-risk-test";
   const isArsenalFan = test.slug === "arsenal-fan-test";
   const isYoungtakFan = test.slug === "youngtak-fan-test";
+  const isYoungtakSongQuiz = test.slug === "youngtak-song-fan-quiz";
   const isLimYoungWoongFan = test.slug === "limyoungwoong-fan-test";
+  const isLimYoungWoongSongQuiz = test.slug === "limyoungwoong-song-fan-quiz";
   const isTetoEgen = test.slug === "teto-egen-test";
   const isMentalAge = test.slug === "mental-age";
   const isYoungOld = test.slug === "young-old";
@@ -158,6 +162,10 @@ export default async function TestDetailPage({ params, searchParams }: Props) {
   const isLionelMessiFan = test.slug === "lionel-messi-true-fan-test";
   const isJungkookFan = test.slug === "bts-jungkook-true-fan-test";
   const isWorkPersona = test.slug === "work-persona-16";
+  if (isYoungtakSongQuiz && start === "1") return <YoungtakSongQuizTestPage />;
+  if (isYoungtakSongQuiz) return <FanQuizLanding test={test} insight="영탁의 대표 싱글과 정규 1집 MMM, 정규 2집 FORM, 미니앨범 SuperSuper의 수록곡을 바탕으로 구성한 노래 팬 퀴즈입니다. 중·상·최상 각 100문항의 총 300문항 풀에서 난이도별 4문항씩 12문항을 출제하며, 긴 가사 대신 짧은 곡명·주제 단서와 검증된 앨범 정보를 사용합니다. 결과는 100점 만점과 LEVEL 1~10으로 표시됩니다." />;
+  if (isLimYoungWoongSongQuiz && start === "1") return <LimYoungWoongSongQuizTestPage />;
+  if (isLimYoungWoongSongQuiz) return <FanQuizLanding test={test} insight="임영웅의 정규 1집 IM HERO와 정규 2집 IM HERO 2, 대표 싱글과 OST 수록곡을 바탕으로 구성한 노래 팬 퀴즈입니다. 중·상·최상 각 100문항의 총 300문항 풀에서 난이도별 4문항씩 12문항을 출제하며, 긴 가사 대신 짧은 곡명·주제 단서와 검증된 앨범 정보를 사용합니다. 결과는 100점 만점과 LEVEL 1~10으로 표시됩니다." />;
   if (isWorkPersona && start === "1") return <WorkPersonaTestPage />;
   if (isWorkPersona) return <><WorkPersonaLanding /><div className="container-page pb-12"><TestSeoContent test={test} itemCount={15} answerType="4지선다" /><RelatedTests current={test} /></div></>;
   if (isNctDreamFan && start === "1") return <NctDreamFanQuizTestPage />;
@@ -221,7 +229,7 @@ export default async function TestDetailPage({ params, searchParams }: Props) {
   if (start === "1" && (!isMarriageTiming || currentAge)) return <div className="container-page py-8 sm:py-12"><TestRunner test={test} currentAge={currentAge ?? undefined} /></div>;
 
   const itemCount=test.itemCount??test.questions.length;
-  const answerType=test.type==="likert"||isBurnoutRisk||isBigFive?"5점 척도":isKkondaePower||isEnneagram||isEqTest||isFootballQuiz||isWorldCupWinnerQuiz||isYoungtakFan||isLimYoungWoongFan||isJealousy||isSbti||isCvsTest||isSnsTest||isWizardCharacter||isCoffeeBrand||isLoverFruit||isSelfEsteem||isMentalAge||isYoungOld?"4지선다":isJoseonDestiny||isPersonalityCountry||isLoverScore||isColorPersonality||isMbti?"2지선다":"O/X";
+  const answerType=test.type==="likert"||isBurnoutRisk||isBigFive?"5점 척도":isKkondaePower||isEnneagram||isEqTest||isFootballQuiz||isWorldCupWinnerQuiz||isYoungtakFan||isYoungtakSongQuiz||isLimYoungWoongFan||isLimYoungWoongSongQuiz||isJealousy||isSbti||isCvsTest||isSnsTest||isWizardCharacter||isCoffeeBrand||isLoverFruit||isSelfEsteem||isMentalAge||isYoungOld?"4지선다":isJoseonDestiny||isPersonalityCountry||isLoverScore||isColorPersonality||isMbti?"2지선다":"O/X";
   const seoTitle = getTestSeoTitle(test);
   const seoDescription = getTestSeoDescription(test);
   const seoKeywords = getTestSeoKeywords(test);

@@ -61,8 +61,7 @@ export function Fromis9FanQuizTestPage() {
 
   return (
     <main
-      className="min-h-[calc(100vh-5rem)] py-6 sm:py-12"
-      style={{ background: `linear-gradient(180deg, ${theme.background} 0%, #f8fafc 100%)` }}
+      className="fan-quiz-theme fan-quiz-exam-page min-h-[calc(100vh-5rem)] py-6 sm:py-12"
     >
       <div className="container-page mx-auto max-w-2xl">
         <header className="mb-6">
@@ -89,7 +88,6 @@ export function Fromis9FanQuizTestPage() {
               <FanQuizQuestionCard
                 theme={theme}
                 questionNumber={index + 1}
-                category={current.category}
                 question={current.question}
                 options={current.choices.map((option, choiceIndex) => ({
                   label: choiceBadges[choiceIndex],
