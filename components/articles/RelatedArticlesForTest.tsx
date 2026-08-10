@@ -1,0 +1,14 @@
+import Link from "next/link";
+import { getArticlesForTest } from "@/data/articles";
+
+export function RelatedArticlesForTest({ testSlug }: { testSlug: string }) {
+  const related = getArticlesForTest(testSlug);
+  if (!related.length) return null;
+  return (
+    <section className="mx-auto mt-8 max-w-3xl rounded-3xl border border-slate-200 bg-white p-6 sm:p-8" aria-labelledby="related-articles-title">
+      <p className="text-sm font-black text-primary">함께 읽어보세요</p>
+      <h2 id="related-articles-title" className="mt-2 text-xl font-black text-ink">관련 콘텐츠</h2>
+      <div className="mt-5 grid gap-3 sm:grid-cols-2">{related.map((article) => <Link key={article.slug} href={`/articles/${article.slug}`} className="rounded-2xl bg-slate-50 p-5 transition hover:bg-blue-50"><span className="font-extrabold text-ink">{article.title}</span><span className="mt-2 block text-sm leading-6 text-slate-600">{article.description}</span></Link>)}</div>
+    </section>
+  );
+}

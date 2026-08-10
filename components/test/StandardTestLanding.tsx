@@ -8,6 +8,7 @@ import type { TestDefinition } from "@/lib/types";
 import { useLanguage } from "@/components/i18n/LanguageProvider";
 import { categoryKey } from "@/lib/i18n";
 import { localizeAnswerType, localizeDuration, localizeTest } from "@/lib/test-i18n";
+import { RelatedArticlesForTest } from "@/components/articles/RelatedArticlesForTest";
 
 export function StandardTestLanding({ test, insight, answerType = "4지선다" }: { test: TestDefinition; insight: string; answerType?: string }) {
   const { locale, t } = useLanguage();
@@ -40,6 +41,7 @@ export function StandardTestLanding({ test, insight, answerType = "4지선다" }
         <p className="mt-3 leading-7 text-slate-600">{insight}</p>
       </section>
       <TestSeoContent test={test} itemCount={itemCount} answerType={answerType} />
+      <RelatedArticlesForTest testSlug={test.slug} />
       <div className="container-readable mt-8 text-center"><Link href="/tests" className="inline-flex min-h-12 items-center justify-center rounded-xl border border-slate-200 bg-white px-5 text-sm font-bold text-slate-700 hover:bg-slate-50">{t("common.otherTests")}</Link></div>
     </div>
   );

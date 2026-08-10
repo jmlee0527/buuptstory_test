@@ -4,8 +4,10 @@ import Link from "next/link";
 import { useLanguage } from "@/components/i18n/LanguageProvider";
 
 const links = [
-  ["footer.about", "/about"], ["footer.privacy", "/privacy"],
-  ["footer.terms", "/terms"], ["footer.contact", "/contact"],
+  { labelKey: "footer.about", href: "/about" }, { text: "콘텐츠", href: "/articles" },
+  { text: "콘텐츠 제작 및 검수 정책", href: "/editorial-policy" },
+  { labelKey: "footer.privacy", href: "/privacy" }, { labelKey: "footer.terms", href: "/terms" },
+  { labelKey: "footer.contact", href: "/contact" },
 ] as const;
 
 export function Footer() {
@@ -19,7 +21,7 @@ export function Footer() {
             <p className="mt-2 max-w-md text-sm leading-6 text-slate-500">{t("footer.tagline")}</p>
           </div>
           <nav className="flex flex-wrap gap-x-5 gap-y-3 text-sm text-slate-600" aria-label={t("footer.menu")}>
-            {links.map(([label, href]) => <Link key={href} href={href} className="hover:text-primary">{t(label)}</Link>)}
+            {links.map((link) => <Link key={link.href} href={link.href} className="hover:text-primary">{"text" in link ? link.text : t(link.labelKey)}</Link>)}
           </nav>
         </div>
         <div className="mt-8 border-t border-slate-100 pt-6 text-xs leading-5 text-slate-400">

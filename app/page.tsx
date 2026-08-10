@@ -1,5 +1,6 @@
 import { JsonLd } from "@/components/seo/JsonLd";
 import { HomePageContent } from "@/components/home/HomePageContent";
+import { HomeEditorialContent } from "@/components/home/HomeEditorialContent";
 import { tests } from "@/data/tests";
 import { absoluteUrl, createMetadata, siteConfig } from "@/lib/site";
 
@@ -21,6 +22,7 @@ export default function HomePage() {
   return (
     <>
       <HomePageContent popularFanTests={popularFanTests} newTests={newTests} personalityTests={personalityTests} />
+      <HomeEditorialContent />
 
       <JsonLd data={{ "@context": "https://schema.org", "@type": "FAQPage", mainEntity: [{ "@type": "Question", name: "테스트는 무료인가요?", acceptedAnswer: { "@type": "Answer", text: "네, 모든 테스트는 회원가입 없이 무료로 이용할 수 있습니다." } }, { "@type": "Question", name: "결과는 어떻게 계산하나요?", acceptedAnswer: { "@type": "Answer", text: "각 답변을 테스트별 성향 가중치와 비교해 가장 가까운 결과를 제공합니다." } }] }} />
       <JsonLd data={{

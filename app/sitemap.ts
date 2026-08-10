@@ -1,6 +1,7 @@
 import type { MetadataRoute } from "next";
 import { tests } from "@/data/tests";
 import { absoluteUrl } from "@/lib/site";
+import { articleCategories, articles } from "@/data/articles";
 
 type SitemapEntry = MetadataRoute.Sitemap[number];
 
@@ -17,6 +18,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: absoluteUrl("/tests"), changeFrequency: "weekly", priority: 0.9 },
     { url: absoluteUrl("/categories"), changeFrequency: "weekly", priority: 0.85 },
     { url: absoluteUrl("/about"), changeFrequency: "monthly", priority: 0.5 },
+    { url: absoluteUrl("/articles"), changeFrequency: "weekly", priority: 0.8 },
+    { url: absoluteUrl("/editorial-policy"), changeFrequency: "monthly", priority: 0.5 },
     { url: absoluteUrl("/contact"), changeFrequency: "yearly", priority: 0.4 },
     { url: absoluteUrl("/privacy"), changeFrequency: "yearly", priority: 0.3 },
     { url: absoluteUrl("/terms"), changeFrequency: "yearly", priority: 0.3 },
@@ -36,8 +39,21 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.6,
   }));
 
+  const articleRoutes: MetadataRoute.Sitemap = articles.map((article) => ({
+    url: absoluteUrl(`/articles/${article.slug}`),
+    lastModified: new Date(article.updatedAt),
+    changeFrequency: "monthly",
+    priority: 0.75,
+  }));
+
+  const articleCategoryRoutes: MetadataRoute.Sitemap = articleCategories.map((category) => ({
+    url: absoluteUrl(`/articles/category/${category.slug}`),
+    changeFrequency: "weekly",
+    priority: 0.6,
+  }));
+
   const uniqueRoutes = new Map<string, SitemapEntry>();
-  for (const route of [...coreRoutes, ...testRoutes, ...categoryRoutes]) {
+  for (const route of [...coreRoutes, ...testRoutes, ...categoryRoutes, ...articleRoutes, ...articleCategoryRoutes]) {
     uniqueRoutes.set(route.url, route);
   }
 

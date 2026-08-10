@@ -28,6 +28,23 @@ body {
   .prose-buup ul { @apply my-5 space-y-2 rounded-2xl bg-slate-50 p-5 text-slate-700; }
   .prose-buup li { @apply relative pl-5 leading-7; }
   .prose-buup li::before { content: ""; @apply absolute left-0 top-[0.7rem] size-1.5 rounded-full bg-primary; }
+  .article-prose { @apply mt-10 text-[1.0625rem] leading-8 text-slate-700; }
+  .article-prose h2 { @apply mb-4 mt-12 text-2xl font-black leading-tight tracking-tight text-ink sm:text-3xl; }
+  .article-prose h3 { @apply mb-3 mt-8 text-xl font-extrabold text-ink; }
+  .article-prose p { @apply my-5; }
+  .article-prose ul { @apply my-6 space-y-3 rounded-2xl bg-slate-100 p-5 sm:p-6; }
+  .article-prose li { @apply relative pl-5; }
+  .article-prose li::before { content: ""; @apply absolute left-0 top-[0.78rem] size-1.5 rounded-full bg-primary; }
+  .article-prose blockquote { @apply my-8 border-l-4 border-blue-300 bg-blue-50 px-5 py-4 font-medium text-slate-700; }
+  .article-prose table { @apply min-w-full border-collapse overflow-hidden rounded-xl text-left text-sm; }
+  .article-prose th { @apply border border-slate-200 bg-slate-100 px-4 py-3 font-extrabold text-ink; }
+  .article-prose td { @apply border border-slate-200 bg-white px-4 py-3 align-top leading-6; }
+  .article-prose .article-sources { @apply mt-12 border-t border-slate-200 pt-8 text-sm; }
+  .article-prose .article-sources h2 { @apply !mt-0 text-xl; }
+  .article-prose .article-sources ul { @apply bg-white p-0; }
+  .article-prose .article-sources li { @apply rounded-xl border border-slate-200 p-4; }
+  .article-prose .article-sources a { @apply font-bold text-primary hover:underline; }
+  .article-prose .article-sources span { @apply mt-1 block text-xs text-slate-500; }
 }
 
 .fan-quiz-theme {

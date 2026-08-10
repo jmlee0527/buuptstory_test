@@ -11,12 +11,12 @@ export function Header() {
   const pathname = usePathname();
   const { t } = useLanguage();
   const trackNav = (destination: string) => (window as Window & { gtag?: (command:string,event:string,params?:Record<string,string>)=>void }).gtag?.("event", "nav_click", { destination });
-  const current = (key: "home" | "categories" | "search") =>
+  const current = (key: "home" | "categories" | "articles" | "search") =>
     key === "home"
       ? pathname === "/"
       : key === "categories"
         ? pathname === "/categories" || pathname === "/tests" || pathname.startsWith("/category/") || pathname.startsWith("/tests/")
-        : pathname === "/search";
+        : key === "articles" ? pathname.startsWith("/articles") : pathname === "/search";
   return (
     <header className="sticky top-0 z-40 border-b border-slate-200/80 bg-white/90 backdrop-blur-xl">
       <div className="container-page flex min-h-[4.25rem] items-center justify-between gap-2 py-2">
@@ -40,6 +40,7 @@ export function Header() {
           <Link onClick={() => trackNav("categories")} aria-current={current("categories") ? "page" : undefined} className="rounded-lg px-1.5 py-2 transition hover:bg-slate-100 hover:text-ink aria-[current=page]:bg-slate-100 aria-[current=page]:text-ink sm:px-3" href="/categories">
             {t("nav.categories")}
           </Link>
+          <Link onClick={() => trackNav("articles")} aria-current={current("articles") ? "page" : undefined} className="rounded-lg px-1.5 py-2 transition hover:bg-slate-100 hover:text-ink aria-[current=page]:bg-slate-100 aria-[current=page]:text-ink sm:px-3" href="/articles">콘텐츠</Link>
           <Link onClick={() => trackNav("search")} aria-current={current("search") ? "page" : undefined} className="rounded-lg px-1.5 py-2 transition hover:bg-slate-100 hover:text-ink aria-[current=page]:bg-slate-100 aria-[current=page]:text-ink sm:px-3" href="/search">
             {t("nav.search")}
           </Link>

@@ -61,6 +61,8 @@ type MetadataInput = {
   absoluteTitle?: boolean;
   /** false면 og:image를 설정하지 않습니다. 라우트에 opengraph-image.tsx 파일 컨벤션이 있을 때 사용합니다. */
   ogImage?: boolean;
+  /** 페이지별 대표 이미지 경로. */
+  ogImagePath?: string;
 };
 
 export function createMetadata({
@@ -71,11 +73,14 @@ export function createMetadata({
   type = "website",
   absoluteTitle = false,
   ogImage = true,
+  ogImagePath,
 }: MetadataInput): Metadata {
   const canonical = absoluteUrl(path);
   const metadataTitle = absoluteTitle ? normalizeOfficialBrand(title) : stripSiteNameSuffix(title);
   const brandedTitle = absoluteTitle ? metadataTitle : withSiteNameTitle(title);
   const metadataDescription = withSiteNameDescription(description);
+  const isResultPage = /\/result\/[^/]+\/?$/.test(path) || /^\/(enneagram|color-personality-test)\/[^/]+\/?$/.test(path);
+  const socialImage = absoluteUrl(ogImagePath ?? "/opengraph-image");
   return {
     title: absoluteTitle ? { absolute: metadataTitle } : metadataTitle,
     description: metadataDescription,
@@ -88,18 +93,18 @@ export function createMetadata({
       title: brandedTitle,
       description: metadataDescription,
       url: canonical,
-      ...(ogImage ? { images: [{ url: absoluteUrl("/opengraph-image"), width: 1200, height: 630, alt: brandedTitle }] } : {}),
+      ...(ogImage ? { images: [{ url: socialImage, width: 1200, height: 630, alt: brandedTitle }] } : {}),
     },
     twitter: {
       card: "summary_large_image",
       title: brandedTitle,
       description: metadataDescription,
-      ...(ogImage ? { images: [absoluteUrl("/opengraph-image")] } : {}),
+      ...(ogImage ? { images: [socialImage] } : {}),
     },
     robots: {
-      index: true,
+      index: !isResultPage,
       follow: true,
-      googleBot: { index: true, follow: true, "max-image-preview": "large", "max-snippet": -1, "max-video-preview": -1 },
+      googleBot: { index: !isResultPage, follow: true, "max-image-preview": "large", "max-snippet": -1, "max-video-preview": -1 },
     },
   };
 }
