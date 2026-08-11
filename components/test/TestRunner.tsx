@@ -172,22 +172,22 @@ export function TestRunner({ test, currentAge }: { test: TestDefinition; current
           <span className="text-primary">{t("runner.question", { current: index + 1 })}</span>
           <span className="text-slate-400">{t("runner.progress", { total: test.questions.length, current: index + 1 })}</span>
         </div>
-        <div className="h-2 overflow-hidden rounded-full bg-slate-200" role="progressbar" aria-valuemin={1} aria-valuemax={test.questions.length} aria-valuenow={index + 1} aria-label={t("runner.progressLabel")}>
-          <div className="h-full rounded-full bg-primary transition-[width] duration-500 ease-out" style={{ width: `${progress}%` }} />
+        <div className="notebook-progress overflow-hidden" role="progressbar" aria-valuemin={1} aria-valuemax={test.questions.length} aria-valuenow={index + 1} aria-label={t("runner.progressLabel")}>
+          <div className="h-full transition-[width] duration-500 ease-out" style={{ width: `${progress}%` }} />
         </div>
       </div>
 
-      <div key={index} className="animate-fade-up rounded-3xl border border-slate-200 bg-white p-6 shadow-card sm:p-10">
+      <div key={index} className="paper-card animate-fade-up p-6 sm:p-10">
         <p className="text-sm font-bold text-slate-400">Q{index + 1}</p>
         <h1 id="question-title" className={`${isMultipleChoice ? "min-h-16" : "min-h-24"} mt-3 text-lg font-extrabold leading-relaxed tracking-tight text-ink sm:text-2xl`}>{question.text}</h1>
         {question.options ? <div className="mt-7 space-y-3">{question.options.map((option) => {
           const active = selected === option.value;
-          return <button key={option.label} type="button" aria-pressed={active} onClick={() => select(option.value)} className={`flex min-h-16 w-full items-center gap-3 rounded-2xl border-2 p-3 text-left transition duration-200 active:scale-[0.99] sm:p-4 ${active ? "border-orange-400 bg-orange-50 text-orange-950 shadow-sm" : "border-slate-200 bg-white text-slate-700 hover:border-orange-200 hover:bg-orange-50/40"}`}><span className={`grid size-10 shrink-0 place-items-center rounded-xl text-sm font-black ${active ? "bg-orange-500 text-white" : "bg-slate-100 text-slate-500"}`}>{option.label}</span><span className="min-w-0 text-sm font-semibold leading-6 sm:text-base">{option.text}</span></button>;
+          return <button key={option.label} type="button" aria-pressed={active} onClick={() => select(option.value)} className={`notebook-option flex min-h-16 w-full items-center gap-3 border-2 p-3 text-left transition duration-200 sm:p-4 ${active ? "text-ink" : "text-slate-700"}`}><span className={`grid size-10 shrink-0 place-items-center rounded-sm border text-sm font-black ${active ? "border-[#4267A8] bg-[#4267A8] text-white" : "border-[#353535]/20 bg-[#f4f1df] text-slate-500"}`}>{option.label}</span><span className="min-w-0 text-sm font-semibold leading-6 sm:text-base">{option.text}</span></button>;
         })}</div> : <div className="mt-8 grid grid-cols-2 gap-3">
           {([true, false] as const).map((answer) => {
             const active = selected === answer;
             return (
-              <button key={String(answer)} type="button" aria-pressed={active} onClick={() => select(answer)} className={`min-h-24 rounded-2xl border-2 text-2xl font-black transition duration-200 active:scale-[0.98] ${active ? "border-primary bg-blue-50 text-primary shadow-sm" : "border-slate-200 bg-white text-slate-500 hover:border-blue-300 hover:bg-slate-50"}`}>
+              <button key={String(answer)} type="button" aria-pressed={active} onClick={() => select(answer)} className={`notebook-option min-h-24 border-2 text-2xl font-black transition duration-200 ${active ? "text-primary" : "text-slate-500"}`}>
                 {answer ? "O" : "X"}<span className="mt-1 block text-xs font-semibold">{answer ? t("runner.yes") : t("runner.no")}</span>
               </button>
             );
@@ -196,8 +196,8 @@ export function TestRunner({ test, currentAge }: { test: TestDefinition; current
       </div>
 
       <div className="mt-6 flex items-center justify-between gap-3">
-        <button type="button" onClick={() => setIndex((current) => Math.max(0, current - 1))} disabled={index === 0 || loading} className="rounded-xl border border-slate-200 bg-white px-5 py-3 text-sm font-bold text-slate-600 transition hover:bg-slate-50 disabled:cursor-not-allowed disabled:opacity-40">{t("runner.previous")}</button>
-        {(!shouldAutoAdvance || index === test.questions.length - 1) ? <button type="button" onClick={moveNext} disabled={selected === null || loading} className="min-w-32 rounded-xl bg-primary px-6 py-3 text-sm font-bold text-white shadow-lg shadow-blue-200 transition hover:bg-blue-700 active:scale-[0.98] disabled:cursor-not-allowed disabled:bg-slate-300 disabled:shadow-none">
+        <button type="button" onClick={() => setIndex((current) => Math.max(0, current - 1))} disabled={index === 0 || loading} className="paper-button bg-[#fffdf6] px-5 py-3 text-sm font-bold text-slate-600 disabled:cursor-not-allowed disabled:opacity-40">{t("runner.previous")}</button>
+        {(!shouldAutoAdvance || index === test.questions.length - 1) ? <button type="button" onClick={moveNext} disabled={selected === null || loading} className="paper-button min-w-32 bg-primary px-6 py-3 text-sm font-bold text-white hover:bg-[#36588f] disabled:cursor-not-allowed disabled:border-slate-300 disabled:bg-slate-300 disabled:shadow-none">
           {loading ? t("runner.analyzing") : index === test.questions.length - 1 ? t("runner.result") : t("runner.next")}
         </button> : <span className="text-xs font-bold text-slate-400">{t("runner.autoAdvance")}</span>}
       </div>

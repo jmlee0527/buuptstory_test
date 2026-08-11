@@ -6,9 +6,9 @@ import { getArticleCategory } from "@/data/articles";
 export function ArticleCard({ article }: { article: Article }) {
   const category = getArticleCategory(article.category);
   return (
-    <article className="overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-card">
+    <article className="notebook-card overflow-hidden border bg-white shadow-card">
       <Link href={`/articles/${article.slug}`} className="group block h-full">
-        <div className="relative aspect-[16/9] bg-slate-100">
+        <div className="notebook-photo relative aspect-[16/9] bg-slate-100">
           <Image src={article.thumbnail} alt="" fill sizes="(max-width: 640px) 100vw, 33vw" className="object-cover transition group-hover:scale-[1.02]" />
         </div>
         <div className="p-5">

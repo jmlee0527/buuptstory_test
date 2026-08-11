@@ -36,23 +36,23 @@ export function TestCard({ test, rank }: { test: TestDefinition; rank?: number }
         : t("common.questions", { count });
   const translatedCategoryKey = categoryKey(test.category);
   return (
-    <motion.article whileHover={reduceMotion ? undefined : { y: -4, scale: 1.01 }} transition={{ type: "spring", stiffness: 320, damping: 24 }} className="group relative overflow-hidden rounded-[1.5rem] border border-white bg-white shadow-card transition-shadow duration-300 hover:shadow-xl hover:shadow-slate-300/40">
+    <motion.article whileHover={reduceMotion ? undefined : { y: -4 }} transition={{ duration: 0.18 }} className="notebook-card group relative overflow-hidden border bg-white shadow-card">
       {rank && <span className="absolute left-3 top-3 z-10 grid size-8 place-items-center rounded-xl border border-white/80 bg-white/90 text-sm font-black shadow-sm backdrop-blur sm:size-9" aria-label={`인기 ${rank}위`}>{["🥇","🥈","🥉"][rank-1] ?? rank}</span>}
       <Link href={href} onClick={() => { if (pathname === "/search") (window as Window & { gtag?: (command:string,event:string,params?:Record<string,string>)=>void }).gtag?.("event","search_result_click",{test_id:test.slug}); }} className="block focus-visible:outline focus-visible:outline-3 focus-visible:outline-offset-[-4px] focus-visible:outline-primary">
-        <div className={`relative grid aspect-[4/3] place-items-center overflow-hidden bg-gradient-to-br ${accentClasses[test.accent]}`}>
+        <div className={`notebook-photo relative grid aspect-[4/3] place-items-center overflow-hidden ${accentClasses[test.accent]}`}>
           {test.thumbnail ? (
             <Image src={test.thumbnail} alt={localizedTest.title} fill sizes="(max-width:640px) 50vw, (max-width:1024px) 33vw, 25vw" className="object-cover object-[center_18%] transition duration-500 group-hover:scale-105" priority={Boolean(rank && rank <= 3)} />
           ) : (
             <>
-              <div className="absolute -right-12 -top-12 size-44 rounded-full bg-white/55 blur-2xl" /><div className="absolute -bottom-16 -left-12 size-48 rounded-full bg-white/45 blur-3xl" />
+              <div className="absolute inset-0 bg-[#f4f1df]" />
               <span className="relative text-5xl drop-shadow-lg transition duration-500 group-hover:scale-105 group-hover:-rotate-2 sm:text-6xl" aria-hidden="true">{test.icon}</span>
             </>
           )}
-          {test.isNew && <span className="absolute right-3 top-3 z-10 rounded-full bg-ink px-2.5 py-1 text-[9px] font-black tracking-wider text-white">NEW</span>}
+          {test.isNew && <span className="absolute right-3 top-3 z-10 rotate-2 rounded-sm border border-[#353535] bg-[#FFE98A] px-2.5 py-1 text-[9px] font-black tracking-wider text-ink">NEW</span>}
         </div>
         <div className="p-3.5 sm:p-4">
           <div className="flex items-center justify-between gap-2 text-[11px] font-bold sm:text-xs">
-            <span className={`max-w-[58%] truncate rounded-full bg-slate-100 px-2.5 py-1 ${accentClasses[test.accent].split(" ").at(-1)}`}>{translatedCategoryKey ? t(translatedCategoryKey) : test.category}</span>
+            <span className={`max-w-[58%] truncate rounded-sm bg-[#f4f1df] px-2.5 py-1 ${accentClasses[test.accent].split(" ").at(-1)}`}>{translatedCategoryKey ? t(translatedCategoryKey) : test.category}</span>
             <span className="shrink-0 text-slate-400">{localizeDuration(test.duration, locale)}</span>
           </div>
           <h3 className="mt-3 min-h-[2.75rem] line-clamp-2 text-sm font-black leading-5 tracking-tight text-ink transition group-hover:text-primary sm:text-base sm:leading-6">{localizedTest.cardTitle ?? localizedTest.title}</h3>

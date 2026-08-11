@@ -41,24 +41,24 @@ export function SearchPageContent({ initialQuery, query, results, suggestions }:
           {results.length ? (
             <div className="test-card-grid mt-7">{results.map((test) => <TestCard key={test.slug} test={test} />)}</div>
           ) : (
-            <div className="mt-7 rounded-3xl border border-slate-200 bg-white px-6 py-14 text-center shadow-card">
+            <div className="paper-card mt-7 px-6 py-14 text-center">
               <span className="text-5xl">🔍</span>
               <h2 className="mt-5 text-xl font-black text-ink">{t("search.empty")}</h2>
               <p className="mt-2 text-sm leading-6 text-slate-500">{t("search.emptyDescription")}</p>
-              <Link href="/categories" className="mt-6 inline-flex min-h-12 items-center rounded-xl bg-slate-950 px-5 text-sm font-black text-white">{t("search.browseCategories")}</Link>
+              <Link href="/categories" className="paper-button mt-6 inline-flex min-h-12 items-center bg-ink px-5 text-sm font-black text-white">{t("search.browseCategories")}</Link>
             </div>
           )}
         </section>
       ) : (
         <section className="mt-10">
-          <div className="rounded-3xl border border-dashed border-slate-300 bg-white/70 px-6 py-10 text-center">
+          <div className="paper-card border-dashed px-6 py-10 text-center">
             <span className="text-5xl">✨</span>
             <h2 className="mt-4 text-xl font-black text-ink">{t("search.prompt")}</h2>
             <div className="mt-5 flex flex-wrap justify-center gap-2">
               {suggestedCategories.map((category) => {
                 const key = categoryKey(category);
                 return (
-                  <Link key={category} href={`/search?q=${encodeURIComponent(category)}`} className="rounded-full border border-slate-200 bg-white px-4 py-2 text-sm font-bold text-slate-600 hover:border-primary hover:text-primary">
+                  <Link key={category} href={`/search?q=${encodeURIComponent(category)}`} className="paper-button bg-[#fffdf6] px-4 py-2 text-sm font-bold text-slate-600 hover:text-primary">
                     {key ? t(key) : category}
                   </Link>
                 );

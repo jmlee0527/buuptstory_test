@@ -13,7 +13,7 @@ const links = [
 export function Footer() {
   const { t } = useLanguage();
   return (
-    <footer className="mt-20 border-t border-slate-200 bg-white">
+    <footer className="notebook-footer mt-20 border-t">
       <div className="container-page py-10">
         <div className="flex flex-col justify-between gap-7 sm:flex-row">
           <div>

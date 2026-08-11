@@ -8,12 +8,12 @@ export default {
   theme: {
     extend: {
       colors: {
-        primary: "#2563EB",
-        ink: "#0F172A",
-        surface: "#F8FAFC",
+        primary: "#4267A8",
+        ink: "#292929",
+        surface: "#FFFDF6",
       },
       boxShadow: {
-        card: "0 12px 36px -18px rgba(15, 23, 42, 0.20)",
+        card: "3px 4px 0 rgba(53, 53, 53, 0.08), 0 10px 24px -18px rgba(53, 53, 53, 0.28)",
       },
       keyframes: {
         "fade-up": {

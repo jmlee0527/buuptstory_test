@@ -13,7 +13,7 @@ export function LanguageSelector() {
         value={locale}
         onChange={(event) => setLocale(event.target.value as Locale)}
         aria-label={t("language.label")}
-        className="h-9 max-w-[6.4rem] appearance-none rounded-md border border-slate-200 bg-white py-1 pl-7 pr-6 text-[11px] font-semibold text-slate-600 outline-none transition hover:border-slate-300 focus:border-primary sm:max-w-none sm:text-xs"
+        className="h-9 max-w-[6.4rem] appearance-none rounded-sm border border-[#353535]/30 bg-[#FFFDF6] py-1 pl-7 pr-6 text-[11px] font-semibold text-slate-600 outline-none transition hover:border-[#4267A8] focus:border-primary sm:max-w-none sm:text-xs"
       >
         {localeOptions.map((option) => (
           <option key={option.value} value={option.value}>{option.label}</option>
