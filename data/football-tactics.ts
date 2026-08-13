@@ -2,9 +2,11 @@ import type { TestDefinition } from "@/lib/types";
 import lv2Questions from "@/data/question-banks/football-tactics-lv2.json";
 import lv3Questions from "@/data/question-banks/football-tactics-lv3.json";
 import lv4Questions from "@/data/question-banks/football-tactics-lv4.json";
+import lv5Questions from "@/data/question-banks/football-tactics-lv5.json";
 import distractorOverrides from "@/data/question-banks/football-tactics-distractors.json";
+import questionOverrides from "@/data/question-banks/football-tactics-question-overrides.json";
 
-export type FootballTacticsDifficulty = 2 | 3 | 4;
+export type FootballTacticsDifficulty = 2 | 3 | 4 | 5;
 
 export type FootballTacticsQuestion = {
   id: string;
@@ -35,16 +37,18 @@ const footballTacticsSourceQuestions = [
   ...lv2Questions,
   ...lv3Questions,
   ...lv4Questions,
+  ...lv5Questions,
 ] as FootballTacticsQuestion[];
 
 export const footballTacticsQuestions = footballTacticsSourceQuestions.map((question) => {
   const distractors = distractorOverrides[question.id as keyof typeof distractorOverrides];
-  if (!distractors) return question;
+  const upgradedQuestion = questionOverrides[question.id as keyof typeof questionOverrides] ?? question.question;
+  if (!distractors) return { ...question, question: upgradedQuestion };
   let distractorIndex = 0;
   const choices = question.choices.map((choice, index) => (
     index === question.correctAnswer ? choice : distractors[distractorIndex++]
   )) as FootballTacticsQuestion["choices"];
-  return { ...question, choices };
+  return { ...question, question: upgradedQuestion, choices };
 });
 
 export const footballTacticsGradeProfiles: FootballTacticsGradeProfile[] = [
@@ -135,12 +139,12 @@ export const footballTacticsTest: TestDefinition = {
     heading: "축잘알 퀴즈(전술편)란?",
     paragraphs: [
       "축잘알 퀴즈(전술편)는 선수 이름이나 우승 기록을 맞히는 상식 퀴즈가 아니라, 경기에서 나타나는 포메이션과 역할, 공간, 압박 구조를 얼마나 이해하는지 확인하는 무료 축구 전술 테스트입니다.",
-      "총 120문제의 문제은행에서 매번 10문제가 랜덤으로 출제됩니다. 일반 난이도 LV.2 3문제, 중급 LV.3 4문제, 상황 판단형 고급 LV.4 3문제로 구성되며, 각 오답도 실제 경기에서 고려할 법한 전술 선택지로 설계해 상황과 우선순위를 비교해야 풀 수 있습니다.",
+      "총 150문제의 문제은행 중 새로 추가한 최상위 LV.5 복합 상황형 30문제에서 매번 10문제가 랜덤으로 출제됩니다. 한 가지 전술 용어를 맞히는 방식이 아니라 상대 압박 구조, 선수 배치, 다음 패스와 공을 잃은 뒤의 위험까지 동시에 비교해야 하며, 모든 보기는 실제 경기에서 선택할 법한 대응으로 설계했습니다.",
       "빌드업과 압박 회피, 하프스페이스, 오버로드, 제3자 움직임, 인버티드 풀백, False 9, 레스트 디펜스와 경기 상황별 판단까지 폭넓게 다룹니다. 결과 화면에서는 틀린 문제의 정답과 전술 원리를 설명하는 해설을 함께 확인할 수 있습니다.",
       "문제의 용어와 원리는 FIFA Training Centre 및 UEFA Performance Analysis·Technical Reports의 공개 자료를 중심으로 검토했습니다. 특정 감독의 철학을 절대적인 정답으로 두지 않고, 문제에 제시된 조건에서 가장 명확한 전술 원리를 묻습니다.",
     ],
     faqs: [
-      ["몇 문제가 출제되나요?", "120문제의 문제은행에서 LV.2 3문제, LV.3 4문제, LV.4 3문제를 뽑아 총 10문제가 출제됩니다."],
+      ["몇 문제가 출제되나요?", "총 150문제의 문제은행 가운데 LV.5 복합 상황형 30문제에서 10개의 최상위 난도 문제가 랜덤 출제됩니다."],
       ["문제는 다시 할 때 달라지나요?", "네. 매번 난이도별 문제를 무작위로 선택하며 최근에 풀었던 문제를 우선 제외해 새로운 조합이 나오도록 구성했습니다."],
       ["점수는 어떻게 계산하나요?", "난이도 가중치 없이 맞힌 문제 수를 그대로 계산해 0점부터 10점까지 표시합니다."],
       ["어떤 전술이 정답인지 논란이 생기지 않나요?", "상황형 문제에는 압박 방식, 선수 위치, 가능한 패스 조건을 구체적으로 제시하고 해당 조건에서 정답 하나가 분명하도록 검수했습니다."],

@@ -21,6 +21,7 @@ const difficultyStyles = {
   2: "border-emerald-200 bg-emerald-50 text-emerald-800",
   3: "border-amber-200 bg-amber-50 text-amber-800",
   4: "border-rose-200 bg-rose-50 text-rose-800",
+  5: "border-violet-300 bg-violet-50 text-violet-900",
 } as const;
 
 export function FootballTacticsTestPage() {
@@ -112,7 +113,7 @@ export function FootballTacticsTestPage() {
 
         <div className="mt-5 flex items-center justify-between gap-4">
           <button type="button" onClick={() => setIndex((currentIndex) => Math.max(currentIndex - 1, 0))} disabled={index === 0 || !current || locked} className="paper-button min-h-12 bg-[#fffdf6] px-4 text-sm font-bold text-slate-500 disabled:cursor-not-allowed disabled:opacity-30">← 이전 문제</button>
-          <p className="text-right text-[11px] leading-5 text-slate-400">LV.2·LV.3·LV.4 문제은행에서 매번 랜덤 출제됩니다.<br />응답은 서버에 저장되지 않습니다.</p>
+          <p className="text-right text-[11px] leading-5 text-slate-400">LV.5 복합 상황형 최상위 문제만 출제됩니다.<br />응답은 서버에 저장되지 않습니다.</p>
         </div>
       </div>
     </main>

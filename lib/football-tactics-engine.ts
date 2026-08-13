@@ -9,9 +9,9 @@ import {
 } from "@/data/football-tactics";
 
 export const FOOTBALL_TACTICS_QUIZ_SIZE = 10;
-export const FOOTBALL_TACTICS_QUOTAS: Record<FootballTacticsDifficulty, number> = { 2: 3, 3: 4, 4: 3 };
+export const FOOTBALL_TACTICS_QUOTAS: Record<FootballTacticsDifficulty, number> = { 2: 0, 3: 0, 4: 0, 5: 10 };
 const RECENT_STORAGE_KEY = "mimi-football-tactics-recent";
-const RECENT_LIMIT = 72;
+const RECENT_LIMIT = 20;
 
 export function shuffleFootballTactics<T>(items: readonly T[]): T[] {
   const result = [...items];
@@ -23,7 +23,7 @@ export function shuffleFootballTactics<T>(items: readonly T[]): T[] {
 }
 
 export function pickFootballTacticsQuestions(recentIds: string[] = []): FootballTacticsQuestion[] {
-  const picked = ([2, 3, 4] as FootballTacticsDifficulty[]).flatMap((difficulty) => {
+  const picked = ([2, 3, 4, 5] as FootballTacticsDifficulty[]).flatMap((difficulty) => {
     const pool = footballTacticsQuestions.filter((question) => question.difficulty === difficulty);
     const fresh = pool.filter((question) => !recentIds.includes(question.id));
     const quota = FOOTBALL_TACTICS_QUOTAS[difficulty];
