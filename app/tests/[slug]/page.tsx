@@ -35,6 +35,7 @@ import { ConvenienceStoreTestPage } from "@/components/test/ConvenienceStoreTest
 import { SnsTypeTestPage } from "@/components/test/SnsTypeTestPage";
 import { BurgerBrandTestPage } from "@/components/test/BurgerBrandTestPage";
 import { StandardTestLanding } from "@/components/test/StandardTestLanding";
+import { IceCreamPersonalityTestPage } from "@/components/test/IceCreamPersonalityTestPage";
 import { FanQuizLanding } from "@/components/fan-quiz/FanQuizLanding";
 import { ArsenalFanQuizTestPage } from "@/components/test/ArsenalFanQuizTestPage";
 import { YoungtakFanQuizTestPage } from "@/components/test/YoungtakFanQuizTestPage";
@@ -129,6 +130,7 @@ export default async function TestDetailPage({ params, searchParams }: Props) {
   const isBurgerTest = test.slug === "burger-brand-test";
   const isWizardCharacter = test.slug === "harry-potter-character-test";
   const isCoffeeBrand = test.slug === "coffee-brand-test";
+  const isIceCreamPersonality = test.slug === "icecream-personality-test";
   const isLoverFruit = test.slug === "lover-fruit-test";
   const isSelfEsteem = test.slug === "self-esteem-test";
   const isAdhdScreening = test.slug === "adhd-self-check";
@@ -216,6 +218,8 @@ export default async function TestDetailPage({ params, searchParams }: Props) {
   if (isArsenalFan && start !== "1") return <FanQuizLanding test={test} insight="나는 아스날을 얼마나 잘 알고 있을까요? 선수와 감독, 우승 기록, 홈구장, 유럽대항전, 역사적인 경기까지 총 15개의 문제를 풀고 나의 아스날 팬 지수를 확인해 보세요. 문제은행은 50문항 이상으로 구성되어 있으며, 매번 새로운 조합으로 무작위 출제됩니다. 본 테스트는 아스날 FC 또는 프리미어리그의 공식 서비스가 아닌 비공식 팬 퀴즈입니다." />;
   if (isLoverFruit && start !== "1") return <StandardTestLanding test={test} insight="연인의 행동을 떠올리며 14가지 연애 상황에 답하면 애정 표현, 안정감, 독립성, 배려심, 유머감각, 감성, 리더십, 모험심, 책임감, 로맨틱함, 친화력, 솔직함을 함께 분석합니다. 단순한 과일 취향이 아니라 연인이 갈등을 풀고 마음을 표현하며 관계의 속도를 맞추는 방식을 20개 과일 성격 프로필과 비교해 가장 닮은 과일 유형을 찾아드려요." />;
   if (isCoffeeBrand && start !== "1") return <StandardTestLanding test={test} insight="휴일, 여행, 선물, 일과 인간관계처럼 익숙한 10가지 상황에서 고른 답으로 트렌디함, 감성, 현실성, 합리성, 여유, 활동성, 독립성, 친화력, 도전성, 안정성, 창의성과 프리미엄 지향을 함께 분석합니다. 단순히 좋아하는 메뉴를 맞히는 대신 생활 리듬과 소비 기준의 전체 조합을 15개 커피 브랜드 이미지와 비교해 가장 어울리는 결과를 찾아드려요." />;
+  if (isIceCreamPersonality && start !== "1") return <StandardTestLanding test={test} insight="좋아하는 맛을 직접 묻지 않고 낯선 모임, 여행 계획, 친구와의 대화, 새로운 취미처럼 자연스러운 12가지 상황을 살펴봅니다. 선택마다 사교성, 도전성, 감정표현, 계획성, 친화력, 개성도가 서로 다른 비율로 반영되며, 완성된 6개 성향 벡터를 30가지 아이스크림 캐릭터와 비교해 가장 가까운 결과를 찾습니다. 결과는 랜덤으로 정해지지 않으며 인간관계, 연애, 숨은 모습과 아이스크림 케미까지 확인할 수 있어요." />;
+  if (isIceCreamPersonality && start === "1") return <IceCreamPersonalityTestPage />;
   if (isBurgerTest && start === "1") return <BurgerBrandTestPage />;
   if (isSnsTest && start === "1") return <SnsTypeTestPage />;
   if (isCvsTest && start === "1") return <ConvenienceStoreTestPage />;
