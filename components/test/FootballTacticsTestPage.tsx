@@ -80,7 +80,7 @@ export function FootballTacticsTestPage() {
 
         {!current ? (
           <section className="paper-card grid min-h-72 place-items-center p-10" aria-busy="true">
-            <div className="text-center"><span className="text-5xl" aria-hidden="true">🧠⚽</span><p className="mt-4 text-sm font-bold text-slate-500">문제은행에서 오늘의 12문제를 뽑는 중...</p></div>
+            <div className="text-center"><span className="text-5xl" aria-hidden="true">🧠⚽</span><p className="mt-4 text-sm font-bold text-slate-500">문제은행에서 오늘의 10문제를 뽑는 중...</p></div>
           </section>
         ) : (
           <AnimatePresence mode="wait">

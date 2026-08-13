@@ -7,11 +7,23 @@ const files = [
   "data/question-banks/football-tactics-lv3.json",
   "data/question-banks/football-tactics-lv4.json",
 ];
-const questions = files.flatMap((file) => JSON.parse(fs.readFileSync(path.join(root, file), "utf8")));
+const sourceQuestions = files.flatMap((file) => JSON.parse(fs.readFileSync(path.join(root, file), "utf8")));
+const distractorOverrides = JSON.parse(fs.readFileSync(path.join(root, "data/question-banks/football-tactics-distractors.json"), "utf8"));
+const questions = sourceQuestions.map((question) => {
+  const distractors = distractorOverrides[question.id];
+  if (!Array.isArray(distractors) || distractors.length !== 3) throw new Error(`${question.id}: 근접 오답 3개가 필요합니다`);
+  let distractorIndex = 0;
+  return {
+    ...question,
+    choices: question.choices.map((choice, index) => index === question.correctAnswer ? choice : distractors[distractorIndex++]),
+  };
+});
 const expectedCounts = { 2: 36, 3: 54, 4: 30 };
-const quotas = { 2: 4, 3: 5, 4: 3 };
+const quotas = { 2: 3, 3: 4, 4: 3 };
+const obviousDistractorPattern = /관중석|공이 자동|손으로 공|골문 뒤|골키퍼 뒤|터치라인 밖|규칙상 (?:금지|불가능)|교체 횟수|공의 크기/;
 
 if (questions.length !== 120) throw new Error(`축구 전술 문제은행은 120문제여야 합니다: ${questions.length}`);
+if (Object.keys(distractorOverrides).length !== questions.length) throw new Error(`근접 오답 세트는 문항마다 하나씩 있어야 합니다: ${Object.keys(distractorOverrides).length}`);
 const ids = new Set();
 for (const question of questions) {
   if (ids.has(question.id)) throw new Error(`중복 문항 ID: ${question.id}`);
@@ -21,6 +33,7 @@ for (const question of questions) {
   if (typeof question.question !== "string" || question.question.trim().length < 12) throw new Error(`${question.id}: 질문이 너무 짧거나 비어 있음`);
   if (!Array.isArray(question.choices) || question.choices.length !== 4) throw new Error(`${question.id}: 선택지는 정확히 4개여야 함`);
   if (new Set(question.choices).size !== 4 || question.choices.some((choice) => typeof choice !== "string" || !choice.trim())) throw new Error(`${question.id}: 선택지 중복 또는 공백`);
+  if (question.choices.some((choice, index) => index !== question.correctAnswer && obviousDistractorPattern.test(choice))) throw new Error(`${question.id}: 너무 쉽게 제거할 수 있는 오답 표현`);
   if (!Number.isInteger(question.correctAnswer) || question.correctAnswer < 0 || question.correctAnswer > 3) throw new Error(`${question.id}: 올바르지 않은 정답 인덱스`);
   if (typeof question.explanation !== "string" || question.explanation.split(/[.!?]\s|[.!?]$/).filter(Boolean).length < 2) throw new Error(`${question.id}: 해설은 최소 2문장이어야 함`);
   if (typeof question.sourceNote !== "string" || !question.sourceNote.trim()) throw new Error(`${question.id}: sourceNote 누락`);
@@ -44,16 +57,16 @@ function shuffle(items) {
 const sessionSignatures = new Set();
 for (let simulation = 0; simulation < 1000; simulation += 1) {
   const selected = [2, 3, 4].flatMap((difficulty) => shuffle(questions.filter((question) => question.difficulty === difficulty)).slice(0, quotas[difficulty]));
-  if (selected.length !== 12 || new Set(selected.map((question) => question.id)).size !== 12) throw new Error("12문제 세션 중복 또는 수량 오류");
+  if (selected.length !== 10 || new Set(selected.map((question) => question.id)).size !== 10) throw new Error("10문제 세션 중복 또는 수량 오류");
   for (const [difficulty, quota] of Object.entries(quotas)) {
     if (selected.filter((question) => question.difficulty === Number(difficulty)).length !== quota) throw new Error(`세션 LV.${difficulty} 할당 오류`);
   }
   sessionSignatures.add(selected.map((question) => question.id).sort().join(","));
 }
 
-const gradeRanges = [[0, 3], [4, 6], [7, 8], [9, 10], [11, 11], [12, 12]];
-for (let score = 0; score <= 12; score += 1) {
+const gradeRanges = [[0, 2], [3, 4], [5, 6], [7, 8], [9, 9], [10, 10]];
+for (let score = 0; score <= 10; score += 1) {
   if (gradeRanges.filter(([min, max]) => score >= min && score <= max).length !== 1) throw new Error(`${score}점 결과 등급 경계 오류`);
 }
 
-console.log(JSON.stringify({ questions: questions.length, difficulty: difficultyCounts, quota: quotas, simulations: 1000, uniqueSessions: sessionSignatures.size, scoreRange: "0-12 PASS", status: "PASS" }, null, 2));
+console.log(JSON.stringify({ questions: questions.length, curatedDistractorSets: Object.keys(distractorOverrides).length, difficulty: difficultyCounts, quota: quotas, simulations: 1000, uniqueSessions: sessionSignatures.size, scoreRange: "0-10 PASS", status: "PASS" }, null, 2));

@@ -24,8 +24,8 @@ export async function generateMetadata({ params, searchParams }: Props): Promise
   const result = answers ? calculateFootballTacticsResult(answers) : null;
   const effectiveGrade = result?.grade ?? grade;
   return createMetadata({
-    title: result ? `축잘알 퀴즈(전술편) ${result.score}/12점, ${effectiveGrade.name}` : `${grade.name} | 축잘알 퀴즈(전술편) 결과`,
-    description: `${effectiveGrade.summary} 포메이션, 빌드업, 압박과 공간 활용을 12문제로 확인한 축잘알 퀴즈(전술편) 결과입니다.`,
+    title: result ? `축잘알 퀴즈(전술편) ${result.score}/10점, ${effectiveGrade.name}` : `${grade.name} | 축잘알 퀴즈(전술편) 결과`,
+    description: `${effectiveGrade.summary} 포메이션, 빌드업, 압박과 공간 활용을 10문제로 확인한 축잘알 퀴즈(전술편) 결과입니다.`,
     path: `/football-tactics-test/result/${grade.slug}`,
     keywords: ["축구 전술 테스트", "축잘알 테스트", "축구 전술 퀴즈", "축구 지식 테스트", effectiveGrade.name],
   });
@@ -43,7 +43,7 @@ export default async function FootballTacticsResultPage({ params, searchParams }
 
   return (
     <>
-      <FootballTacticsResult grade={effectiveGrade} score={result?.score ?? null} total={result?.total ?? 12} wrong={result?.wrong ?? []} encodedAnswers={result ? r ?? null : null} />
+      <FootballTacticsResult grade={effectiveGrade} score={result?.score ?? null} total={result?.total ?? 10} wrong={result?.wrong ?? []} encodedAnswers={result ? r ?? null : null} />
       <JsonLd data={{
         "@context": "https://schema.org",
         "@type": "WebPage",

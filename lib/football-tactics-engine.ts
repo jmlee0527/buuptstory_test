@@ -8,8 +8,8 @@ import {
   type FootballTacticsQuestion,
 } from "@/data/football-tactics";
 
-export const FOOTBALL_TACTICS_QUIZ_SIZE = 12;
-export const FOOTBALL_TACTICS_QUOTAS: Record<FootballTacticsDifficulty, number> = { 2: 4, 3: 5, 4: 3 };
+export const FOOTBALL_TACTICS_QUIZ_SIZE = 10;
+export const FOOTBALL_TACTICS_QUOTAS: Record<FootballTacticsDifficulty, number> = { 2: 3, 3: 4, 4: 3 };
 const RECENT_STORAGE_KEY = "mimi-football-tactics-recent";
 const RECENT_LIMIT = 72;
 

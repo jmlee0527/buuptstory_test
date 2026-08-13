@@ -222,7 +222,7 @@ export default async function TestDetailPage({ params, searchParams }: Props) {
   if (isReactionTime && start === "1") return <ReactionTimeTestPage />;
   if (isFootballQuiz && start === "1") return <FootballQuizTestPage />;
   if (isFootballTactics && start === "1") return <FootballTacticsTestPage />;
-  if (isFootballTactics) return <StandardTestLanding test={test} answerType="4지선다" insight="포메이션과 포지션 역할부터 빌드업, 압박과 압박 회피, 하프스페이스, 수적·위치적 우위, 제3자 움직임, 공격과 수비 전환까지 실제 경기에서 나타나는 전술 원리를 12문제로 확인합니다. 120문제 은행에서 LV.2 4문제, LV.3 5문제, LV.4 3문제가 매번 랜덤 출제되며 난이도 가중치 없이 정답 개수를 0~12점으로 계산합니다. 결과에서는 틀린 문제의 정답과 전술 해설, 검토 자료 범주를 함께 확인할 수 있습니다." />;
+  if (isFootballTactics) return <StandardTestLanding test={test} answerType="4지선다" insight="포메이션과 포지션 역할부터 빌드업, 압박과 압박 회피, 하프스페이스, 수적·위치적 우위, 제3자 움직임, 공격과 수비 전환까지 실제 경기에서 나타나는 전술 원리를 10문제로 확인합니다. 120문제 은행에서 LV.2 3문제, LV.3 4문제, LV.4 3문제가 매번 랜덤 출제되며, 실제 전술 선택지와 비슷하게 설계한 근접 오답을 비교해야 합니다. 난이도 가중치 없이 정답 개수를 0~10점으로 계산하고 결과에서 정답과 전술 해설, 검토 자료 범주를 확인할 수 있습니다." />;
   if (isWorldCupWinnerQuiz && start === "1") return <WorldCupWinnerQuizTestPage />;
   if (isYoungtakFan && start === "1") return <YoungtakFanQuizTestPage />;
   if (isLimYoungWoongFan && start === "1") return <LimYoungWoongFanQuizTestPage />;
