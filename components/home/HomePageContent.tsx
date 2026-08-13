@@ -13,9 +13,11 @@ type Props = {
   popularFanTests: TestDefinition[];
   newTests: TestDefinition[];
   personalityTests: TestDefinition[];
+  relationshipTests: TestDefinition[];
+  workTests: TestDefinition[];
 };
 
-export function HomePageContent({ popularFanTests, newTests, personalityTests }: Props) {
+export function HomePageContent({ popularFanTests, newTests, personalityTests, relationshipTests, workTests }: Props) {
   const { t } = useLanguage();
   return (
     <>
@@ -67,18 +69,34 @@ export function HomePageContent({ popularFanTests, newTests, personalityTests }:
           <div className="test-card-grid mt-7">{personalityTests.map((test) => <TestCard key={test.slug} test={test} />)}</div>
         </SectionReveal>
       </section>
+
+      <section className="notebook-section-soft border-y">
+        <div className="container-page py-12 sm:py-16">
+          <SectionReveal>
+            <SectionHeader eyebrow="LOVE & RELATIONSHIPS" title="연애·관계 테스트" description="애착, 연애 성향과 소통 방식처럼 가까운 관계에서 반복되는 패턴을 가볍게 살펴보세요." href={`/category/${encodeURIComponent("연애.관계")}`} />
+            <div className="test-card-grid mt-7">{relationshipTests.map((test) => <TestCard key={test.slug} test={test} />)}</div>
+          </SectionReveal>
+        </div>
+      </section>
+
+      <section className="container-page py-12 sm:py-16">
+        <SectionReveal>
+          <SectionHeader eyebrow="WORK & DAILY LIFE" title="직장·일상 테스트" description="업무 스타일, 직무 스트레스와 생활 속 선택 경향을 확인할 수 있는 테스트를 모았습니다." href={`/category/${encodeURIComponent("직업.일상")}`} />
+          <div className="test-card-grid mt-7">{workTests.map((test) => <TestCard key={test.slug} test={test} />)}</div>
+        </SectionReveal>
+      </section>
     </>
   );
 }
 
-function SectionHeader({ eyebrow, titleKey, descriptionKey, href }: { eyebrow: string; titleKey: TranslationKey; descriptionKey: TranslationKey; href?: string }) {
+function SectionHeader({ eyebrow, titleKey, descriptionKey, title, description, href }: { eyebrow: string; titleKey?: TranslationKey; descriptionKey?: TranslationKey; title?: string; description?: string; href?: string }) {
   const { t } = useLanguage();
   return (
     <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
       <div>
         <p className="text-sm font-black text-primary">{eyebrow}</p>
-        <h2 className="mt-2 text-2xl font-black tracking-tight text-ink sm:text-3xl">{t(titleKey)}</h2>
-        <p className="mt-3 max-w-2xl text-sm leading-6 text-slate-600 sm:text-base">{t(descriptionKey)}</p>
+        <h2 className="mt-2 text-2xl font-black tracking-tight text-ink sm:text-3xl">{titleKey ? t(titleKey) : title}</h2>
+        <p className="mt-3 max-w-2xl text-sm leading-6 text-slate-600 sm:text-base">{descriptionKey ? t(descriptionKey) : description}</p>
       </div>
       {href && <Link href={href} className="paper-button w-fit shrink-0 bg-[#fffdf6] px-4 py-2 text-sm font-bold text-slate-600 hover:text-primary">{t("common.more")}</Link>}
     </div>

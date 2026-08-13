@@ -1,8 +1,12 @@
 import Link from "next/link";
-import { getArticlesForTest } from "@/data/articles";
+import { getArticle, getArticlesForTest } from "@/data/articles";
+import { getDiscoveryMetadata } from "@/data/test-discovery";
+import { getTest } from "@/data/tests";
 
 export function RelatedArticlesForTest({ testSlug }: { testSlug: string }) {
-  const related = getArticlesForTest(testSlug);
+  const test = getTest(testSlug);
+  const explicit = test ? (getDiscoveryMetadata(test).relatedArticles ?? []).map(getArticle).filter((article) => article !== undefined) : [];
+  const related = [...explicit, ...getArticlesForTest(testSlug)].filter((article, index, all) => all.findIndex((item) => item.slug === article.slug) === index).slice(0, 4);
   if (!related.length) return null;
   return (
     <section className="paper-card mx-auto mt-8 max-w-3xl p-6 sm:p-8" aria-labelledby="related-articles-title">

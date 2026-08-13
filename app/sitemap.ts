@@ -2,6 +2,7 @@ import type { MetadataRoute } from "next";
 import { tests } from "@/data/tests";
 import { absoluteUrl } from "@/lib/site";
 import { articleCategories, articles } from "@/data/articles";
+import { getDiscoveryMetadata } from "@/data/test-discovery";
 
 type SitemapEntry = MetadataRoute.Sitemap[number];
 
@@ -25,11 +26,15 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: absoluteUrl("/terms"), changeFrequency: "yearly", priority: 0.3 },
   ];
 
-  const testRoutes: MetadataRoute.Sitemap = tests.map((test) => ({
-    url: absoluteUrl(test.href ?? `/tests/${test.slug}`),
-    changeFrequency: test.type === "fortune" ? "daily" : test.category === "팬 퀴즈" ? "weekly" : "monthly",
-    priority: test.category === "팬 퀴즈" ? 0.85 : 0.8,
-  }));
+  const testRoutes: MetadataRoute.Sitemap = tests.map((test) => {
+    const createdAt = getDiscoveryMetadata(test).createdAt;
+    return {
+      url: absoluteUrl(test.href ?? `/tests/${test.slug}`),
+      ...(createdAt ? { lastModified: new Date(createdAt) } : {}),
+      changeFrequency: test.type === "fortune" ? "daily" : test.category === "팬 퀴즈" ? "weekly" : "monthly",
+      priority: test.category === "팬 퀴즈" ? 0.85 : 0.8,
+    };
+  });
 
   const categoryRoutes: MetadataRoute.Sitemap = [
     ...new Set(tests.map((test) => test.category)),

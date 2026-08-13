@@ -75,8 +75,22 @@ export type TestDefinition = {
   resultSlugs: string[];
   seoTitle?: string;
   seoDescription?: string;
+  /** 화면 제목과 분리해 점진적으로 적용하는 검색 메타데이터입니다. */
+  seo?: {
+    title?: string;
+    description?: string;
+    keywords?: string[];
+  };
   keywords?: string[];
   seoContent?: TestSeoContent;
+  /** 정적 콘텐츠 탐색용 메타데이터입니다. 값이 없어도 카테고리 기반 fallback이 동작합니다. */
+  tags?: string[];
+  relatedTests?: string[];
+  relatedArticles?: string[];
+  createdAt?: string;
+  popularRank?: number;
+  series?: string;
+  disclaimer?: string;
   participants: number;
   accent: "blue" | "orange" | "pink" | "purple" | "green" | "indigo" | "teal";
   fanTheme?: FanQuizThemeId;

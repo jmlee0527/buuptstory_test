@@ -37,14 +37,14 @@ export function getFanQuizEntityName(test: TestDefinition) {
 }
 
 export function getTestSeoTitle(test: TestDefinition) {
-  const title = test.seoTitle ?? test.title;
+  const title = test.seo?.title ?? test.seoTitle ?? test.title;
   if (!isFanQuizTest(test) || !hasFandomSearchIntent(test) || /(팬\s?퀴즈|진성팬\s*테스트)/u.test(title)) return title;
 
   return `${getFanQuizEntityName(test)} 팬퀴즈 | ${test.shortTitle}`;
 }
 
 export function getTestSeoDescription(test: TestDefinition) {
-  const description = test.seoDescription ?? test.description;
+  const description = test.seo?.description ?? test.seoDescription ?? test.description;
   if (!isFanQuizTest(test) || !hasFandomSearchIntent(test) || /(팬\s?퀴즈|진성팬\s*테스트)/u.test(description)) return description;
 
   const summary = test.description.replace(/[.!?。！？]\s*$/u, "");
@@ -53,6 +53,7 @@ export function getTestSeoDescription(test: TestDefinition) {
 
 export function getTestSeoKeywords(test: TestDefinition) {
   const keywords = [
+    ...(test.seo?.keywords ?? []),
     ...(test.keywords ?? []),
     test.shortTitle,
     test.title,

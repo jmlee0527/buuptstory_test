@@ -2,6 +2,7 @@ import { JsonLd } from "@/components/seo/JsonLd";
 import { HomePageContent } from "@/components/home/HomePageContent";
 import { HomeEditorialContent } from "@/components/home/HomeEditorialContent";
 import { tests } from "@/data/tests";
+import { getNewestTests, getPopularTests } from "@/lib/test-discovery";
 import { absoluteUrl, createMetadata, siteConfig } from "@/lib/site";
 
 export const metadata = createMetadata({
@@ -12,19 +13,19 @@ export const metadata = createMetadata({
   keywords: ["무료 테스트", "성향 테스트", "종합 테스트", "심리 테스트", "연애 테스트", "팬 퀴즈"],
 });
 
-const rankedTests = [...tests].sort((a, b) => b.participants - a.participants);
-const popularFanTests = rankedTests.filter((test) => test.category === "팬 퀴즈").slice(0, 8);
-const newTests = tests.filter((test) => test.isNew).slice(0, 4);
-const personalityTests = tests.filter((test) => test.category === "성격.심리").slice(0, 4);
-const homeVisibleTests = [...popularFanTests, ...newTests, ...personalityTests];
+const popularFanTests = getPopularTests(tests, { category: "팬 퀴즈", limit: 8 });
+const newTests = getNewestTests(tests, { limit: 4 });
+const personalityTests = getPopularTests(tests, { category: "성격.심리", limit: 4 });
+const relationshipTests = getPopularTests(tests, { category: "연애.관계", limit: 4 });
+const workTests = getPopularTests(tests, { category: "직업.일상", limit: 4 });
+const homeVisibleTests = [...popularFanTests, ...newTests, ...personalityTests, ...relationshipTests, ...workTests];
 
 export default function HomePage() {
   return (
     <>
-      <HomePageContent popularFanTests={popularFanTests} newTests={newTests} personalityTests={personalityTests} />
+      <HomePageContent popularFanTests={popularFanTests} newTests={newTests} personalityTests={personalityTests} relationshipTests={relationshipTests} workTests={workTests} />
       <HomeEditorialContent />
 
-      <JsonLd data={{ "@context": "https://schema.org", "@type": "FAQPage", mainEntity: [{ "@type": "Question", name: "테스트는 무료인가요?", acceptedAnswer: { "@type": "Answer", text: "네, 모든 테스트는 회원가입 없이 무료로 이용할 수 있습니다." } }, { "@type": "Question", name: "결과는 어떻게 계산하나요?", acceptedAnswer: { "@type": "Answer", text: "각 답변을 테스트별 성향 가중치와 비교해 가장 가까운 결과를 제공합니다." } }] }} />
       <JsonLd data={{
         "@context": "https://schema.org",
         "@type": "WebSite",
