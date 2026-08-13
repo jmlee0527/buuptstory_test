@@ -5,7 +5,7 @@
   "scripts": {
     "predev": "node scripts/sync-ads-txt.mjs",
     "dev": "next dev --turbopack",
-    "prebuild": "node scripts/sync-ads-txt.mjs && node scripts/validate-i18n.mjs && node scripts/validate-football-tactics.mjs && node scripts/validate-youngtak-song-quiz.mjs && node scripts/validate-limyoungwoong-song-quiz.mjs && node scripts/validate-jungkook-fan.mjs && node scripts/validate-lionel-messi-fan.mjs && node scripts/validate-interpersonal-ability.mjs && node scripts/validate-relationship-satisfaction.mjs && node scripts/validate-ego-resilience.mjs && node scripts/validate-workaholic.mjs && node scripts/validate-job-stress.mjs && node scripts/validate-stray-kids-fan.mjs && node scripts/validate-manchester-united-fan.mjs && node scripts/validate-ateez-fan.mjs && node scripts/validate-rescene-fan.mjs && node scripts/validate-girls-generation-fan.mjs && node scripts/validate-bigbang-fan.mjs && node scripts/validate-nct-dream-fan.mjs && node scripts/validate-work-persona.mjs && node scripts/validate-turnover-intention.mjs && node scripts/validate-feedback.mjs",
+    "prebuild": "node scripts/sync-ads-txt.mjs && node scripts/validate-i18n.mjs && node scripts/validate-menhera-test.mjs && node scripts/validate-football-tactics.mjs && node scripts/validate-youngtak-song-quiz.mjs && node scripts/validate-limyoungwoong-song-quiz.mjs && node scripts/validate-jungkook-fan.mjs && node scripts/validate-lionel-messi-fan.mjs && node scripts/validate-interpersonal-ability.mjs && node scripts/validate-relationship-satisfaction.mjs && node scripts/validate-ego-resilience.mjs && node scripts/validate-workaholic.mjs && node scripts/validate-job-stress.mjs && node scripts/validate-stray-kids-fan.mjs && node scripts/validate-manchester-united-fan.mjs && node scripts/validate-ateez-fan.mjs && node scripts/validate-rescene-fan.mjs && node scripts/validate-girls-generation-fan.mjs && node scripts/validate-bigbang-fan.mjs && node scripts/validate-nct-dream-fan.mjs && node scripts/validate-work-persona.mjs && node scripts/validate-turnover-intention.mjs && node scripts/validate-feedback.mjs",
     "build": "next build",
     "sync:ads": "node scripts/sync-ads-txt.mjs",
     "generate:favicon": "node scripts/generate-favicon.mjs",
@@ -35,6 +35,7 @@
     "validate:limyoungwoong-song-quiz": "node scripts/validate-limyoungwoong-song-quiz.mjs",
     "validate:i18n": "node scripts/validate-i18n.mjs",
     "validate:football-tactics": "node scripts/validate-football-tactics.mjs",
+    "validate:menhera": "node scripts/validate-menhera-test.mjs",
     "i18n:extract": "node scripts/extract-content-i18n.mjs",
     "i18n:translate:en": "python3 scripts/translate-content-i18n.py --locale en",
     "i18n:translate:ja": "python3 scripts/translate-content-i18n.py --locale ja",

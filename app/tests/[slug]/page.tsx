@@ -18,6 +18,7 @@ import { BurnoutTestPage } from "@/components/test/BurnoutTestPage";
 import { ConsumerStyleTestPage } from "@/components/test/ConsumerStyleTestPage";
 import { LoveMbtiTestPage } from "@/components/test/LoveMbtiTestPage";
 import { JealousyTestPage } from "@/components/test/JealousyTestPage";
+import { MenheraTestPage } from "@/components/test/MenheraTestPage";
 import { RelationshipSatisfactionLanding } from "@/components/test/RelationshipSatisfactionLanding";
 import { RelationshipSatisfactionTestPage } from "@/components/test/RelationshipSatisfactionTestPage";
 import { InterpersonalAbilityLanding } from "@/components/test/InterpersonalAbilityLanding";
@@ -104,6 +105,7 @@ export default async function TestDetailPage({ params, searchParams }: Props) {
   const isConsumerStyle = test.slug === "consumer-style-test";
   const isLoveMbti = test.slug === "love-mbti-test";
   const isJealousy = test.slug === "jealousy-test";
+  const isMenhera = test.slug === "menhera-test";
   const isRelationshipSatisfaction = test.slug === "relationship-satisfaction-test";
   const isInterpersonalAbility = test.slug === "interpersonal-ability-test";
   const isLoverScore = test.slug === "lover-score-test";
@@ -231,13 +233,15 @@ export default async function TestDetailPage({ params, searchParams }: Props) {
   if (isConsumerStyle && start === "1") return <ConsumerStyleTestPage />;
   if (isLoveMbti && start === "1") return <LoveMbtiTestPage />;
   if (isJealousy && start === "1") return <JealousyTestPage />;
+  if (isMenhera && start === "1") return <MenheraTestPage />;
+  if (isMenhera) return <StandardTestLanding test={test} answerType="4지선다" insight="연애·썸·친구·SNS·연락·약속·갈등처럼 자연스러운 관계 상황에서 내가 선택할 반응을 살펴봅니다. 200문제 은행은 관계 불안, 애정 확인 욕구, 과해석·반추, 질투·관계 독점성, 감정 의존·관계 과몰입 5개 영역별 40문항으로 구성되며, 매번 각 영역에서 정확히 2문항씩 총 10문항을 출제합니다. 선택지의 점수 순서가 섞여 있고 일부 문항은 역채점됩니다. 결과의 0~100% 멘헤라 지수와 Lv.1~Lv.10은 좋고 나쁨이나 능력이 아닌 성향 강도이며 정신건강 진단을 의미하지 않습니다." />;
   if (isAttachmentStyle && start === "1") return <AttachmentStyleTestPage />;
   if (isMentalAge && start === "1") return <MentalAgeTestPage />;
   if (isYoungOld && start === "1") return <YoungOldTestPage />;
   if (start === "1" && (!isMarriageTiming || currentAge)) return <div className="container-page py-8 sm:py-12"><TestRunner test={test} currentAge={currentAge ?? undefined} /></div>;
 
   const itemCount=test.itemCount??test.questions.length;
-  const answerType=test.type==="likert"||isBurnoutRisk||isBigFive?"5점 척도":isKkondaePower||isEnneagram||isEqTest||isFootballQuiz||isFootballTactics||isWorldCupWinnerQuiz||isYoungtakFan||isYoungtakSongQuiz||isLimYoungWoongFan||isLimYoungWoongSongQuiz||isJealousy||isSbti||isCvsTest||isSnsTest||isWizardCharacter||isCoffeeBrand||isLoverFruit||isSelfEsteem||isMentalAge||isYoungOld?"4지선다":isJoseonDestiny||isPersonalityCountry||isLoverScore||isColorPersonality||isMbti?"2지선다":"O/X";
+  const answerType=test.type==="likert"||isBurnoutRisk||isBigFive?"5점 척도":isKkondaePower||isEnneagram||isEqTest||isFootballQuiz||isFootballTactics||isWorldCupWinnerQuiz||isYoungtakFan||isYoungtakSongQuiz||isLimYoungWoongFan||isLimYoungWoongSongQuiz||isJealousy||isMenhera||isSbti||isCvsTest||isSnsTest||isWizardCharacter||isCoffeeBrand||isLoverFruit||isSelfEsteem||isMentalAge||isYoungOld?"4지선다":isJoseonDestiny||isPersonalityCountry||isLoverScore||isColorPersonality||isMbti?"2지선다":"O/X";
   const seoTitle = getTestSeoTitle(test);
   const seoDescription = getTestSeoDescription(test);
   const seoKeywords = getTestSeoKeywords(test);

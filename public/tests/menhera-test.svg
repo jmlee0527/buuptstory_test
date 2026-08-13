@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 576" role="img" aria-labelledby="title desc">
+  <title id="title">멘헤라 테스트 썸네일</title>
+  <desc id="desc">분홍색 메모지와 채팅 말풍선, 하트가 겹친 감성적인 일러스트</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#fde7f3"/><stop offset=".55" stop-color="#f5d9ff"/><stop offset="1" stop-color="#dcecff"/></linearGradient>
+    <filter id="shadow" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="12" stdDeviation="16" flood-color="#7c3a78" flood-opacity=".18"/></filter>
+  </defs>
+  <rect width="1024" height="576" rx="36" fill="url(#bg)"/>
+  <g opacity=".35" fill="none" stroke="#fff" stroke-width="3"><path d="M0 92h1024M0 184h1024M0 276h1024M0 368h1024M0 460h1024"/><path d="M104 0v576M306 0v576M508 0v576M710 0v576M912 0v576"/></g>
+  <g filter="url(#shadow)">
+    <path d="M218 130h380a34 34 0 0 1 34 34v190a34 34 0 0 1-34 34H390l-94 72 20-72h-98a34 34 0 0 1-34-34V164a34 34 0 0 1 34-34Z" fill="#fffdfb" stroke="#372c42" stroke-width="7"/>
+    <path d="M557 194h245a32 32 0 0 1 32 32v154a32 32 0 0 1-32 32h-52l16 58-78-58H557a32 32 0 0 1-32-32V226a32 32 0 0 1 32-32Z" fill="#6a4a8c" stroke="#372c42" stroke-width="7"/>
+  </g>
+  <g fill="#d7c9df"><rect x="248" y="204" width="212" height="18" rx="9"/><rect x="248" y="250" width="304" height="18" rx="9"/><rect x="248" y="296" width="176" height="18" rx="9"/></g>
+  <g fill="#e6dcf0"><rect x="590" y="258" width="176" height="16" rx="8"/><rect x="590" y="300" width="120" height="16" rx="8"/></g>
+  <path d="M474 162c-28-40-90-18-90 30 0 49 90 100 90 100s90-51 90-100c0-48-62-70-90-30Z" fill="#ff6fae" stroke="#372c42" stroke-width="7" transform="translate(120 75) scale(.78)"/>
+  <g stroke="#372c42" stroke-width="6" stroke-linecap="round"><path d="m150 108-28-28M874 120l30-32M908 404l38 12M114 430l-38 18"/></g>
+  <g fill="#fff"><circle cx="126" cy="174" r="10"/><circle cx="878" cy="188" r="13"/><circle cx="848" cy="470" r="9"/><circle cx="176" cy="490" r="12"/></g>
+</svg>
