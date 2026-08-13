@@ -19,6 +19,7 @@ import { enneagramTest } from "@/data/enneagram";
 import { eqTest } from "@/data/eq-test";
 import { bigFiveTest } from "@/data/big-five";
 import { footballQuizTest } from "@/data/football-quiz";
+import { footballTacticsTest } from "@/data/football-tactics";
 import { worldCupWinnerQuizTest } from "@/data/worldcup-winners";
 import { reactionTimeTest } from "@/data/reaction-time";
 import { mbtiTest } from "@/data/mbti";
@@ -155,7 +156,7 @@ export const tests: TestDefinition[] = [limYoungWoongSongQuizTest, youngtakSongQ
     ],
     assesses: "부업 적합 성향과 업무 선호",
   },
-}, jobStressTest, turnoverIntentionTest, workPersonaTest, nctDreamFanTest, bigbangFanTest, girlsGenerationFanTest, resceneFanTest, ateezFanTest, manchesterUnitedFanTest, strayKidsFanTest, seventeenFanTest, idealTypeTest, youngOldTest, mentalAgeTest, fromis9FanTest, btsFanTest, tetoEgenTest, limYoungWoongFanTest, youngtakFanTest, arsenalFanTest, loverFruitTest, dementiaRiskTest, adhdScreeningTest, nameCompatibilityTest, selfEsteemTest, coffeeBrandTest, wizardCharacterTest, officeAnimalTest, marriageTimingTest, kkondaePowerTest, weekendFoodWorldcup, burnoutRiskTest, consumerStyleTest, loveMbtiTest, loverScoreTest, jealousyTest, attachmentStyleTest, joseonDestinyTest, personalityCountryTest, colorPersonalityTest, enneagramTest, eqTest, bigFiveTest, footballQuizTest, worldCupWinnerQuizTest, reactionTimeTest, mbtiTest, sbtiTest, stressTest, cvsTest, snsTest, burgerTest, dailyFortuneTest];
+}, jobStressTest, turnoverIntentionTest, workPersonaTest, nctDreamFanTest, bigbangFanTest, girlsGenerationFanTest, resceneFanTest, ateezFanTest, manchesterUnitedFanTest, strayKidsFanTest, seventeenFanTest, idealTypeTest, youngOldTest, mentalAgeTest, fromis9FanTest, btsFanTest, tetoEgenTest, limYoungWoongFanTest, youngtakFanTest, arsenalFanTest, footballTacticsTest, loverFruitTest, dementiaRiskTest, adhdScreeningTest, nameCompatibilityTest, selfEsteemTest, coffeeBrandTest, wizardCharacterTest, officeAnimalTest, marriageTimingTest, kkondaePowerTest, weekendFoodWorldcup, burnoutRiskTest, consumerStyleTest, loveMbtiTest, loverScoreTest, jealousyTest, attachmentStyleTest, joseonDestinyTest, personalityCountryTest, colorPersonalityTest, enneagramTest, eqTest, bigFiveTest, footballQuizTest, worldCupWinnerQuizTest, reactionTimeTest, mbtiTest, sbtiTest, stressTest, cvsTest, snsTest, burgerTest, dailyFortuneTest];
 
 export const getTest = (slug: string) => tests.find((test) => test.slug === slug);
 export const getResultProfile = (slug: string) => resultProfiles.find((item) => item.slug === slug);
